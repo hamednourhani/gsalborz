@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: hermooder 1.0\n"
+"Project-Id-Version: gsalborz 1.0\n"
 "Report-Msgid-Bugs-To: http://itstar.ir/contact-us\n"
 "POT-Creation-Date: 2015-11-29 21:20:57+00:00\n"
 "MIME-Version: 1.0\n"
@@ -1023,19 +1023,19 @@ msgstr ""
 msgid "New Product Tag Name"
 msgstr ""
 
-#: library/hermooder.php:87
+#: library/gsalborz.php:87
 msgid "Page %s"
 msgstr ""
 
-#: library/hermooder.php:278
+#: library/gsalborz.php:278
 msgid "The Main Menu"
 msgstr ""
 
-#: library/hermooder.php:309
+#: library/gsalborz.php:309
 msgid "No Related Posts Yet!"
 msgstr ""
 
-#: library/hermooder.php:354
+#: library/gsalborz.php:354
 msgid "Read "
 msgstr ""
 
@@ -1060,15 +1060,15 @@ msgid " Email : "
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "hermooder"
+msgid "gsalborz"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://hermooder.com"
+msgid "http://gsalborz.com"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "hermooder Portal Theme by iTstar."
+msgid "gsalborz Portal Theme by iTstar."
 msgstr ""
 
 #. Author of the plugin/theme

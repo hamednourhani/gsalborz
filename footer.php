@@ -20,11 +20,11 @@
 						</ul>
 						
 						<span class="site-holder">
-							<?php echo __('Designed by','hermooder').'<a href="http://Karait.com">'.' '.__('Farakaranet','hermooder').'</a>'; ?>
+							<?php echo __('Designed by','gsalborz').'<a href="http://Karait.com">'.' '.__('Farakaranet','gsalborz').'</a>'; ?>
 						</span>
 						
 						<span class="credit">
-							<?php echo __('Hermooder © 2015. All Right Reserved','hermooder');?>
+							<?php echo __('Hermooder © 2015. All Right Reserved','gsalborz');?>
 						</span>
 
 						

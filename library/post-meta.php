@@ -7,8 +7,8 @@
 						<ul class="post-meta-list">
 							
 							<?php if( 'post' == get_post_type() && is_singular()){
-											// $cat_list =get_the_term_list( get_the_ID(), 'news_cat', '<span class="cats-title">' . __( 'News category :', 'hermooder' ) . '</span> ', ', ' );
-											$tag_list =get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags :', 'hermooder' ) . '</span> ', ', ' );
+											// $cat_list =get_the_term_list( get_the_ID(), 'news_cat', '<span class="cats-title">' . __( 'News category :', 'gsalborz' ) . '</span> ', ', ' );
+											$tag_list =get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags :', 'gsalborz' ) . '</span> ', ', ' );
 											?>
 								
 									
@@ -28,9 +28,9 @@
 						
 							
 							<?php if( 'product' == get_post_type() && is_singular()){
-											// $cat_list =get_the_term_list( get_the_ID(), 'news_cat', '<span class="cats-title">' . __( 'News category :', 'hermooder' ) . '</span> ', ', ' );
-											$tag_list =get_the_term_list( get_the_ID(), 'product_tag', '<span class="tags-title">' . __( 'Tags :', 'hermooder' ) . '</span> ', ', ' );
-											$cat_list =get_the_term_list( get_the_ID(), 'product_cat', '<span class="cats-title">' . __( 'Categories :', 'hermooder' ) . '</span> ', ', ' );
+											// $cat_list =get_the_term_list( get_the_ID(), 'news_cat', '<span class="cats-title">' . __( 'News category :', 'gsalborz' ) . '</span> ', ', ' );
+											$tag_list =get_the_term_list( get_the_ID(), 'product_tag', '<span class="tags-title">' . __( 'Tags :', 'gsalborz' ) . '</span> ', ', ' );
+											$cat_list =get_the_term_list( get_the_ID(), 'product_cat', '<span class="cats-title">' . __( 'Categories :', 'gsalborz' ) . '</span> ', ', ' );
 											?>
 								
 									

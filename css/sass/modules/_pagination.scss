@@ -4,16 +4,16 @@ nav.pagination{
 	text-align : center;
 	@include clearfix;
 	a.page-numbers,span.page-numbers{
-		border : 3px solid $blue1;
+		border : 3px solid $cream2;
 		padding : 5px 10px;
-		background-color: $white2;
+		background-color: $white;
 		&:hover {
-			background-color: $blue2;
-			color : $white2;
+			background-color: $cream2;
+			color : $white;
 		}
 		&.current{
-			background-color: $blue2;
-			color : $white2;
+			background-color: $cream2;
+			color : $white;
 		}
 	}
 	span.page-numbers{

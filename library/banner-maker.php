@@ -18,7 +18,7 @@
 		<div class="banner-wrapper">
 			<div class="single-cat-title">
 				<section class="layout">
-					<h1><?php printf( __( 'Search Results for: %s', 'hermooder' ), get_search_query() ); ?></h1>
+					<h1><?php printf( __( 'Search Results for: %s', 'gsalborz' ), get_search_query() ); ?></h1>
 				</section>
 			</div>
 		</div>

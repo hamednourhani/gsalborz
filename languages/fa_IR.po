@@ -619,20 +619,20 @@ msgstr "افزودن برچسب محصول جدید"
 msgid "New Product Tag Name"
 msgstr "نام برچسب جدید محصول"
 
-#: library/hermooder.php:87
+#: library/gsalborz.php:87
 #, php-format
 msgid "Page %s"
 msgstr "صفحه  %s"
 
-#: library/hermooder.php:278
+#: library/gsalborz.php:278
 msgid "The Main Menu"
 msgstr "فهرست اصلی"
 
-#: library/hermooder.php:309
+#: library/gsalborz.php:309
 msgid "No Related Posts Yet!"
 msgstr "هنوز مطلب مرتبطی منتشر نشده است!"
 
-#: library/hermooder.php:354
+#: library/gsalborz.php:354
 msgid "Read "
 msgstr "مشاهده"
 

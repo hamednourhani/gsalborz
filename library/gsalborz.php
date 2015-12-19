@@ -1,12 +1,12 @@
 <?php
-/* Welcome to hermooder :)
-This is the core hermooder file where most of the
+/* Welcome to gsalborz :)
+This is the core gsalborz file where most of the
 main functions & features reside. If you have
 any custom functions, it's best to put them
 in the functions.php file.
 
 Developed by: Eddie Machado
-URL: http://themble.com/hermooder/
+URL: http://themble.com/gsalborz/
 
   - head cleanup (remove rsd, uri links, junk css, ect)
   - enqueueing scripts & styles
@@ -37,6 +37,8 @@ function hermooder_head_cleanup() {
 	// EditURI link
 	remove_action( 'wp_head', 'rsd_link' );
 	// windows live writer
+
+
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	// previous link
 	remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
@@ -51,7 +53,7 @@ function hermooder_head_cleanup() {
 	// remove Wp version from scripts
 	add_filter( 'script_loader_src', 'hermooder_remove_wp_ver_css_js', 9999 );
 
-} /* end hermooder head cleanup */
+} /* end gsalborz head cleanup */
 
 //hide admin bar from front end
 function my_function_admin_bar(){ 
@@ -146,14 +148,14 @@ function hermooder_scripts_and_styles() {
 
 
 
-		wp_register_script( 'hermooder-modernizr', get_stylesheet_directory_uri() . '/js/lib/modernizr.custom.min.js', array(), '2.5.3', false );
+		wp_register_script( 'gsalborz-modernizr', get_stylesheet_directory_uri() . '/js/lib/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// register main stylesheet
 		
 		wp_register_style( 'font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css', array(), '', 'all' );
-		wp_register_style( 'hermooder-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
-		wp_register_style( 'hermooder-rtl-stylesheet', get_stylesheet_directory_uri() . '/css/rtl.css', array('hermooder-stylesheet'), '', 'all' );
-		wp_register_style( 'hermooder-ie-only', get_stylesheet_directory_uri() . '/css/ie.css', array(), '' );
+		wp_register_style( 'gsalborz-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
+		wp_register_style( 'gsalborz-rtl-stylesheet', get_stylesheet_directory_uri() . '/css/rtl.css', array('gsalborz-stylesheet'), '', 'all' );
+		wp_register_style( 'gsalborz-ie-only', get_stylesheet_directory_uri() . '/css/ie.css', array(), '' );
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -171,7 +173,7 @@ function hermooder_scripts_and_styles() {
 		wp_register_script( 'flexie', get_stylesheet_directory_uri() . '/js/lib/flexie.js', array('jquery'), '', false );
 		wp_register_script( 'selectivizr', get_stylesheet_directory_uri() . '/js/lib/selectivizr-min.js', array(), '', false );
 		wp_register_script( 'cssfx', get_stylesheet_directory_uri() . '/js/lib/cssfx.js', array(), '', false );
-		wp_register_script( 'hermooder-js', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery','scrolltofixed'), '', true );
+		wp_register_script( 'gsalborz-js', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery','scrolltofixed'), '', true );
 		
 		wp_register_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCSatHC6AP22DyNRlWCyT8EZnEPo175cl4"', array(), '', true );
 		wp_register_script( 'map-loader', get_stylesheet_directory_uri() . '/js/map-loader.js', array('google-map'), '', true );
@@ -180,19 +182,19 @@ function hermooder_scripts_and_styles() {
 		// enqueue styles and scripts
 		//wp_enqueue_script( 'please-wait' );
 		//wp_enqueue_script( 'please-wait-custom' );
-		//wp_enqueue_script( 'hermooder-modernizr' );
+		//wp_enqueue_script( 'gsalborz-modernizr' );
 	
-		wp_enqueue_script( 'modernizr-hermooder' );
+		wp_enqueue_script( 'modernizr-gsalborz' );
 
 
 		wp_enqueue_style('font-awesome' );
-		wp_enqueue_style( 'hermooder-stylesheet' );
-		if(is_rtl()){
-			wp_enqueue_style('hermooder-rtl-stylesheet');
-		}
-		wp_enqueue_style( 'hermooder-ie-only' );
+		wp_enqueue_style( 'gsalborz-stylesheet' );
+//		if(is_rtl()){
+//			wp_enqueue_style('gsalborz-rtl-stylesheet');
+//		}
+		wp_enqueue_style( 'gsalborz-ie-only' );
 
-		$wp_styles->add_data( 'hermooder-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+		$wp_styles->add_data( 'gsalborz-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 		
 		
 
@@ -218,7 +220,7 @@ function hermooder_scripts_and_styles() {
 
 		// wp_enqueue_script( 'onscreen' );
 		
-		wp_enqueue_script( 'hermooder-js' );
+		wp_enqueue_script( 'gsalborz-js' );
 		
 
 			
@@ -275,11 +277,11 @@ function hermooder_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-menu' => __( 'The Main Menu', 'hermooder' ),   // main nav in header
+			'main-menu' => __( 'The Main Menu', 'gsalborz' ),   // main nav in header
 		)
 	);
 
-} /* end hermooder theme support */
+} /* end gsalborz theme support */
 
 
 /*********************
@@ -288,7 +290,7 @@ RELATED POSTS FUNCTION
 
 // Related Posts Function (call using hermooder_related_posts(); )
 function hermooder_related_posts() {
-	echo '<ul id="hermooder-related-posts">';
+	echo '<ul id="gsalborz-related-posts">';
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
@@ -306,12 +308,12 @@ function hermooder_related_posts() {
 				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; }
 		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'hermooder' ) . '</li>'; ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'gsalborz' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_postdata();
 	echo '</ul>';
-} /* end hermooder related posts function */
+} /* end gsalborz related posts function */
 
 /*********************
 PAGE NAVI
@@ -351,7 +353,7 @@ function hermooder_filter_ptags_on_images($content){
 function hermooder_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '<a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'hermooder' ) . esc_attr( get_the_title( $post->ID ) ).'">'. '[...]' .'</a>';
+	return '<a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'gsalborz' ) . esc_attr( get_the_title( $post->ID ) ).'">'. '[...]' .'</a>';
 }
 
 add_action('wp_head','hermooder_inline_style' );

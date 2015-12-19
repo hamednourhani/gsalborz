@@ -1,6 +1,6 @@
 <?php
 /**
- * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the hermooder directory)
+ * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the gsalborz directory)
  *
  * Be sure to replace all instances of 'hermooder_' with your pharmacy's prefix.
  * http://nacin.com/2010/05/11/in-wordpress-prefix-everything/
@@ -8,7 +8,7 @@
  * @category YourThemeOrPlugin
  * @package  Demo_hermooder
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
- * @link     https://github.com/WebDevStudios/hermooder
+ * @link     https://github.com/WebDevStudios/gsalborz
  */
 
 /**
@@ -53,7 +53,7 @@ function ed_metabox_include_front_page($display, $meta_box) {
 /**
  * Conditionally displays a metabox when used as a callback in the 'show_on_cb' hermooder_box parameter
  *
- * @param  hermooder object $cmb hermooder object
+ * @param  gsalborz object $cmb gsalborz object
  *
  * @return bool             True if metabox should show
  */
@@ -107,14 +107,14 @@ function hermooder_before_row_if_2($field_args, $field) {
 // 	 */
 // 	$cmb_demo = new_cmb2_box( array(
 // 		'id'            => $prefix . 'prodct_features',
-// 		'title'         => __( 'Product Features', 'hermooder' ),
+// 		'title'         => __( 'Product Features', 'gsalborz' ),
 // 		'object_types'  => array( 'pharmacy' ), // Post type
 
 // 	) );
 
 // 	$cmb_demo->add_field( array(
-// 		'name'         => __( 'address', 'hermooder' ),
-// 		'desc'         => __( 'Enter pharmacy address', 'hermooder' ),
+// 		'name'         => __( 'address', 'gsalborz' ),
+// 		'desc'         => __( 'Enter pharmacy address', 'gsalborz' ),
 // 		'id'           => $prefix . 'address',
 // 		'type'         => 'text',
 
@@ -138,7 +138,7 @@ function hermooder_register_pharmacy_images_metabox() {
 	 */
 	$cmb_demo = new_cmb2_box(array(
 			'id'           => $prefix.'pharmacy_images',
-			'title'        => __('pharmacy Images', 'hermooder'),
+			'title'        => __('pharmacy Images', 'gsalborz'),
 			'object_types' => array('pharmacy'), // Post type
 			// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
 			// 'context'    => 'normal',
@@ -149,40 +149,40 @@ function hermooder_register_pharmacy_images_metabox() {
 		));
 
 	$cmb_demo->add_field(array(
-			'name' => __('address', 'hermooder'),
-			'desc' => __('Enter pharmacy address', 'hermooder'),
+			'name' => __('address', 'gsalborz'),
+			'desc' => __('Enter pharmacy address', 'gsalborz'),
 			'id'   => $prefix.'address',
 			'type' => 'text',
 
 		));
 
 	$cmb_demo->add_field(array(
-			'name' => __('Latitude', 'hermooder'),
-			'desc' => __('Enter address Latitude', 'hermooder'),
+			'name' => __('Latitude', 'gsalborz'),
+			'desc' => __('Enter address Latitude', 'gsalborz'),
 			'id'   => $prefix.'Latitude',
 			'type' => 'text',
 
 		));
 
 	$cmb_demo->add_field(array(
-			'name' => __('Longitude', 'hermooder'),
-			'desc' => __('Enter address Longitude', 'hermooder'),
+			'name' => __('Longitude', 'gsalborz'),
+			'desc' => __('Enter address Longitude', 'gsalborz'),
 			'id'   => $prefix.'Longitude',
 			'type' => 'text',
 
 		));
 
 	$cmb_demo->add_field(array(
-			'name' => __('email', 'hermooder'),
-			'desc' => __('Enter pharmacy email address', 'hermooder'),
+			'name' => __('email', 'gsalborz'),
+			'desc' => __('Enter pharmacy email address', 'gsalborz'),
 			'id'   => $prefix.'email',
 			'type' => 'text',
 
 		));
 
 	$cmb_demo->add_field(array(
-			'name' => __('phone', 'hermooder'),
-			'desc' => __('Enter pharmacy phone', 'hermooder'),
+			'name' => __('phone', 'gsalborz'),
+			'desc' => __('Enter pharmacy phone', 'gsalborz'),
 			'id'   => $prefix.'phone',
 			'type' => 'text',
 
@@ -206,7 +206,7 @@ function hermooder_register_page_banner_metabox() {
 	 */
 	$cmb_demo = new_cmb2_box(array(
 			'id'           => $prefix.'page_banner',
-			'title'        => __('Page Banner', 'hermooder'),
+			'title'        => __('Page Banner', 'gsalborz'),
 			'object_types' => array('post', 'page', 'product', 'pharmacy'), // Post type
 			// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
 			// 'context'    => 'normal',
@@ -217,14 +217,14 @@ function hermooder_register_page_banner_metabox() {
 		));
 
 	$cmb_demo->add_field(array(
-			'name'             => __('Banner', 'hermooder'),
-			'desc'             => __('Choose Banner Mod, SlideShow , Image Banner or Nothing', 'hermooder'),
+			'name'             => __('Banner', 'gsalborz'),
+			'desc'             => __('Choose Banner Mod, SlideShow , Image Banner or Nothing', 'gsalborz'),
 			'id'               => $prefix.'banner_mod',
 			'type'             => 'radio_inline',
 			'show_option_none' => true,
 			'options'          => array(
-				'slider'          => __('Slider', 'hermooder'),
-				'image'           => __('Image', 'hermooder'),
+				'slider'          => __('Slider', 'gsalborz'),
+				'image'           => __('Image', 'gsalborz'),
 
 			),
 
@@ -236,29 +236,29 @@ function hermooder_register_page_banner_metabox() {
 		));
 
 	$cmb_demo->add_field(array(
-			'name' => __('Slider Shortcode', 'hermooder'),
-			'desc' => __('write this page Revolotion Slider shortcode with alis name here', 'hermooder'),
+			'name' => __('Slider Shortcode', 'gsalborz'),
+			'desc' => __('write this page Revolotion Slider shortcode with alis name here', 'gsalborz'),
 			'id'   => $prefix.'slider_shortcode',
 			'type' => 'text',
 
 		));
 
 	$cmb_demo->add_field(array(
-			'name' => __('Banner Image', 'hermooder'),
-			'desc' => __('Upload an image to show as the banner', 'hermooder'),
+			'name' => __('Banner Image', 'gsalborz'),
+			'desc' => __('Upload an image to show as the banner', 'gsalborz'),
 			'id'   => $prefix.'image',
 			'type' => 'file',
 
 		));
 
 	$cmb_demo->add_field(array(
-			'name'    => __('Page Title', 'hermooder'),
-			'desc'    => __('show Page Title or Not?', 'hermooder'),
+			'name'    => __('Page Title', 'gsalborz'),
+			'desc'    => __('show Page Title or Not?', 'gsalborz'),
 			'id'      => $prefix.'title',
 			'type'    => 'radio_inline',
 			'options' => array(
-				'yes'    => __('Yes', 'hermooder'),
-				'no'     => __('No', 'hermooder'),
+				'yes'    => __('Yes', 'gsalborz'),
+				'no'     => __('No', 'gsalborz'),
 
 			),
 			'default' => 'yes',

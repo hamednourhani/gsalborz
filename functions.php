@@ -1,15 +1,15 @@
 <?php
 /*
 Author: Eddie Machado
-URL: http://themble.com/hermooder/
+URL: http://themble.com/gsalborz/
 
 This is where you can drop your custom functions or
 just edit things like thumbnail sizes, header images,
 sidebars, comments, ect.
 */
 
-// LOAD hermooder CORE (if you remove this, the theme will break)
-require_once( 'library/hermooder.php' );
+// LOAD gsalborz CORE (if you remove this, the theme will break)
+require_once( 'library/gsalborz.php' );
 // require_once( 'library/notifications.php' );
 
 //Include and setup custom metaboxes and fields.
@@ -22,7 +22,7 @@ require_once( 'library/cmb-functions.php' );
  //require_once( 'library/admin.php' );
 
 /*********************
-LAUNCH hermooder
+LAUNCH gsalborz
 Let's get everything up and running.
 *********************/
 
@@ -32,7 +32,7 @@ function hermooder_ahoy() {
   //add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
   // let's get language support going, if you need it
-  load_theme_textdomain( 'hermooder', get_template_directory() . '/languages' );
+  load_theme_textdomain( 'gsalborz', get_template_directory() . '/languages' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'library/custom-post-type.php' );
@@ -65,7 +65,7 @@ function hermooder_ahoy() {
   // cleaning up excerpt
   add_filter( 'excerpt_more', 'hermooder_excerpt_more' );
 
-} /* end hermooder ahoy */
+} /* end gsalborz ahoy */
 
 // let's get this party started
 add_action( 'after_setup_theme', 'hermooder_ahoy' );
@@ -135,8 +135,8 @@ add_action( 'customize_register', 'hermooder_theme_customizer' );
 function hermooder_register_sidebars() {
   register_sidebar(array(
     'id' => 'sidebar',
-    'name' => __( 'Sidebar', 'hermooder' ),
-    'description' => __( 'The first (primary) sidebar.', 'hermooder' ),
+    'name' => __( 'Sidebar', 'gsalborz' ),
+    'description' => __( 'The first (primary) sidebar.', 'gsalborz' ),
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
@@ -144,8 +144,8 @@ function hermooder_register_sidebars() {
   ));
   register_sidebar(array(
     'id' => 'footer-col1',
-    'name' => __( 'Footer first col', 'hermooder' ),
-    'description' => __( 'The first footer widget area', 'hermooder' ),
+    'name' => __( 'Footer first col', 'gsalborz' ),
+    'description' => __( 'The first footer widget area', 'gsalborz' ),
     'before_widget' => '<aside id="%1$s" class="footer-first footer-col1 widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
@@ -153,8 +153,8 @@ function hermooder_register_sidebars() {
   ));
   register_sidebar(array(
     'id' => 'footer-col2',
-    'name' => __( 'Footer 2d col', 'hermooder' ),
-    'description' => __( 'The first footer widget area', 'hermooder' ),
+    'name' => __( 'Footer 2d col', 'gsalborz' ),
+    'description' => __( 'The first footer widget area', 'gsalborz' ),
     'before_widget' => '<aside id="%1$s" class="footer-first footer-col2 widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
@@ -162,8 +162,8 @@ function hermooder_register_sidebars() {
   ));
   register_sidebar(array(
     'id' => 'footer-col3',
-    'name' => __( 'Footer 3rd col', 'hermooder' ),
-    'description' => __( 'The first footer widget area', 'hermooder' ),
+    'name' => __( 'Footer 3rd col', 'gsalborz' ),
+    'description' => __( 'The first footer widget area', 'gsalborz' ),
     'before_widget' => '<aside id="%1$s" class="footer-first footer-col3 widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
@@ -171,8 +171,8 @@ function hermooder_register_sidebars() {
   ));
   // register_sidebar(array(
   //   'id' => 'footer-col4',
-  //   'name' => __( 'Footer 4th Col', 'hermooder' ),
-  //   'description' => __( 'The first footer widget area', 'hermooder' ),
+  //   'name' => __( 'Footer 4th Col', 'gsalborz' ),
+  //   'description' => __( 'The first footer widget area', 'gsalborz' ),
   //   'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
   //   'after_widget' => '</aside>',
   //   'before_title' => '<h4 class="widgettitle">',
@@ -205,13 +205,13 @@ function hermooder_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'hermooder' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'hermooder' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'hermooder' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'gsalborz' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'gsalborz' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'gsalborz' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'hermooder' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'gsalborz' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">
@@ -229,13 +229,13 @@ function hermooder_pagination(){
 
     if($wp_query->max_num_pages > 1){
         $big = 999999999; 
-        echo /*__('Page : ','hermooder').*/paginate_links( array(
+        echo /*__('Page : ','gsalborz').*/paginate_links( array(
           'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
           'format' => '?paged=%#%',
           'current' => max( 1, get_query_var('paged') ),
           'total' => $wp_query->max_num_pages,
-          'prev_text'    => __('<i class="fa fa-angle-double-left"></i>','hermooder'),
-          'next_text'    => __('<i class="fa fa-angle-double-right"></i>','hermooder')
+          'prev_text'    => __('<i class="fa fa-angle-double-left"></i>','gsalborz'),
+          'next_text'    => __('<i class="fa fa-angle-double-right"></i>','gsalborz')
         ) );
       }
 }
@@ -277,7 +277,7 @@ function hermooder_search_form( $form ) {
 
   if(ICL_LANGUAGE_CODE == 'en' || ICL_LANGUAGE_CODE == 'it'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','hermooder' ) . '</label>
+      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','gsalborz' ) . '</label>
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
       <input type="submit" value="' .  __( 'Search' ) . '" name="submit" id="submit" />
       <input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>
@@ -285,7 +285,7 @@ function hermooder_search_form( $form ) {
       </form>';
   } else {
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','hermooder') . '</label>
+      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','gsalborz') . '</label>
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
       <input type="submit" value="' .  __( 'Search' ) . '" name="submit" id="submit" />
       </div>
@@ -354,10 +354,10 @@ class contact_info_widget extends WP_Widget {
         'contact_info_widget', 
 
         // Widget name will appear in UI
-        __('Contact Informaion Widget', 'hermooder'), 
+        __('Contact Informaion Widget', 'gsalborz'),
 
         // Widget description
-        array( 'description' => __( 'Display Contact Information', 'hermooder' ), ) 
+        array( 'description' => __( 'Display Contact Information', 'gsalborz' ), )
         );
     }
 
@@ -375,11 +375,11 @@ class contact_info_widget extends WP_Widget {
         
                 
         $content = '<main class="widgetbody">';
-        $content .='<p><i class="fa fa-map-marker"></i>'.__('Address : ','hermooder').$address.'</p>';
-        $content .='<p><i class="fa fa-fire"></i>'.__('Zip : ','hermooder').$zip.'</p>';
-        $content .='<p><i class="fa fa-fax"></i>'.__('TelFax : ','hermooder').$telfax.'</p>';
-        $content .='<p><i class="fa fa-tablet"></i></i>'.__('Sms Panel : ','hermooder').$smspanel.'</p>';
-        $content .='<p><i class="fa fa-envelope"></i>'.__('Email : ','hermooder').$email.'</p>';
+        $content .='<p><i class="fa fa-map-marker"></i>'.__('Address : ','gsalborz').$address.'</p>';
+        $content .='<p><i class="fa fa-fire"></i>'.__('Zip : ','gsalborz').$zip.'</p>';
+        $content .='<p><i class="fa fa-fax"></i>'.__('TelFax : ','gsalborz').$telfax.'</p>';
+        $content .='<p><i class="fa fa-tablet"></i></i>'.__('Sms Panel : ','gsalborz').$smspanel.'</p>';
+        $content .='<p><i class="fa fa-envelope"></i>'.__('Email : ','gsalborz').$email.'</p>';
         $content .= '</main>';
       
         // before and after widget arguments are defined by themes
@@ -397,7 +397,7 @@ class contact_info_widget extends WP_Widget {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
         }else {
-            $title = __( 'Last Posts', 'hermooder' );
+            $title = __( 'Last Posts', 'gsalborz' );
         }
 
         if ( isset( $instance[ 'address' ] ) ) {
@@ -437,26 +437,26 @@ class contact_info_widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
          <p>
-            <label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e( 'Address :','hermooder' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e( 'Address :','gsalborz' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" type="text" value="<?php echo esc_attr( $address ); ?>" />
         </p>
          <p>
-            <label for="<?php echo $this->get_field_id( 'zip' ); ?>"><?php _e( 'Zip :','hermooder' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'zip' ); ?>"><?php _e( 'Zip :','gsalborz' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'zip' ); ?>" name="<?php echo $this->get_field_name( 'zip' ); ?>" type="text" value="<?php echo esc_attr( $zip ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'telfax' ); ?>"><?php _e( 'TelFax :','hermooder' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'telfax' ); ?>"><?php _e( 'TelFax :','gsalborz' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'telfax' ); ?>" name="<?php echo $this->get_field_name( 'telfax' ); ?>" type="text" value="<?php echo esc_attr( $telfax ); ?>" />
         </p>
 
          <p>
-            <label for="<?php echo $this->get_field_id( 'smspanel' ); ?>"><?php _e( 'Sms Panel :','hermooder' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'smspanel' ); ?>"><?php _e( 'Sms Panel :','gsalborz' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'smspanel' ); ?>" name="<?php echo $this->get_field_name( 'smspanel' ); ?>" type="text" value="<?php echo esc_attr( $smspanel ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e( 'Email Address :','hermooder' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e( 'Email Address :','gsalborz' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" type="text" value="<?php echo esc_attr( $email ); ?>" />
         </p>
         
@@ -488,10 +488,10 @@ class last_products_widget extends WP_Widget {
         'last_products_widget', 
 
         // Widget name will appear in UI
-        __('Last Products Widget', 'hermooder'), 
+        __('Last Products Widget', 'gsalborz'),
 
         // Widget description
-        array( 'description' => __( 'Display Last Products', 'hermooder' ), ) 
+        array( 'description' => __( 'Display Last Products', 'gsalborz' ), )
         );
     }
 
@@ -540,7 +540,7 @@ class last_products_widget extends WP_Widget {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
         }else {
-            $title = __( 'Last Products', 'hermooder' );
+            $title = __( 'Last Products', 'gsalborz' );
         }
         if ( isset( $instance[ 'number' ] ) ) {
             $number = $instance[ 'number' ];
@@ -559,11 +559,11 @@ class last_products_widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
          <p>
-            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'product Numbers :','hermooder' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'product Numbers :','gsalborz' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Product Category :','hermooder' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Product Category :','gsalborz' ); ?></label>
            <?php wp_dropdown_categories(array(
                   'name'               => $this->get_field_name( 'cat' ),
                   'id'                 => $this->get_field_id( 'cat' ),
@@ -600,10 +600,10 @@ class last_posts_by_cat_widget extends WP_Widget {
         'last_posts_by_cat_widget', 
 
         // Widget name will appear in UI
-        __('Last Posts By Category Widget', 'hermooder'), 
+        __('Last Posts By Category Widget', 'gsalborz'),
 
         // Widget description
-        array( 'description' => __( 'Display Last Posts in Category', 'hermooder' ), ) 
+        array( 'description' => __( 'Display Last Posts in Category', 'gsalborz' ), )
         );
     }
 
@@ -653,7 +653,7 @@ class last_posts_by_cat_widget extends WP_Widget {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
         }else {
-            $title = __( 'Last Posts', 'hermooder' );
+            $title = __( 'Last Posts', 'gsalborz' );
         }
         if ( isset( $instance[ 'number' ] ) ) {
             $number = $instance[ 'number' ];
@@ -672,11 +672,11 @@ class last_posts_by_cat_widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
          <p>
-            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Post Numbers :','hermooder' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Post Numbers :','gsalborz' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
         </p>
         <p>
-        <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Post Category :','hermooder' ); ?></label> 
+        <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Post Category :','gsalborz' ); ?></label>
         <?php wp_dropdown_categories(array(
                   'name'               => $this->get_field_name( 'cat' ),
                   'id'                 => $this->get_field_id( 'cat' ),
@@ -805,25 +805,25 @@ function html_form_code() {
 
   echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post" class="order-products">';
   echo '<p>';
-  echo __('Your Name (required)','hermooder'). '<br/>';
+  echo __('Your Name (required)','gsalborz'). '<br/>';
   echo '<input type="text" name="cf-name"  value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
   echo '</p>';
   echo '<p>';
-  echo __('Your Email (required)','hermooder'). '<br/>';
+  echo __('Your Email (required)','gsalborz'). '<br/>';
   echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
   echo '</p>';
-   echo __('Your Phone (required)','hermooder'). '<br/>';
+   echo __('Your Phone (required)','gsalborz'). '<br/>';
   echo '<input type="text" name="cf-phone" value="' . ( isset( $_POST["cf-phone"] ) ? esc_attr( $_POST["cf-phone"] ) : '' ) . '" size="40" />';
   echo '</p>';
   echo '<p>';
-  echo  __('Products List (required)','hermooder'). '<br/>';
+  echo  __('Products List (required)','gsalborz'). '<br/>';
   echo  $product_select;
   echo '</p>';
   echo '<p>';
-  echo  __('More Information (required)','hermooder'). '<br/>';
+  echo  __('More Information (required)','gsalborz'). '<br/>';
   echo '<textarea rows="10" cols="35" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
   echo '</p>';
-  echo '<p><input type="submit" name="cf-submitted" value="'.__('Order Products','hermooder').'"></p>';
+  echo '<p><input type="submit" name="cf-submitted" value="'.__('Order Products','gsalborz').'"></p>';
   echo '</form>';
 }
 
@@ -850,10 +850,10 @@ function deliver_mail() {
     }
     
     $message = "<div style='direction:rtl;text-align:right;'>";
-    $message .= "<p>".__('Name : ','hermooder').$name."</p>"."\r\n";
-    $message .= "<p>".__('Phone Number : ','hermooder').$phone."</p><br />"."\r\n";
-    $message .= "<p>".__('Email : ','hermooder').$email."</p><br />"."\r\n";
-    $message .= "<p>".__('Products : ','hermooder')."</p><br /><p>"."\r\n".$ordered_products."</p><br />"."\r\n";
+    $message .= "<p>".__('Name : ','gsalborz').$name."</p>"."\r\n";
+    $message .= "<p>".__('Phone Number : ','gsalborz').$phone."</p><br />"."\r\n";
+    $message .= "<p>".__('Email : ','gsalborz').$email."</p><br />"."\r\n";
+    $message .= "<p>".__('Products : ','gsalborz')."</p><br /><p>"."\r\n".$ordered_products."</p><br />"."\r\n";
     $message .= "<p>".esc_textarea( $_POST["cf-message"] )."\r\n"."</p>"."</div>";
 
     // get the blog administrator's email address
@@ -864,12 +864,12 @@ function deliver_mail() {
 
 
     // If email has been process for sending, display a success message
-    if ( wp_mail( $to, __('Order Products','hermooder'), $message, $headers ) ) {
+    if ( wp_mail( $to, __('Order Products','gsalborz'), $message, $headers ) ) {
       echo '<div>';
-      echo '<p class="success-message">'.__('Thanks for Ordering Products, We will contact you as soon as posible.','hermooder'). '</p>';
+      echo '<p class="success-message">'.__('Thanks for Ordering Products, We will contact you as soon as posible.','gsalborz'). '</p>';
       echo '</div>';
     } else {
-      echo '<p class="failed-message">'.__('An unexpected error occurred','hermooder').'</p>';
+      echo '<p class="failed-message">'.__('An unexpected error occurred','gsalborz').'</p>';
     }
 
     remove_filter( 'wp_mail_content_type', 'set_html_content_type' );

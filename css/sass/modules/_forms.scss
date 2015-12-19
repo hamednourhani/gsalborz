@@ -1,8 +1,8 @@
 /* form style */
 input#s {
     outline: none;
-    border: 1px solid $grey2;
-    background-color: $white2;
+    border: 1px solid $grey1;
+    background-color: $white;
     padding: 7px;
     //padding-left : 30px;
 }
@@ -28,11 +28,11 @@ form.order-products{
 }
 .failed-message{
 	background-color: $grey1;
-	border-bottom : 3px solid $red;
+	border-bottom : 3px solid $cream2;
 	padding : 10px;
 }
 .success-message{
 	background-color: $grey1;
-	border-bottom : 3px solid $green;
+	border-bottom : 3px solid $cream2;
 	padding : 10px;
 }
