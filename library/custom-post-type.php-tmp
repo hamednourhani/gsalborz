@@ -15,10 +15,10 @@ URL: http://themble.com/gsalborz/
  */
 
 // Flush rewrite rules for custom post types
-add_action('after_switch_theme', 'hermooder_flush_rewrite_rules');
+add_action('after_switch_theme', 'gsalborz_flush_rewrite_rules');
 
 // Flush your rewrite rules
-function hermooder_flush_rewrite_rules() {
+function gsalborz_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 

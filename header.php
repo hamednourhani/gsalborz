@@ -92,7 +92,7 @@
 							)); ?>
 
 							<div class="menu-search-area">
-								<?php echo hermooder_menu_search_form(); ?>
+								<?php echo gsalborz_menu_search_form(); ?>
 							</div>
 											
 		

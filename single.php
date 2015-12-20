@@ -17,7 +17,7 @@
 							
 								
 							<article class="hentry">
-								<?php if( get_post_meta(get_the_ID(),'_hermooder_title',1) !== 'no'){ ?>
+								<?php if( get_post_meta(get_the_ID(),'_gsalborz_title',1) !== 'no'){ ?>
 									<header class="article-title">
 										<a href="<?php the_permalink(); ?>">
 											<h3><?php the_title(); ?></h3>

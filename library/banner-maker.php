@@ -23,15 +23,15 @@
 			</div>
 		</div>
 <?php } elseif(is_singular()) {
-		$banner_mod = get_post_meta(get_the_ID(),'_hermooder_banner_mod',1);
+		$banner_mod = get_post_meta(get_the_ID(),'_gsalborz_banner_mod',1);
 		
 		switch ($banner_mod[0]) {
 			case 'slider':
-				$slider_shortcode = get_post_meta(get_the_ID(),'_hermooder_slider_shortcode');
+				$slider_shortcode = get_post_meta(get_the_ID(),'_gsalborz_slider_shortcode');
 				echo '<div class="banner-wrapper">'.do_shortcode($slider_shortcode[0] ).'</div>';
 				break;
 			case 'image':
-				$image = get_post_meta( get_the_ID(), '_hermooder_image' );
+				$image = get_post_meta( get_the_ID(), '_gsalborz_image' );
 				echo '<div class="banner-wrapper"><div class="banner-inner"><img class="page-banner" src="'.$image[0].'"/></div></div>';
 				break;
 			default: 

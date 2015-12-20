@@ -26,7 +26,7 @@ LAUNCH gsalborz
 Let's get everything up and running.
 *********************/
 
-function hermooder_ahoy() {
+function gsalborz_ahoy() {
 
   //Allow editor style.
   //add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
@@ -38,40 +38,40 @@ function hermooder_ahoy() {
   require_once( 'library/custom-post-type.php' );
 
   // launching operation cleanup
-  add_action( 'init', 'hermooder_head_cleanup' );
+  add_action( 'init', 'gsalborz_head_cleanup' );
   // A better title
   add_filter( 'wp_title', 'rw_title', 10, 3 );
   // remove WP version from RSS
-  add_filter( 'the_generator', 'hermooder_rss_version' );
+  add_filter( 'the_generator', 'gsalborz_rss_version' );
   // remove pesky injected css for recent comments widget
-  add_filter( 'wp_head', 'hermooder_remove_wp_widget_recent_comments_style', 1 );
+  add_filter( 'wp_head', 'gsalborz_remove_wp_widget_recent_comments_style', 1 );
   // clean up comment styles in the head
-  add_action( 'wp_head', 'hermooder_remove_recent_comments_style', 1 );
+  add_action( 'wp_head', 'gsalborz_remove_recent_comments_style', 1 );
   // clean up gallery output in wp
-  add_filter( 'gallery_style', 'hermooder_gallery_style' );
+  add_filter( 'gallery_style', 'gsalborz_gallery_style' );
 
   // enqueue base scripts and styles
-  add_action( 'wp_enqueue_scripts', 'hermooder_scripts_and_styles', 999 );
+  add_action( 'wp_enqueue_scripts', 'gsalborz_scripts_and_styles', 999 );
   // ie conditional wrapper
 
   // launching this stuff after theme setup
-  hermooder_theme_support();
+  gsalborz_theme_support();
 
   // adding sidebars to Wordpress (these are created in functions.php)
-  add_action( 'widgets_init', 'hermooder_register_sidebars' );
+  add_action( 'widgets_init', 'gsalborz_register_sidebars' );
 
   // cleaning up random code around images
-  add_filter( 'the_content', 'hermooder_filter_ptags_on_images' );
+  add_filter( 'the_content', 'gsalborz_filter_ptags_on_images' );
   // cleaning up excerpt
-  add_filter( 'excerpt_more', 'hermooder_excerpt_more' );
+  add_filter( 'excerpt_more', 'gsalborz_excerpt_more' );
 
 } /* end gsalborz ahoy */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'hermooder_ahoy' );
+add_action( 'after_setup_theme', 'gsalborz_ahoy' );
 
-add_action( 'after_setup_theme', 'hermooder_woocommerce_support' );
-function hermooder_woocommerce_support() {
+add_action( 'after_setup_theme', 'gsalborz_woocommerce_support' );
+function gsalborz_woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 /************* OEMBED SIZE OPTIONS *************/
@@ -83,17 +83,18 @@ function hermooder_woocommerce_support() {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'banner', 1000, 250, array( 'center', 'center' ) );
-add_image_size( 'product-thumb', 30, 30, array( 'center', 'center' ) );
-add_image_size( 'post-thumb', 150, 150, array( 'center', 'center' ) );
+add_image_size( 'banner', 940, 430, array( 'center', 'center' ) );
+add_image_size( 'product-thumb', 163, 163, array( 'center', 'center' ) );
+add_image_size( 'slider-thumb', 103, 103, array( 'center', 'center' ) );
 
-add_filter( 'image_size_names_choose', 'hermooder_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'gsalborz_custom_image_sizes' );
 
-function hermooder_custom_image_sizes( $sizes ) {
+function gsalborz_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'banner' => __('1000px by 250px'),
-        'product-thumb' => __('50px by 50px'),
-        'post-thumb' => __('150px by 150px'),
+        'banner' => __('940px by 430px'),
+        'product-thumb' => __('163px by 163px'),
+        'slider-thumb' => __('103px by 103px'),
+
     ) );
 }
 
@@ -108,7 +109,7 @@ new image size.
 /************* THEME CUSTOMIZE *********************/
 
 
-function hermooder_theme_customizer($wp_customize) {
+function gsalborz_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
   // Uncomment the below lines to remove the default customize sections 
@@ -127,12 +128,12 @@ function hermooder_theme_customizer($wp_customize) {
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 }
 
-add_action( 'customize_register', 'hermooder_theme_customizer' );
+add_action( 'customize_register', 'gsalborz_theme_customizer' );
 
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function hermooder_register_sidebars() {
+function gsalborz_register_sidebars() {
   register_sidebar(array(
     'id' => 'sidebar',
     'name' => __( 'Sidebar', 'gsalborz' ),
@@ -187,7 +188,7 @@ function hermooder_register_sidebars() {
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout
-function hermooder_comments( $comment, $args, $depth ) {
+function gsalborz_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
   <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
     <article  class="cf">
@@ -224,7 +225,7 @@ function hermooder_comments( $comment, $args, $depth ) {
 } // don't remove this bracket!
 
 
-function hermooder_pagination(){
+function gsalborz_pagination(){
   global $wp_query;
 
     if($wp_query->max_num_pages > 1){
@@ -241,14 +242,14 @@ function hermooder_pagination(){
 }
 
 
-function hermooder_SearchFilter($query) {
+function gsalborz_SearchFilter($query) {
     if ($query->is_search) {
       $query->set('post_type', array('post','product'));
     }
     return $query;
     }
 
-add_filter('pre_get_posts','hermooder_SearchFilter');
+add_filter('pre_get_posts','gsalborz_SearchFilter');
 
 // Enable support for HTML5 markup.
   add_theme_support( 'html5', array(
@@ -261,7 +262,7 @@ add_filter('pre_get_posts','hermooder_SearchFilter');
 
 /*---------------Widgets----------------------*/
 
-function hermooder_get_image_src($src="" , $size=""){
+function gsalborz_get_image_src($src="" , $size=""){
     $path_info = pathinfo($src);
     return $path_info['dirname'].'/'.$path_info['filename'].'-'.$size.'.'.$path_info['extension'];
 }
@@ -271,7 +272,7 @@ function hermooder_get_image_src($src="" , $size=""){
 
 
 
-function hermooder_search_form( $form ) {
+function gsalborz_search_form( $form ) {
   global $post,$wp_query,$wpdb;
    
 
@@ -294,7 +295,7 @@ function hermooder_search_form( $form ) {
 
   return $form;
 }
-function hermooder_menu_search_form() {
+function gsalborz_menu_search_form() {
   global $post,$wp_query,$wpdb;
    
 
@@ -320,10 +321,10 @@ function hermooder_menu_search_form() {
 
 
 
-function hermooder_excerpt_length( $length ) {
+function gsalborz_excerpt_length( $length ) {
   return 20;
 }
-add_filter( 'excerpt_length', 'hermooder_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'gsalborz_excerpt_length', 999 );
 
 
 
@@ -701,12 +702,12 @@ class last_posts_by_cat_widget extends WP_Widget {
 
 
 // Register and load the widget
-function hermooder_widget() {
+function gsalborz_widget() {
   register_widget( 'last_products_widget' );
   register_widget( 'last_posts_by_cat_widget' );
   register_widget( 'contact_info_widget' );
 }
-add_action( 'widgets_init', 'hermooder_widget' );
+add_action( 'widgets_init', 'gsalborz_widget' );
 
 
 
@@ -890,10 +891,10 @@ add_shortcode( 'product_order_form', 'cf_shortcode' );
 
 /*------------------- Pharmacy search function.----------------------------------------- */
 
-add_action("wp_ajax_hermooder_request_pharmacies", "hermooder_request_pharmacies");
-add_action("wp_ajax_nopriv_hermooder_request_pharmacies", "hermooder_request_pharmacies_approval");
+add_action("wp_ajax_gsalborz_request_pharmacies", "gsalborz_request_pharmacies");
+add_action("wp_ajax_nopriv_gsalborz_request_pharmacies", "gsalborz_request_pharmacies_approval");
 
-function hermooder_request_pharmacies() {
+function gsalborz_request_pharmacies() {
 
 global $wp,$wp_query; 
 
@@ -926,9 +927,9 @@ header("Content-type: text/xml");
 foreach($posts as $post) { 
   setup_postdata( $post );
   
-  $address = get_post_meta($post->ID,'_hermooder_address',1);
-  $lat = get_post_meta($post->ID,'_hermooder_Latitude',1);
-  $lng = get_post_meta($post->ID,'_hermooder_Longitude',1);
+  $address = get_post_meta($post->ID,'_gsalborz_address',1);
+  $lat = get_post_meta($post->ID,'_gsalborz_Latitude',1);
+  $lng = get_post_meta($post->ID,'_gsalborz_Longitude',1);
   $distance = (3959 * acos( cos( radians($center_lat) ) * cos( radians( $lat ) ) * cos( radians( $lng ) - radians($center_lng) ) + sin( radians($center_lat) ) * sin( radians( $lat ) ) ) );
   
   if($distance < $radius){
@@ -955,7 +956,7 @@ foreach($posts as $post) {
 
 }
 
-function hermooder_request_pharmacies_approval() {
+function gsalborz_request_pharmacies_approval() {
    echo "You must log in to view";
    die();
 }

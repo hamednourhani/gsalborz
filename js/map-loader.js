@@ -140,7 +140,7 @@ function downloadUrl(searchOptions) {
              //success: UrlHelper.renderData,
              //error : UrlHelper.logError,
              data : {
-                   action: "hermooder_request_pharmacies",
+                   action: "gsalborz_request_pharmacies",
                    lat : center_lat,
                    lng : center_lng,
                    radius : radius,

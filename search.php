@@ -46,7 +46,7 @@
 						<?php } ?>
 					<?php } ?>		
 					<nav class="pagination">
-						<?php hermooder_pagination(); ?>
+						<?php gsalborz_pagination(); ?>
 					</nav>		
 				</div><!-- primary -->
 				

@@ -2,11 +2,11 @@
 /**
  * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the gsalborz directory)
  *
- * Be sure to replace all instances of 'hermooder_' with your pharmacy's prefix.
+ * Be sure to replace all instances of 'gsalborz_' with your pharmacy's prefix.
  * http://nacin.com/2010/05/11/in-wordpress-prefix-everything/
  *
  * @category YourThemeOrPlugin
- * @package  Demo_hermooder
+ * @package  Demo_gsalborz
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link     https://github.com/WebDevStudios/gsalborz
  */
@@ -52,13 +52,13 @@ function ed_metabox_include_front_page( $display, $meta_box ) {
 }
 //add_filter( 'cmb2_show_on', 'ed_metabox_include_front_page', 10, 2 );
 /**
- * Conditionally displays a metabox when used as a callback in the 'show_on_cb' hermooder_box parameter
+ * Conditionally displays a metabox when used as a callback in the 'show_on_cb' gsalborz_box parameter
  *
  * @param  gsalborz object $cmb gsalborz object
  *
  * @return bool             True if metabox should show
  */
-function hermooder_show_if_front_page( $cmb ) {
+function gsalborz_show_if_front_page( $cmb ) {
 	// Don't show this metabox if it's not the front page template
 	if ( $cmb->object_id !== get_option( 'page_on_front' ) ) {
 		return false;
@@ -69,11 +69,11 @@ function hermooder_show_if_front_page( $cmb ) {
 /**
  * Conditionally displays a field when used as a callback in the 'show_on_cb' field parameter
  *
- * @param  hermooder_Field object $field Field object
+ * @param  gsalborz_Field object $field Field object
  *
  * @return bool                     True if metabox should show
  */
-function hermooder_hide_if_no_cats( $field ) {
+function gsalborz_hide_if_no_cats( $field ) {
 	// Don't show this field if not in the cats category
 	if ( ! has_tag( 'cats', $field->object_id ) ) {
 		return false;
@@ -85,9 +85,9 @@ function hermooder_hide_if_no_cats( $field ) {
  * Conditionally displays a message if the $post_id is 2
  *
  * @param  array             $field_args Array of field parameters
- * @param  hermooder_Field object $field      Field object
+ * @param  gsalborz_Field object $field      Field object
  */
-function hermooder_before_row_if_2( $field_args, $field ) {
+function gsalborz_before_row_if_2( $field_args, $field ) {
 	if ( 2 == $field->object_id ) {
 		echo '<p>Testing <b>"before_row"</b> parameter (on $post_id 2)</p>';
 	} else {
@@ -105,10 +105,10 @@ function hermooder_before_row_if_2( $field_args, $field ) {
 /******************************************************************/
 /*--------------------Product Features-------------------------------*/
 /******************************************************************/
-//  add_action( 'cmb2_init', 'hermooder_register_product_features_metabox' );
-// function hermooder_register_product_features_metabox() {
+//  add_action( 'cmb2_init', 'gsalborz_register_product_features_metabox' );
+// function gsalborz_register_product_features_metabox() {
 
-// 	$prefix = '_hermooder_';
+// 	$prefix = '_gsalborz_';
 
 // 	/**
 // 	 * Sample metabox to demonstrate each field type included
@@ -135,14 +135,14 @@ function hermooder_before_row_if_2( $field_args, $field ) {
 /******************************************************************/
 /*--------------------Pharmacy-------------------------------*/
 /******************************************************************/
-add_action( 'cmb2_init', 'hermooder_register_pharmacy_images_metabox' );
+add_action( 'cmb2_init', 'gsalborz_register_pharmacy_images_metabox' );
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_init' hook.
  */
-function hermooder_register_pharmacy_images_metabox() {
+function gsalborz_register_pharmacy_images_metabox() {
 
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_hermooder_';
+	$prefix = '_gsalborz_';
 
 	/**
 	 * Sample metabox to demonstrate each field type included
@@ -151,7 +151,7 @@ function hermooder_register_pharmacy_images_metabox() {
 		'id'            => $prefix . 'pharmacy_information',
 		'title'         => __( 'pharmacy Information', 'gsalborz' ),
 		'object_types'  => array( 'pharmacy' ), // Post type
-		// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
+		// 'show_on_cb' => 'gsalborz_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',
 		// 'show_names' => true, // Show field names on the left
@@ -212,12 +212,12 @@ function hermooder_register_pharmacy_images_metabox() {
 /*--------------------Page Banner -------------------------------*/
 /******************************************************************/
 
-add_action('cmb2_init','hermooder_register_page_banner_metabox');
-// add_action('cmb2_init','hermooder_register_tour_information_metabox');
-function hermooder_register_page_banner_metabox() {
+add_action('cmb2_init','gsalborz_register_page_banner_metabox');
+// add_action('cmb2_init','gsalborz_register_tour_information_metabox');
+function gsalborz_register_page_banner_metabox() {
 
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_hermooder_';
+	$prefix = '_gsalborz_';
 
 	/**
 	 * Sample metabox to demonstrate each field type included
@@ -226,7 +226,7 @@ function hermooder_register_page_banner_metabox() {
 		'id'            => $prefix . 'page_banner',
 		'title'         => __( 'Page Banner', 'gsalborz' ),
 		'object_types'  => array( 'post','page','product'), // Post type
-		// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
+		// 'show_on_cb' => 'gsalborz_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',
 		// 'show_names' => true, // Show field names on the left
@@ -248,7 +248,7 @@ function hermooder_register_page_banner_metabox() {
 			
 		),	
 		
-		//'show_on_cb' => 'hermooder_hide_if_no_cats', // function should return a bool value
+		//'show_on_cb' => 'gsalborz_hide_if_no_cats', // function should return a bool value
 		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
 		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
 		// 'on_front'        => false, // Optionally designate a field to wp-admin only
