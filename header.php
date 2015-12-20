@@ -49,58 +49,60 @@
 	<!-- ********************************************************************* -->
 
 	<header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-			
-		<section class="layout">	
+
 			<div class="header-inner">
-				<div class="hero">
-					
-						
+
+				<div class="top-bar">
+					<section class="layout">
 						<div class="lang-container">
 							<?php do_action('icl_language_selector'); ?>
 						</div>
-						
-						<a class="site-url" href="<?php echo get_bloginfo('url'); ?>">
-							<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="<?php echo get_bloginfo('url'); ?>"/>
-							<span class="site-desc"><?php echo '-| '.__('Your Ultimate Depilatory Solution','gsalborz').' |-'; ?></span>
-						</a>
+					</section>
+				</div><!--top-bar-->
+
+				<div class="hero">
+					<section class="layout">
+						<div class="site-logo-container">
+							<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/gsalborz-logo-en-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
+						</div>
 
 						<span class="menu-toggler" id="menu-toggler">
 							<i class="fa fa-bars"></i>
 						</span>
-						
 
-
-					
+						<div class="menu-search-area">
+							<?php echo gsalborz_menu_search_form(); ?>
+						</div>
+					</section>
 				</div><!-- hero -->
 			
 
 				<nav role="navigation" class="main-menu" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-																	
-							<?php wp_nav_menu(array(
-	    					         'container' => false,                           // remove nav container
-	    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-	    					         'menu' => __( 'Main Menu', 'gsalborz' ),  // nav name
-	    					         'menu_class' => 'nav main-nav cf', 
-	    					         // 'walker' => $walker,             // adding custom nav class
-	    					         'theme_location' => 'main-menu',                 // where it's located in the theme
-	    					         'before' => '',                                 // before the menu
-	        			               'after' => '',                                  // after the menu
-	        			               'link_before' => '',                            // before each link
-	        			               'link_after' => '',                             // after each link
-	        			               'depth' => 3,                                   // limit the depth of the nav
-	    					         'fallback_cb' => ''                             // fallback function (if there is one)
-							)); ?>
+					<section class="layout">
+						<?php wp_nav_menu(array(
+								 'container' => false,                           // remove nav container
+								 'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+								 'menu' => __( 'Main Menu', 'gsalborz' ),  // nav name
+								 'menu_class' => 'nav main-nav cf',
+								 // 'walker' => $walker,             // adding custom nav class
+								 'theme_location' => 'main-menu',                 // where it's located in the theme
+								 'before' => '',                                 // before the menu
+								   'after' => '',                                  // after the menu
+								   'link_before' => '',                            // before each link
+								   'link_after' => '',                             // after each link
+								   'depth' => 3,                                   // limit the depth of the nav
+								 'fallback_cb' => ''                             // fallback function (if there is one)
+						)); ?>
+					</section>
+				</nav><!--main-menu-->
 
-							<div class="menu-search-area">
-								<?php echo gsalborz_menu_search_form(); ?>
-							</div>
-											
-		
-					</nav>
-				</div>
-		</section>
-			
-	</header>	
+				<div class="banner-container">
+					<?php get_template_part("library/banner","maker"); ?>
+				</div><!--banner-container-->
+
+			</div><!--header-inner-->
+
+	</header><!--site-header-->
 
 <!-- ********************************************************************* -->
 <!--****************** Site Main ******************************************-->

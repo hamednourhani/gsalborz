@@ -135,77 +135,77 @@ function gsalborz_before_row_if_2( $field_args, $field ) {
 /******************************************************************/
 /*--------------------Pharmacy-------------------------------*/
 /******************************************************************/
-add_action( 'cmb2_init', 'gsalborz_register_pharmacy_images_metabox' );
-/**
- * Hook in and add a demo metabox. Can only happen on the 'cmb2_init' hook.
- */
-function gsalborz_register_pharmacy_images_metabox() {
-
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_gsalborz_';
-
-	/**
-	 * Sample metabox to demonstrate each field type included
-	 */
-	$cmb_demo = new_cmb2_box( array(
-		'id'            => $prefix . 'pharmacy_information',
-		'title'         => __( 'pharmacy Information', 'gsalborz' ),
-		'object_types'  => array( 'pharmacy' ), // Post type
-		// 'show_on_cb' => 'gsalborz_show_if_front_page', // function should return a bool value
-		// 'context'    => 'normal',
-		// 'priority'   => 'high',
-		// 'show_names' => true, // Show field names on the left
-		// 'cmb_styles' => false, // false to disable the CMB stylesheet
-		// 'closed'     => true, // true to keep the metabox closed by default
-	) );
-
-
-	
-	$cmb_demo->add_field( array(
-		'name'         => __( 'address', 'gsalborz' ),
-		'desc'         => __( 'Enter pharmacy address', 'gsalborz' ),
-		'id'           => $prefix . 'address',
-		'type'         => 'text',
-		
-	) );
-
-	$cmb_demo->add_field( array(
-		'name'         => __( 'Latitude', 'gsalborz' ),
-		'desc'         => __( 'Enter address Latitude', 'gsalborz' ),
-		'id'           => $prefix . 'Latitude',
-		'type'         => 'text',
-		
-	) );
-	
-	$cmb_demo->add_field( array(
-		'name'         => __( 'Longitude', 'gsalborz' ),
-		'desc'         => __( 'Enter address Longitude', 'gsalborz' ),
-		'id'           => $prefix . 'Longitude',
-		'type'         => 'text',
-		
-	) );
-
-	
-
-	$cmb_demo->add_field( array(
-		'name'         => __( 'email', 'gsalborz' ),
-		'desc'         => __( 'Enter pharmacy email address', 'gsalborz' ),
-		'id'           => $prefix . 'email',
-		'type'         => 'text',
-		
-	) );
-
-	$cmb_demo->add_field( array(
-		'name'         => __( 'phone', 'gsalborz' ),
-		'desc'         => __( 'Enter pharmacy phone', 'gsalborz' ),
-		'id'           => $prefix . 'phone',
-		'type'         => 'text',
-		
-	) );
-
-	
-
-}
+//add_action( 'cmb2_init', 'gsalborz_register_pharmacy_images_metabox' );
+///**
+// * Hook in and add a demo metabox. Can only happen on the 'cmb2_init' hook.
+// */
+//function gsalborz_register_pharmacy_images_metabox() {
+//
+//	// Start with an underscore to hide fields from custom fields list
+//	$prefix = '_gsalborz_';
+//
+//	/**
+//	 * Sample metabox to demonstrate each field type included
+//	 */
+//	$cmb_demo = new_cmb2_box( array(
+//		'id'            => $prefix . 'pharmacy_information',
+//		'title'         => __( 'pharmacy Information', 'gsalborz' ),
+//		'object_types'  => array( 'pharmacy' ), // Post type
+//		// 'show_on_cb' => 'gsalborz_show_if_front_page', // function should return a bool value
+//		// 'context'    => 'normal',
+//		// 'priority'   => 'high',
+//		// 'show_names' => true, // Show field names on the left
+//		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+//		// 'closed'     => true, // true to keep the metabox closed by default
+//	) );
+//
+//
+//
+//	$cmb_demo->add_field( array(
+//		'name'         => __( 'address', 'gsalborz' ),
+//		'desc'         => __( 'Enter pharmacy address', 'gsalborz' ),
+//		'id'           => $prefix . 'address',
+//		'type'         => 'text',
+//
+//	) );
+//
+//	$cmb_demo->add_field( array(
+//		'name'         => __( 'Latitude', 'gsalborz' ),
+//		'desc'         => __( 'Enter address Latitude', 'gsalborz' ),
+//		'id'           => $prefix . 'Latitude',
+//		'type'         => 'text',
+//
+//	) );
+//
+//	$cmb_demo->add_field( array(
+//		'name'         => __( 'Longitude', 'gsalborz' ),
+//		'desc'         => __( 'Enter address Longitude', 'gsalborz' ),
+//		'id'           => $prefix . 'Longitude',
+//		'type'         => 'text',
+//
+//	) );
+//
+//
+//
+//	$cmb_demo->add_field( array(
+//		'name'         => __( 'email', 'gsalborz' ),
+//		'desc'         => __( 'Enter pharmacy email address', 'gsalborz' ),
+//		'id'           => $prefix . 'email',
+//		'type'         => 'text',
+//
+//	) );
+//
+//	$cmb_demo->add_field( array(
+//		'name'         => __( 'phone', 'gsalborz' ),
+//		'desc'         => __( 'Enter pharmacy phone', 'gsalborz' ),
+//		'id'           => $prefix . 'phone',
+//		'type'         => 'text',
+//
+//	) );
+//
+//
+//
+//}
 
 
 /******************************************************************/

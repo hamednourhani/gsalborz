@@ -166,7 +166,7 @@ function gsalborz_scripts_and_styles() {
 		
 		
 		
-		wp_register_script( 'scrolltofixed', get_stylesheet_directory_uri() . '/js/lib/jquery-scrolltofixed-min.js', array('jquery'), '', true );
+//		wp_register_script( 'scrolltofixed', get_stylesheet_directory_uri() . '/js/lib/jquery-scrolltofixed-min.js', array('jquery'), '', true );
 		// wp_register_script( 'onscreen', get_stylesheet_directory_uri() . '/js/lib/jquery.onscreen.min.js', array('jquery'), '', true );
 		wp_register_script( 'respond-js', get_stylesheet_directory_uri() . '/js/lib/respond.js', array(), '', false );
 		wp_register_script( 'pie', get_stylesheet_directory_uri() . '/js/lib/PIE.js', array('jquery'), '', false );
@@ -175,7 +175,7 @@ function gsalborz_scripts_and_styles() {
 		wp_register_script( 'cssfx', get_stylesheet_directory_uri() . '/js/lib/cssfx.js', array(), '', false );
 		wp_register_script( 'gsalborz-js', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery','scrolltofixed'), '', true );
 		
-		wp_register_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCSatHC6AP22DyNRlWCyT8EZnEPo175cl4"', array(), '', true );
+//		wp_register_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCSatHC6AP22DyNRlWCyT8EZnEPo175cl4"', array(), '', true );
 		wp_register_script( 'map-loader', get_stylesheet_directory_uri() . '/js/map-loader.js', array('google-map'), '', true );
 		
 		
@@ -211,12 +211,9 @@ function gsalborz_scripts_and_styles() {
 			wp_enqueue_script( 'selectivizr' );
 			wp_enqueue_script( 'cssfx' );
 		}
-		if(is_page_template('page-templates/search-pharmacy.php')){
-			wp_enqueue_script( 'google-map' );
-			wp_enqueue_script( 'map-loader' );
-		}
+
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'scrolltofixed' );
+//		wp_enqueue_script( 'scrolltofixed' );
 
 		// wp_enqueue_script( 'onscreen' );
 		
@@ -238,7 +235,7 @@ function gsalborz_theme_support() {
 	add_theme_support( 'post-thumbnails' );
 
 	// default thumb size
-	set_post_thumbnail_size(700,300 , true);
+	set_post_thumbnail_size(163,163 , true);
 	
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',

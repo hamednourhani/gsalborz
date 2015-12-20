@@ -1,46 +1,29 @@
 <!-- ********************************************************************* -->
-	<!--****************** Site footer      ***********************************-->
-	<!-- ********************************************************************* -->
+<!--****************** Site footer      ***********************************-->
+<!-- ********************************************************************* -->
 
 
-			
-			
-			
-			<footer class="site-footer">
-				
-				<?php get_sidebar('footer-first'); ?>
+<footer class="site-footer">
 
-				<div class="credit-holder">
-					<section class="layout">
-						<ul class="socials">
-							<li><a href="#" class="social-icon facebook"></a></li>
-							<li><a href="#" class="social-icon instagram"></a></li>
-							<li><a href="#" class="social-icon linkedin"></a></li>
-							<li><a href="#" class="social-icon gplus"></a></li>
-						</ul>
-						
-						<span class="site-holder">
-							<?php echo __('Designed by','gsalborz').'<a href="http://Karait.com">'.' '.__('Farakaranet','gsalborz').'</a>'; ?>
-						</span>
-						
-						<span class="credit">
-							<?php echo __('Hermooder © 2015. All Right Reserved','gsalborz');?>
-						</span>
+    <?php get_sidebar('footer-first'); ?>
 
-						
-						
-					</section>
-				</div>
-			</footer>
-	
-	
-	
+    <div class="credit-holder">
+        <section class="layout">
+            <div class="footer-logo">
+                <?php echo '<img src="' . get_template_directory_uri() . '/images/gsalborz-logo-en-200.png" class="footer-en-logo" />'; ?>
+            </div>
 
-	<!-- scrolltofixed menu -->
-	
-	
-		</div>
+            <span class="credit">
+                <?php echo __('Alborz Industrial Group © 2015. All Right Reserved', 'gsalborz'); ?>
+            </span>
 
-		<?php wp_footer(); ?>
-	</body><!-- body -->
+        </section>
+    </div>
+</footer>
+
+
+</div>
+
+<?php wp_footer(); ?>
+</body><!-- body -->
 </html><!-- html -->

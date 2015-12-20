@@ -5,9 +5,9 @@ jQuery(document).ready(function($){
 	// 	window.loading_screen.finish();
 	//  }, 1000);
 
-	$('nav.main-menu').scrollToFixed({
-		minWidth : '700',
-	});
+	//$('nav.main-menu').scrollToFixed({
+	//	minWidth : '700',
+	//});
 	$('.menu-search-area span#submit').click(function(e){
 		console.log("i am clicked");
 		$('nav.main-menu form#searchform').trigger('submit');

@@ -85,7 +85,7 @@ function gsalborz_woocommerce_support() {
 // Thumbnail sizes
 add_image_size( 'banner', 940, 430, array( 'center', 'center' ) );
 add_image_size( 'product-thumb', 163, 163, array( 'center', 'center' ) );
-add_image_size( 'slider-thumb', 103, 103, array( 'center', 'center' ) );
+add_image_size( 'widget-thumb', 53, 53, array( 'center', 'center' ) );
 
 add_filter( 'image_size_names_choose', 'gsalborz_custom_image_sizes' );
 
@@ -93,7 +93,7 @@ function gsalborz_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'banner' => __('940px by 430px'),
         'product-thumb' => __('163px by 163px'),
-        'slider-thumb' => __('103px by 103px'),
+        'widget-thumb' => __('53px by 53px'),
 
     ) );
 }

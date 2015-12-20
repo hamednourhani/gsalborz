@@ -16,7 +16,7 @@ body {
 	
 	// @extend .back-gradiant-ltr;
 	//@include background(image-url("pattern_6.png") top left);
-	background-color: $grey2;
+	background-color: $grey1;
 	font-family : $open-sans,$serif;
 	direction : ltr;
 	font-size : 100%;
@@ -56,10 +56,11 @@ body {
 
 .fa {
 	@include fa-icon;
+
 }
 a{
 	text-decoration : none;
-	color : $brown2;
+	color : $grey3;
 	&:hover{
 		color : $brown1;
 	}

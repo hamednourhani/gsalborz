@@ -14,14 +14,7 @@
 				</div>
 			</div>
 			
-<?php } elseif(is_search()) { ?>
-		<div class="banner-wrapper">
-			<div class="single-cat-title">
-				<section class="layout">
-					<h1><?php printf( __( 'Search Results for: %s', 'gsalborz' ), get_search_query() ); ?></h1>
-				</section>
-			</div>
-		</div>
+
 <?php } elseif(is_singular()) {
 		$banner_mod = get_post_meta(get_the_ID(),'_gsalborz_banner_mod',1);
 		
