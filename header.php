@@ -54,6 +54,12 @@
 
 				<div class="top-bar">
 					<section class="layout">
+						<div class="top-contact-info">
+							<ul>
+								<li><i class="fa fa-phone"></i><span> +98 (21) 88245608 - 9 </span></li>
+								<li><i class="fa fa-envelope"></i><span> info@gsalborz.com </span></li>
+							</ul>
+						</div>
 						<div class="lang-container">
 							<?php do_action('icl_language_selector'); ?>
 						</div>
@@ -97,7 +103,9 @@
 				</nav><!--main-menu-->
 
 				<div class="banner-container">
-					<?php get_template_part("library/banner","maker"); ?>
+					<section class="layout">
+						<?php echo get_template_part("library/banner","maker"); ?>
+					</section>
 				</div><!--banner-container-->
 
 			</div><!--header-inner-->

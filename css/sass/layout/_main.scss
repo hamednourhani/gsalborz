@@ -9,29 +9,44 @@ body.page-template-page-templatesintro-php{
   width :100%;
   height : 100%;
   .intro-content{
-    padding-top : 100px;
-    padding-bottom : 50px;
+    padding-top : 40px;
+    padding-bottom : 20px;
     width : 100%;
+    @include at-breakpoint($medium){
+      padding-top : 100px;
+      padding-bottom : 50px;
+    }
     .intro-logo,.intro-text{
       @include span-columns(12,12);
       @include at-breakpoint($medium){
         @include span-columns(6,12);
       }
-      text-align : right;
+      text-align : center;
       padding : 20px;
+      @include at-breakpoint($medium){
+        text-align: right;
+      }
       img{
         max-width: 100%;
       }
     }
     .intro-logo{
       @include omega;
-      text-align: left;
-      padding-left : 40px;
+      @include at-breakpoint($medium){
+        text-align: left;
+        padding-left : 40px;
+
+      }
     }
     .intro-text{
-      padding-right: 0px;
-      padding-top : 55px;
+      padding-top : 15px;
+      @include at-breakpoint($medium){
+        padding-right: 0px;
+        padding-top : 55px;
+
+      }
     }
+
   }
   .intro-buttons{
     width : 100%;
@@ -46,8 +61,40 @@ body.page-template-page-templatesintro-php{
       margin : 20px;
       height:41px;
       &:hover{
-        @extend .def-box-shadow;
+        @extend .gold-box-shadow;
 
+      }
+    }
+  }
+}
+.site-main{
+  padding-top : 40px;
+  padding-bottom : 20px;
+  .primary{
+    @include span-columns(12,12);
+    @include at-breakpoint($medium){
+      @include span-columns(9,12);
+    }
+  }
+  .secondary{
+    @include span-columns(12,12);
+    @include at-breakpoint($medium){
+      @include span-columns(3 omega,12);
+    }
+    .widget {
+      padding : 10px;
+      border-bottom : 3px solid $grey2;
+      ul {
+        margin: auto;
+        padding: 5px;
+      }
+      h4.widgettitle{
+        margin : 10px auto;
+        padding : 0px;
+        padding-left : 5px;
+        padding-bottom : 5px;
+        border-left : 10px solid $brown2 ;
+        border-bottom: 1px solid $grey2;
       }
     }
   }

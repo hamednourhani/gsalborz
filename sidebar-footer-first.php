@@ -2,10 +2,13 @@
 		
 		<div class="footer-widget-area">
 			<section class="layout">
-				<?php dynamic_sidebar( 'footer-col1' ); ?>
-				<?php dynamic_sidebar( 'footer-col2' ); ?>
-				<?php dynamic_sidebar( 'footer-col3' ); ?>
-				
+				<div class="footer-widget-inner">
+					<?php dynamic_sidebar( 'footer-col1' ); ?>
+					<?php dynamic_sidebar( 'footer-col2' ); ?>
+					<?php dynamic_sidebar( 'footer-col3' ); ?>
+					<?php dynamic_sidebar( 'footer-col4' ); ?>
+				</div>
+
 				
 				
 <!-- 

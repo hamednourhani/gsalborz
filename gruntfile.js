@@ -157,21 +157,21 @@ module.exports = function(grunt) {
       // 			files: ['js/*.js'],
       // 			tasks: ['jshint','uglify:dev','uglify:dist']
     		// },//scripts
-    		html : {
-    			files : ['*.html']
-    		},//html
+    		//html : {
+    		//	files : ['*.html']
+    		//},//html
     		sass : {
     			files : ['css/sass/**/*.scss'],
     			tasks : ['compass:dev','compass:dist','copy:css','clean']
     		},
-    		php : {
-    			files : ['*.php','**/*.php'],
-    			tasks : ['makepot']
-    		},
-    		readme: {
-    			files : ['readme.txt'],
-    			tasks : ['copy:readme']
-    		}
+    		//php : {
+    		//	files : ['*.php','**/*.php'],
+    		//	tasks : ['makepot']
+    		//},
+    		//readme: {
+    		//	files : ['readme.txt'],
+    		//	tasks : ['copy:readme']
+    		//}
     	}//watch
   
 		

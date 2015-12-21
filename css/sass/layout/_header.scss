@@ -3,3 +3,265 @@
     display: none;
   }
 }
+.site-header{
+  background-image:  image_url("wood.jpg");
+  background-position: top left;
+  background-repeat: repeat;
+  border-bottom : 1px solid $cream2;
+  .top-bar{
+    border-bottom: 1px solid $brown1;
+    padding : 5px;
+    .top-contact-info{
+      ul{
+        padding-bottom : 0px;
+        margin-bottom : 0px;
+      }
+      ul li{
+          display: inline-block;
+          color : $cream1;
+          font-size : smaller;
+         span{
+           padding-left: 5px ;
+         }
+         i{
+           padding:{
+             right : 5px;
+             left:10px;
+           }
+         }
+       }
+        @include span-columns(12,12);
+        @include at-breakpoint($medium){
+          @include span-columns(6 omega,12);
+          text-align: right;
+        }
+      }
+
+    }
+    .lang-container{
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(6,12);
+        text-align: left;
+      }
+    }
+
+    .hero{
+      position: relative;
+      .site-logo-container{
+        .site-logo{
+          margin : 20px auto 20px;
+        }
+        text-align: center;
+        @include span-columns(12,12);
+        @include at-breakpoint($medium){
+          @include span-columns(6,12);
+          text-align: left;
+          img.site-logo {
+            margin: 30px auto 5px 30px;
+          }
+
+        }
+      }
+      .menu-search-area{
+
+        form#searchform{
+          text-align: center;
+          margin-top : 20px;
+          @include at-breakpoint($medium){
+            text-align: right;
+            padding-right : 30px;
+            margin-top : auto;
+          }
+
+        }
+        input#s{
+          @extend .def-transition;
+          background-color: $cream3;
+          opacity : 0.55;
+          color : $cream1;
+          border : 1px solid $cream2;
+          @include border-radius(0px);
+          padding : 5px 28px 5px 10px;
+          @include at-breakpoint($medium){
+            margin : 70px auto 20px;
+
+          }
+          &:focus{
+            opacity: 0.9;
+          }
+
+        }
+        span#submit{
+          position: relative;
+          color : $cream1;
+          i{
+            position: absolute;
+            left : -23px;
+            top : 2px;
+            cursor : pointer;
+          }
+        }
+        @include span-columns(12,12);
+        @include at-breakpoint($medium){
+          @include span-columns(6 omega,12);
+          text-align: right;
+        }
+      }
+      span.menu-toggler{
+       display : inline-block;
+        color : $cream1;
+        border : 1px solid $cream1;
+        padding : 5px 10px;
+        margin-top : 5px;
+        position: absolute;
+        bottom: 42px;
+        right : 30px;
+        cursor: pointer;
+        @include at-breakpoint($medium){
+          display : none;
+        }
+        i{
+          font-size : 140%;
+        }
+      }
+    }
+    .banner-wrapper {
+      padding: 10px 10px 10px;
+      background-color: $cream3;
+      margin-bottom : -30px;
+      @extend .dark-box-shadow;
+      img{
+        padding:0px;
+        margin:0px;
+      }
+    }
+}
+
+/*-------------------Main Menu-------------------------*/
+nav.main-menu{
+  margin-bottom: 10px;
+  @include at-breakpoint($medium){
+    margin-bottom : 0px;
+  }
+}
+ul.main-nav{
+  @extend .dark-box-shadow;
+  background-color: $cream3;
+  display : none;
+  padding : 0px 10px 10px;
+  margin : auto;
+  @include at-breakpoint($medium){
+    @include box-shadow(0px 0px 0px $glass);
+    background-color: $glass;
+    display : block;
+    margin : 0px auto 10px;
+
+  }
+  li{
+    position: relative;
+    width : 100%;
+    @include at-breakpoint($medium){
+      width:inherit;
+    }
+    &.menu-item-has-children::after{
+      @extend .fa;
+
+      @include at-breakpoint($medium){
+        content : "\f0da";
+        position : absolute;
+        top : 15px;
+        right : 15px;
+        font-size : 110%;
+        color : $cream1;
+      }
+    }
+  }
+  ul.sub-menu{
+    margin : auto;
+    padding:0px;
+    @extend .def-transition;
+    @extend .dark-box-shadow;
+    display : inline-block;
+    width : 100%;
+    @include at-breakpoint($medium){
+      display : none;
+      position: absolute;
+      top : 100%;
+      left : -20%;
+      width : 240px;
+      background-color: $cream3;
+      z-index : 9999;
+    }
+    li a{
+      @extend .def-transition;
+      padding : 10px 20px;
+
+      &:hover{
+        @include at-breakpoint($medium){
+          background-color: darken($cream3,20%);
+          border-bottom: 1px solid $brown1;
+        }
+
+        color : $brown1;
+        @include text-shadow(0px 0px 5px $brown1);
+      }
+    }
+  }
+
+  &>li{
+    @extend .def-transition;
+    display: inline-block;
+
+    a{
+      @extend .def-transition;
+      padding : 10px;
+      width : 100%;
+      color : $cream1;
+      @include text-shadow(0px);
+      display : inline-block;
+      position: relative;
+      border-bottom : 1px solid $cream2;
+      width : 100%;
+      @include at-breakpoint($medium){
+        border-bottom: 1px solid $glass;
+        width : inherit;
+      }
+      &:hover{
+        @include at-breakpoint($medium){
+          border-bottom: 1px solid $brown1;
+        }
+        color : $brown1;
+        @include text-shadow(0px 0px 5px $brown1);
+      }
+    }
+
+    &.current_page_item{
+      &>a{
+        color : $brown1;
+        @include text-shadow(0px 0px 5px $brown1);
+        border-bottom: 1px solid $brown1;
+      }
+    }
+    &.menu-item-has-children::after{
+      @include at-breakpoint($medium){
+        content: "\f0d7";
+        left : 40%;
+        top : 32px;
+      }
+
+    }
+    &:hover > ul.sub-menu{
+       display: inline-block;
+    }
+    ul li ul.sub-menu{
+      top : 0;
+      left : 100%;
+    }
+    ul li:hover > ul.sub-menu{
+      display: inline-block;
+    }
+
+  }
+}
+/*-------------------end of Main Menu-------------------*/

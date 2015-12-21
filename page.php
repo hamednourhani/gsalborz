@@ -10,10 +10,7 @@
 					<section class="layout">
 						
 						<div class="primary">
-					
-								<?php get_template_part('library/banner','maker'); ?>
-					
-								
+
 							<article class="hentry">
 								<?php if( get_post_meta(get_the_ID(),'_gsalborz_title',1 ) !== 'no'){ ?>
 									<header class="article-title">

@@ -170,15 +170,15 @@ function gsalborz_register_sidebars() {
     'before_title' => '<h4 class="widgettitle">',
     'after_title' => '</h4>',
   ));
-  // register_sidebar(array(
-  //   'id' => 'footer-col4',
-  //   'name' => __( 'Footer 4th Col', 'gsalborz' ),
-  //   'description' => __( 'The first footer widget area', 'gsalborz' ),
-  //   'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
-  //   'after_widget' => '</aside>',
-  //   'before_title' => '<h4 class="widgettitle">',
-  //   'after_title' => '</h4>',
-  // ));
+   register_sidebar(array(
+     'id' => 'footer-col4',
+     'name' => __( 'Footer 4th Col', 'gsalborz' ),
+     'description' => __( 'The first footer widget area', 'gsalborz' ),
+     'before_widget' => '<aside id="%1$s" class="footer-first footer-col4 widget %2$s">',
+     'after_widget' => '</aside>',
+     'before_title' => '<h4 class="widgettitle">',
+     'after_title' => '</h4>',
+   ));
   
 
   
@@ -301,7 +301,7 @@ function gsalborz_menu_search_form() {
 
   if(ICL_LANGUAGE_CODE == 'en' || ICL_LANGUAGE_CODE == 'it'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div>
+      <div class="search-form-inner">
         <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' .  __( 'Search' ) . '"/>
         <span name="submit" id="submit" ><i class="fa fa-search"></i></span>
         <input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>
@@ -309,7 +309,7 @@ function gsalborz_menu_search_form() {
       </form>';
   } else {
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div>
+      <div  class="search-form-inner">
         <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' .  __( 'Search' ) . '"/>
         <span name="submit" id="submit" ><i class="fa fa-search"></i></span>
       </div>

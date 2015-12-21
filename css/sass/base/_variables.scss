@@ -64,7 +64,8 @@ $grey1 : #EBEBEB;
 
 $black1 : #111;
 $white : #FFFFFF;
-//
+
+$glass : rgba(0,0,0,0);
 //$orang : #e47a26;
 //$green : #8db63f;
 //
@@ -78,12 +79,18 @@ $white : #FFFFFF;
 
 /*----------------transition-shadow----------------------*/
 .def-transition{
-	@include single-transition(all ,0.5s , ease-in-out);
+	@include single-transition(all ,0.4s , ease-in-out);
 }
 /*----------------box-shadow----------------------*/
 
-.def-box-shadow{
+.gold-box-shadow {
 	@include box-shadow(0px 0px 6px $brown1,inset 0px 0px 6px $brown1);
+}
+.def-box-shadow {
+	@include box-shadow(0px 0px 6px $grey2);
+}
+.dark-box-shadow {
+	@include box-shadow(0px 0px 6px $black1);
 }
 
 /*----------------gradiant----------------------*/
