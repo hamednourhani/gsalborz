@@ -1,41 +1,4 @@
 
-.site-main.intro-main {
-
-
-  .intro-content{
-
-    .intro-logo,.intro-text{
-      @include span-columns(12,12);
-      @include at-breakpoint($medium){
-        @include span-columns(6,12);
-        margin-right : auto;
-      }
-      @include at-breakpoint($medium){
-        text-align: left;
-      }
-
-    }
-    .intro-logo{
-      @include omega;
-      @include at-breakpoint($medium){
-        text-align: right;
-        padding-left : 0px;
-        padding-right: 40px;
-
-      }
-    }
-    .intro-text{
-      padding-top : 15px;
-      @include at-breakpoint($medium){
-        padding-right: 15px;
-        padding-left: 0px;
-
-      }
-    }
-
-  }
-
-}
 .site-main{
   .primary{
     @include span-columns(12,12);
