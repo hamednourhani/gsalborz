@@ -3,8 +3,8 @@ $total-columns : 12;
 $column-width : 4.5em;
 $gutter-width : 1em;
 $grid-padding : $gutter-width;
-$from-direction: left;
-$omega-float : right;
+$from-direction: right;
+$omega-float : left;
 
 $default-transition-delay    : 0s;
 @include border-box-sizing;
@@ -101,3 +101,4 @@ $glass : rgba(0,0,0,0);
 /*----------------gradiant----------------------*/
 
 
+/*----------------gradiant----------------------*/

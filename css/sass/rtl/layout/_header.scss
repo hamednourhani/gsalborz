@@ -1,0 +1,149 @@
+
+.site-header{
+
+  .top-bar{
+
+    .top-contact-info{
+        direction: ltr;
+      ul li{
+
+        span{
+          padding-left: 0px ;
+          padding-right: 5px ;
+
+        }
+        i{
+          padding:{
+            right : 10px;
+            left:5px;
+          }
+        }
+      }
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(6 omega,12);
+        margin-right : auto;
+
+        text-align: left;
+      }
+    }
+
+  }
+  .lang-container{
+    @include span-columns(12,12);
+    @include at-breakpoint($medium){
+      @include span-columns(6,12);
+      margin-right : auto;
+
+      text-align:right;
+    }
+  }
+
+  .hero{
+    .site-logo-container{
+
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(6,12);
+        margin-right : auto;
+
+        text-align: right;
+        img.site-logo {
+          margin: 30px 30px 5px auto;
+        }
+
+      }
+    }
+    .menu-search-area{
+
+      form#searchform{
+
+        @include at-breakpoint($medium){
+          text-align: left;
+          padding-right : 0px;
+          padding-left : 30px;
+          margin-top : auto;
+        }
+
+      }
+      input#s{
+        padding : 5px 10px 5px 28px;
+      }
+      span#submit{
+
+        i{
+          position: absolute;
+          right : -23px;
+          left : auto;
+          top : 4px;
+          cursor : pointer;
+        }
+      }
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(6 omega,12);
+        margin-right : auto;
+
+        text-align: left;
+      }
+    }
+    span.menu-toggler{
+      left : 30px;
+      right : auto;
+      }
+  }
+
+}
+
+/*-------------------Main Menu-------------------------*/
+nav.main-menu{
+  margin-bottom: 10px;
+  @include at-breakpoint($medium){
+    margin-bottom : 0px;
+  }
+}
+ul.main-nav{
+
+  li{
+
+    &.menu-item-has-children::after{
+      @extend .fa;
+
+      @include at-breakpoint($medium){
+        content : "\f0d9";
+        left : 15px;
+        right : auto;
+      }
+    }
+  }
+  ul.sub-menu{
+    @include at-breakpoint($medium){
+      left : auto;
+      right : -20%;
+    }
+    li a{
+
+
+    }
+  }
+
+  &>li{
+
+
+    &.menu-item-has-children::after{
+      @include at-breakpoint($medium){
+        left : auto;
+        right : 40%;
+        content: "\f0d7";
+      }
+
+    }
+
+    ul li ul.sub-menu{
+      left : auto;
+      right : 100%;
+    }
+
+  }
+}
+/*-------------------end of Main Menu-------------------*/

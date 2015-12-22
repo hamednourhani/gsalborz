@@ -69,7 +69,11 @@
 				<div class="hero">
 					<section class="layout">
 						<div class="site-logo-container">
-							<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/gsalborz-logo-en-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
+							<?php if(is_rtl()){?>
+								<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/gsalborz-logo-fa-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
+							<?php } else { ?>
+								<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/gsalborz-logo-en-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
+							<?php } ?>
 						</div>
 
 						<span class="menu-toggler" id="menu-toggler">

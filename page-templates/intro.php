@@ -21,10 +21,10 @@ get_header(); ?>
                     </section>
                 </div>
                 <div class="intro-buttons">
-                    <a href="#" class="intro-fa-button">
+                    <a href="<?php echo get_post_meta(get_the_ID(),'_gsalborz_fa_link',1 ); ?>" class="intro-fa-button">
                         <?php echo '<img src="'.get_template_directory_uri().'/images/gsalborz-ib-fa.png" />'?>
                     </a>
-                    <a href="#" class="intro-en-button">
+                    <a href="<?php echo get_post_meta(get_the_ID(),'_gsalborz_en_link',1 ); ?>" class="intro-en-button">
                         <?php echo '<img src="'.get_template_directory_uri().'/images/gsalborz-ib-en.png" />'?>
                     </a>
                 </div>

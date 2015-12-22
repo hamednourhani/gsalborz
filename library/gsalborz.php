@@ -189,9 +189,9 @@ function gsalborz_scripts_and_styles() {
 
 		wp_enqueue_style('font-awesome' );
 		wp_enqueue_style( 'gsalborz-stylesheet' );
-//		if(is_rtl()){
-//			wp_enqueue_style('gsalborz-rtl-stylesheet');
-//		}
+		if(is_rtl()){
+			wp_enqueue_style('gsalborz-rtl-stylesheet');
+		}
 		wp_enqueue_style( 'gsalborz-ie-only' );
 
 		$wp_styles->add_data( 'gsalborz-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet

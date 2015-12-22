@@ -1,0 +1,168 @@
+
+.site-main.intro-main {
+
+
+  .intro-content{
+
+    .intro-logo,.intro-text{
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(6,12);
+        margin-right : auto;
+      }
+      @include at-breakpoint($medium){
+        text-align: left;
+      }
+
+    }
+    .intro-logo{
+      @include omega;
+      @include at-breakpoint($medium){
+        text-align: right;
+        padding-left : 0px;
+        padding-right: 40px;
+
+      }
+    }
+    .intro-text{
+      padding-top : 15px;
+      @include at-breakpoint($medium){
+        padding-right: 15px;
+        padding-left: 0px;
+
+      }
+    }
+
+  }
+
+}
+.site-main{
+  .primary{
+    @include span-columns(12,12);
+    @include at-breakpoint($medium){
+      @include span-columns(9,12);
+      margin-right : auto;
+    }
+  }
+  .secondary{
+    @include span-columns(12,12);
+    @include at-breakpoint($medium){
+      @include span-columns(3 omega,12);
+      margin-right : auto;
+    }
+    .widget {
+
+      h4.widgettitle{
+        padding-left : 0px;
+        padding-right : 5px;
+        border-right : 10px solid $brown2 ;
+        border-left : 0px solid $brown2 ;
+      }
+      &.widget_contact_info_widget{
+
+        i::before{
+          padding-right : 0px;
+          padding-left: 7px;
+        }
+      }
+      &.widget_last_posts_by_cat_widget{
+
+        img{
+          margin-right : auto;
+          margin-left: 7px;
+          float : right;
+        }
+        span{
+          float :right;
+        }
+      }
+    }
+  }
+  &.single-article{
+
+    article.hentry{
+      .article-header{
+        .featured-image{
+
+          @include span-columns(12,12);
+          @include at-breakpoint($medium){
+            @include span-columns(5 ,12);
+            margin-right : auto;
+          }
+        }
+        .article-title{
+
+          @include span-columns(12,12);
+          @include at-breakpoint($medium){
+            @include span-columns(7 omega,12);
+            margin-right : auto;
+          }
+        }
+        .article-excerpt{
+
+          @include span-columns(12,12);
+          @include at-breakpoint($medium){
+            @include span-columns(7 omega,12);
+            margin-right : auto;
+          }
+        }
+      }
+
+    }
+
+  }
+  &.single-page{
+
+    .article-title{
+      h3,h1{
+        border-left : 0px solid $brown2;
+        border-right : 10px solid $brown2;
+        padding-right : 20px;
+        padding-left : 0px;
+      }
+    }
+
+  }
+  &.archive-articles{
+
+    article.hentry{
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(4,12);
+        margin-right : auto;
+      }
+      &:nth-of-type(3n){
+        @include omega;
+      }
+
+    }
+
+
+  }
+  .last-products-shortcode{
+    .single-cat-title{
+      h3{
+        border-left : 10px solid $brown2;
+        border-right : 10px solid $brown2;
+        padding-left : 0px;
+        padding-right : 10px;
+        margin :{
+          right : 0px
+        }
+
+      }
+    }
+    div.product-grid{
+
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(4,12);
+        margin-right : auto;
+      }
+      &:nth-of-type(3n){
+        @include omega;
+        margin-right : auto;
+      }
+    }
+  }
+}

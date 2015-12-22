@@ -10,7 +10,15 @@
     <div class="credit-holder">
         <section class="layout">
             <div class="footer-logo">
-                <?php echo '<img src="' . get_template_directory_uri() . '/images/gsalborz-logo-en-200.png" class="footer-en-logo" />'; ?>
+                <?php
+                    if(is_rtl()){
+                        echo '<img src="' . get_template_directory_uri() . '/images/gsalborz-logo-fa-200.png" class="footer-fa-logo" />';
+
+                    }else {
+                        echo '<img src="' . get_template_directory_uri() . '/images/gsalborz-logo-en-200.png" class="footer-en-logo" />';
+
+                    }
+                ?>
             </div>
 
             <div class="credit">

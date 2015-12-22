@@ -300,5 +300,43 @@ function gsalborz_register_page_banner_metabox() {
 	
 	
 }
+/******************************************************************/
+/*--------------------Product Features-------------------------------*/
+/******************************************************************/
+add_action( 'cmb2_init', 'gsalborz_register_intro_links_metabox' );
+function gsalborz_register_intro_links_metabox() {
+
+	$prefix = '_gsalborz_';
+
+	/**
+	 * Sample metabox to demonstrate each field type included
+	 */
+	$cmb_demo = new_cmb2_box( array(
+		'id'            => $prefix . 'intro_links',
+		'title'         => __( 'Language Links', 'gsalborz' ),
+		'object_types'  => array( 'page' ), // Post type
+
+	) );
+
+
+
+	$cmb_demo->add_field( array(
+		'name'         => __( 'English', 'gsalborz' ),
+		'desc'         => __( 'Enter English web site Url', 'gsalborz' ),
+		'id'           => $prefix . 'en_link',
+		'type'         => 'text_url',
+
+	) );
+	$cmb_demo->add_field( array(
+		'name'         => __( 'Persian', 'gsalborz' ),
+		'desc'         => __( 'Enter Persian web site Url', 'gsalborz' ),
+		'id'           => $prefix . 'fa_link',
+		'type'         => 'text_url',
+
+	) );
+
+
+
+}
 
 
