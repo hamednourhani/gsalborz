@@ -12,9 +12,10 @@
     border-bottom: 1px solid $brown1;
     padding : 5px;
     .top-contact-info{
+
       ul{
         padding-bottom : 0px;
-        margin-bottom : 0px;
+        margin : 0px;
       }
       ul li{
           display: inline-block;
@@ -39,6 +40,15 @@
 
     }
     .lang-container{
+      #lang_sel_list{
+        float : left ;
+        padding-top : 7px;
+        ul a {
+          background: $glass;
+          color : $cream1;
+
+        }
+      }
       @include span-columns(12,12);
       @include at-breakpoint($medium){
         @include span-columns(6,12);

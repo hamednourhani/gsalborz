@@ -30,6 +30,9 @@
 
   }
   .lang-container{
+    #lang_sel_list{
+      float : right;
+    }
     @include span-columns(12,12);
     @include at-breakpoint($medium){
       @include span-columns(6,12);
@@ -75,7 +78,7 @@
           position: absolute;
           right : -23px;
           left : auto;
-          top : 4px;
+          top : 3px;
           cursor : pointer;
         }
       }
