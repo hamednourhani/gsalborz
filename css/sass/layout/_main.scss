@@ -71,12 +71,14 @@ body.page-template-page-templatesintro-php{
   padding-top : 40px;
   padding-bottom : 20px;
   .primary{
+    padding-top : 30px;
     @include span-columns(12,12);
     @include at-breakpoint($medium){
       @include span-columns(9,12);
     }
   }
   .secondary{
+    padding-top : 20px;
     @include span-columns(12,12);
     @include at-breakpoint($medium){
       @include span-columns(3 omega,12);
@@ -95,6 +97,192 @@ body.page-template-page-templatesintro-php{
         padding-bottom : 5px;
         border-left : 10px solid $brown2 ;
         border-bottom: 1px solid $grey2;
+      }
+      &.widget_contact_info_widget{
+
+        i::before{
+          padding-right : 7px;
+          color : $cream2;
+        }
+      }
+      &.widget_last_posts_by_cat_widget{
+        a{
+          display: inline-block;
+        }
+        img{
+          border : 3px solid $grey2;
+          margin-right : 7px;
+          vertical-align: baseline;
+          float : left;
+        }
+        span{
+          float : left;
+        }
+      }
+    }
+  }
+  &.single-article{
+
+    article.hentry{
+      .article-header{
+        padding-bottom : 20px;
+        border-bottom: 3px solid $grey2 ;
+
+        @include clearfix();
+        .featured-image{
+          img{
+            @extend .dark-box-shadow;
+            margin : auto;
+            display: block;
+            border : 3px solid $grey2;
+
+          }
+          @include span-columns(12,12);
+          @include at-breakpoint($medium){
+            @include span-columns(5 ,12);
+          }
+        }
+        .article-title{
+          h1{
+            margin : auto;
+            padding : 10px 10px;
+            font-size : 140%;
+            border-bottom: 1px solid $grey2;
+          }
+
+          @include span-columns(12,12);
+          @include at-breakpoint($medium){
+            @include span-columns(7 omega,12);
+          }
+        }
+        .article-excerpt{
+          padding:{
+            right : 10px;
+            left : 10px;
+          }
+          @include span-columns(12,12);
+          @include at-breakpoint($medium){
+            @include span-columns(7 omega,12);
+          }
+        }
+      }
+      .article-body{
+        padding : 20px;
+        img.article-gallery-image{
+          @extend .def-box-shadow;
+          border : 3px solid $grey2;
+          margin : 5px;
+
+        }
+        .post-meta{
+          .post-meta-list{
+            span.tags-title,span.cats-title,
+            .fa-bookmark,.fa-tags{
+              color : $cream2;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  &.single-page{
+
+    .article-title{
+      h3,h1{
+        margin : 15px;
+        border-left : 10px solid $brown2;
+        border-bottom : 1px solid $grey2;
+        padding-left : 20px;
+      }
+    }
+
+  }
+  &.archive-articles{
+
+    article.hentry{
+      padding-top : 20px;
+      padding-bottom : 20px;
+      @extend .def-transition;
+      @include box-shadow(0px 0px 0px $glass);
+      border : 2px solid $grey2;
+      background-color: $white;
+      padding : 15px;
+      text-align: center;
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(4,12);
+      }
+      &:nth-of-type(3n){
+        @include omega;
+      }
+      &:hover,&:focus{
+        @extend .def-box-shadow;
+      }
+      .featured-image{
+        img{
+          border:3px solid $grey1;
+
+        }
+      }
+      .article-title{
+        a{
+          h1,h3{
+            @extend .def-transition;
+            margin : 15px 10px;
+            color : $cream2;
+          }
+          &:hover{
+            h1,h3{
+            color:$cream3;}
+          }
+        }
+
+      }
+    }
+
+
+  }
+  .last-products-shortcode{
+    .single-cat-title{
+      h3{
+        border-left : 10px solid $brown2;
+        border-bottom :1px solid $grey2;
+        padding-left : 10px;
+        padding-bottom: 10px;
+        margin :{
+          left: 0px;
+          bottom : 20px;
+          top : 20px;
+        }
+
+      }
+    }
+    div.product-grid{
+      padding : 10px;
+      background-color: $white;
+      border : 2px solid $grey2;
+      text-align: center;
+      .featured-image{
+        img{
+          border : 3px solid $grey2;
+        }
+      }
+      .product-title{
+        a h4{
+          color : $cream2;
+          margin : 15px;
+        }
+        a:hover {
+          color : $cream3;
+        }
+      }
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(4,12);
+      }
+      &:nth-of-type(3n){
+        @include omega;
       }
     }
   }

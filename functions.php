@@ -83,15 +83,17 @@ function gsalborz_woocommerce_support() {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'banner', 940, 430, array( 'center', 'center' ) );
-add_image_size( 'product-thumb', 163, 163, array( 'center', 'center' ) );
+add_image_size( 'banner', 1040, 430, array( 'center', 'center' ) );
+add_image_size( 'product-thumb', 270, 270, array( 'center', 'center' ) );
+add_image_size( 'archive-thumb', 163, 163, array( 'center', 'center' ) );
 add_image_size( 'widget-thumb', 53, 53, array( 'center', 'center' ) );
 
 add_filter( 'image_size_names_choose', 'gsalborz_custom_image_sizes' );
 
 function gsalborz_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'banner' => __('940px by 430px'),
+        'banner' => __('1040px by 430px'),
+        'archive-thumb' => __('270px by 270px'),
         'product-thumb' => __('163px by 163px'),
         'widget-thumb' => __('53px by 53px'),
 
@@ -369,17 +371,15 @@ class contact_info_widget extends WP_Widget {
 
         $title = apply_filters( 'widget_title', $instance['title'] );
         $address = $instance['address'];
-        $zip = $instance['zip'];
-        $telfax = $instance['telfax'];
+        $phone = $instance['phone'];
+        $fax = $instance['fax'];
         $email = $instance['email'];
-        $smspanel = $instance['smspanel'];
-        
+
                 
         $content = '<main class="widgetbody">';
         $content .='<p><i class="fa fa-map-marker"></i>'.__('Address : ','gsalborz').$address.'</p>';
-        $content .='<p><i class="fa fa-fire"></i>'.__('Zip : ','gsalborz').$zip.'</p>';
-        $content .='<p><i class="fa fa-fax"></i>'.__('TelFax : ','gsalborz').$telfax.'</p>';
-        $content .='<p><i class="fa fa-tablet"></i></i>'.__('Sms Panel : ','gsalborz').$smspanel.'</p>';
+        $content .='<p><i class="fa fa-phone"></i>'.__('Phone : ','gsalborz').$phone.'</p>';
+        $content .='<p><i class="fa fa-fax"></i>'.__('Fax : ','gsalborz').$fax.'</p>';
         $content .='<p><i class="fa fa-envelope"></i>'.__('Email : ','gsalborz').$email.'</p>';
         $content .= '</main>';
       
@@ -407,16 +407,16 @@ class contact_info_widget extends WP_Widget {
             $address = "No. ----";
         }
 
-        if ( isset( $instance[ 'zip' ] ) ) {
-            $zip = $instance[ 'zip' ];
+        if ( isset( $instance[ 'phone' ] ) ) {
+            $phone = $instance[ 'phone' ];
         }else {
-            $zip = "+98 ----";
+            $phone = "+98 ----";
         }
 
-        if ( isset( $instance[ 'telfax' ] ) ) {
-            $telfax = $instance[ 'telfax' ];
+        if ( isset( $instance[ 'fax' ] ) ) {
+            $fax = $instance[ 'fax' ];
         }else {
-            $telfax = "+98 ----";
+            $fax = "+98 ----";
         }
 
         if ( isset( $instance[ 'email' ] ) ) {
@@ -425,11 +425,6 @@ class contact_info_widget extends WP_Widget {
             $email = "info@email.com";
         }
 
-        if ( isset( $instance['smspanel'] ) ) {
-           $smspanel = $instance['smspanel'];
-        }else {
-            $smspanel = '300000000';
-        } $smspanel = $instance['smspanel'];
         
         // Widget admin form
         ?>
@@ -442,19 +437,16 @@ class contact_info_widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" type="text" value="<?php echo esc_attr( $address ); ?>" />
         </p>
          <p>
-            <label for="<?php echo $this->get_field_id( 'zip' ); ?>"><?php _e( 'Zip :','gsalborz' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'zip' ); ?>" name="<?php echo $this->get_field_name( 'zip' ); ?>" type="text" value="<?php echo esc_attr( $zip ); ?>" />
+            <label for="<?php echo $this->get_field_id( 'phone' ); ?>"><?php _e( 'Phone :','gsalborz' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>" type="text" value="<?php echo esc_attr( $phone ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'telfax' ); ?>"><?php _e( 'TelFax :','gsalborz' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'telfax' ); ?>" name="<?php echo $this->get_field_name( 'telfax' ); ?>" type="text" value="<?php echo esc_attr( $telfax ); ?>" />
+            <label for="<?php echo $this->get_field_id( 'fax' ); ?>"><?php _e( 'Fax :','gsalborz' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'fax' ); ?>" name="<?php echo $this->get_field_name( 'fax' ); ?>" type="text" value="<?php echo esc_attr( $fax ); ?>" />
         </p>
 
-         <p>
-            <label for="<?php echo $this->get_field_id( 'smspanel' ); ?>"><?php _e( 'Sms Panel :','gsalborz' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'smspanel' ); ?>" name="<?php echo $this->get_field_name( 'smspanel' ); ?>" type="text" value="<?php echo esc_attr( $smspanel ); ?>" />
-        </p>
+
 
         <p>
             <label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e( 'Email Address :','gsalborz' ); ?></label>
@@ -469,10 +461,9 @@ class contact_info_widget extends WP_Widget {
         $instance = array();
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
         $instance['address'] = ( ! empty( $new_instance['address'] ) ) ? strip_tags( $new_instance['address'] ) : '';
-        $instance['zip'] = ( ! empty( $new_instance['zip'] ) ) ? strip_tags( $new_instance['zip'] ) : '';
-        $instance['telfax'] = ( ! empty( $new_instance['telfax'] ) ) ? strip_tags( $new_instance['telfax'] ) : '';
+        $instance['phone'] = ( ! empty( $new_instance['phone'] ) ) ? strip_tags( $new_instance['phone'] ) : '';
+        $instance['fax'] = ( ! empty( $new_instance['fax'] ) ) ? strip_tags( $new_instance['fax'] ) : '';
         $instance['email'] = ( ! empty( $new_instance['email'] ) ) ? strip_tags( $new_instance['email'] ) : '';
-        $instance['smspanel'] = ( ! empty( $new_instance['smspanel'] ) ) ? strip_tags( $new_instance['smspanel'] ) : '';
         return $instance;
     }
 } // Class wpb_widget ends here
@@ -481,115 +472,115 @@ class contact_info_widget extends WP_Widget {
 /*---------------Widgets----------------------*/
 
 // Creating the widget 
-class last_products_widget extends WP_Widget {
-
-    function __construct() {
-        parent::__construct(
-        // Base ID of your widget
-        'last_products_widget', 
-
-        // Widget name will appear in UI
-        __('Last Products Widget', 'gsalborz'),
-
-        // Widget description
-        array( 'description' => __( 'Display Last Products', 'gsalborz' ), )
-        );
-    }
-
-    // Creating widget front-end
-    // This is where the action happens
-    public function widget( $args, $instance ) {
-        global $wp_query;
-
-        $title = apply_filters( 'widget_title', $instance['title'] );
-        $number = $instance['number'];
-        $term = get_term($instance['cat'],'product_cat');
-
-        //var_dump($instance);
-        $products = get_posts(array(
-            'post_type' => 'product',
-            'posts_per_page' => $number,
-            'product_cat'         => $term->slug,
-            )
-        );
-       
-        $content = '<ul class="widget-list">';
-        foreach($products as $product) : setup_postdata( $product );
-          $url = get_the_permalink($product->ID);
-          $thumb = get_the_post_thumbnail($product->ID,'product-thumb');
-          $name = $product->post_title;
-          $content .='<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
-        endforeach;
-        $content .= '</ul>';
-
-      
-       
-
-        
-        // before and after widget arguments are defined by themes
-        echo $args['before_widget'];
-        
-        if ( ! empty( $title ) )
-          echo $args['before_title'] . $title . $args['after_title'];
-          echo $content;
-        // This is where you run the code and display the output
-          echo $args['after_widget'];
-    }
-        
-    // Widget Backend 
-    public function form( $instance ) {
-        if ( isset( $instance[ 'title' ] ) ) {
-            $title = $instance[ 'title' ];
-        }else {
-            $title = __( 'Last Products', 'gsalborz' );
-        }
-        if ( isset( $instance[ 'number' ] ) ) {
-            $number = $instance[ 'number' ];
-        }else {
-            $number = 5;
-        }
-        if ( isset( $instance[ 'cat' ] ) ) {
-            $cat = $instance[ 'cat' ];
-        }else {
-            $cat ="";
-        }
-        // Widget admin form
-        ?>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-        </p>
-         <p>
-            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'product Numbers :','gsalborz' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Product Category :','gsalborz' ); ?></label>
-           <?php wp_dropdown_categories(array(
-                  'name'               => $this->get_field_name( 'cat' ),
-                  'id'                 => $this->get_field_id( 'cat' ),
-                  'class'              => 'widefat',
-                  'taxonomy'           => 'product_cat',
-                  'echo'               => '1',
-                  'selected'          =>esc_attr( $cat ),
-            )); ?>
-
-
-        </p>
-        
-        <?php 
-    }
-      
-    // Updating widget replacing old instances with new
-    public function update( $new_instance, $old_instance ) {
-        $instance = array();
-        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? strip_tags( $new_instance['number'] ) : '';
-        $instance['cat'] = ( ! empty( $new_instance['cat'] ) ) ? strip_tags( $new_instance['cat'] ) : '';
-        //var_dump($instance);
-        return $instance;
-    }
-} // Class wpb_widget ends here
+//class last_products_widget extends WP_Widget {
+//
+//    function __construct() {
+//        parent::__construct(
+//        // Base ID of your widget
+//        'last_products_widget',
+//
+//        // Widget name will appear in UI
+//        __('Last Products Widget', 'gsalborz'),
+//
+//        // Widget description
+//        array( 'description' => __( 'Display Last Products', 'gsalborz' ), )
+//        );
+//    }
+//
+//    // Creating widget front-end
+//    // This is where the action happens
+//    public function widget( $args, $instance ) {
+//        global $wp_query;
+//
+//        $title = apply_filters( 'widget_title', $instance['title'] );
+//        $number = $instance['number'];
+//        $term = get_term($instance['cat'],'product_cat');
+//
+//        //var_dump($instance);
+//        $products = get_posts(array(
+//            'post_type' => 'product',
+//            'posts_per_page' => $number,
+//            'product_cat'         => $term->slug,
+//            )
+//        );
+//
+//        $content = '<ul class="widget-list">';
+//        foreach($products as $product) : setup_postdata( $product );
+//          $url = get_the_permalink($product->ID);
+//          $thumb = get_the_post_thumbnail($product->ID,'product-thumb');
+//          $name = $product->post_title;
+//          $content .='<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
+//        endforeach;
+//        $content .= '</ul>';
+//
+//
+//
+//
+//
+//        // before and after widget arguments are defined by themes
+//        echo $args['before_widget'];
+//
+//        if ( ! empty( $title ) )
+//          echo $args['before_title'] . $title . $args['after_title'];
+//          echo $content;
+//        // This is where you run the code and display the output
+//          echo $args['after_widget'];
+//    }
+//
+//    // Widget Backend
+//    public function form( $instance ) {
+//        if ( isset( $instance[ 'title' ] ) ) {
+//            $title = $instance[ 'title' ];
+//        }else {
+//            $title = __( 'Last Products', 'gsalborz' );
+//        }
+//        if ( isset( $instance[ 'number' ] ) ) {
+//            $number = $instance[ 'number' ];
+//        }else {
+//            $number = 5;
+//        }
+//        if ( isset( $instance[ 'cat' ] ) ) {
+//            $cat = $instance[ 'cat' ];
+//        }else {
+//            $cat ="";
+//        }
+//        // Widget admin form
+//        ?>
+<!--        <p>-->
+<!--            <label for="--><?php //echo $this->get_field_id( 'title' ); ?><!--">--><?php //_e( 'Title:' ); ?><!--</label> -->
+<!--            <input class="widefat" id="--><?php //echo $this->get_field_id( 'title' ); ?><!--" name="--><?php //echo $this->get_field_name( 'title' ); ?><!--" type="text" value="--><?php //echo esc_attr( $title ); ?><!--" />-->
+<!--        </p>-->
+<!--         <p>-->
+<!--            <label for="--><?php //echo $this->get_field_id( 'number' ); ?><!--">--><?php //_e( 'product Numbers :','gsalborz' ); ?><!--</label>-->
+<!--            <input class="widefat" id="--><?php //echo $this->get_field_id( 'number' ); ?><!--" name="--><?php //echo $this->get_field_name( 'number' ); ?><!--" type="text" value="--><?php //echo esc_attr( $number ); ?><!--" />-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <label for="--><?php //echo $this->get_field_id( 'cat' ); ?><!--">--><?php //_e( 'Product Category :','gsalborz' ); ?><!--</label>-->
+<!--           --><?php //wp_dropdown_categories(array(
+//                  'name'               => $this->get_field_name( 'cat' ),
+//                  'id'                 => $this->get_field_id( 'cat' ),
+//                  'class'              => 'widefat',
+//                  'taxonomy'           => 'product_cat',
+//                  'echo'               => '1',
+//                  'selected'          =>esc_attr( $cat ),
+//            )); ?>
+<!---->
+<!---->
+<!--        </p>-->
+<!--        -->
+<!--        --><?php //
+//    }
+//
+//    // Updating widget replacing old instances with new
+//    public function update( $new_instance, $old_instance ) {
+//        $instance = array();
+//        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+//        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? strip_tags( $new_instance['number'] ) : '';
+//        $instance['cat'] = ( ! empty( $new_instance['cat'] ) ) ? strip_tags( $new_instance['cat'] ) : '';
+//        //var_dump($instance);
+//        return $instance;
+//    }
+//} // Class wpb_widget ends here
 
 
 
@@ -629,9 +620,9 @@ class last_posts_by_cat_widget extends WP_Widget {
         $content = '<ul class="widget-list">';
         foreach($posts as $post) : setup_postdata( $post );
           $url = get_the_permalink($post->ID);
-          $thumb = get_the_post_thumbnail($post->ID,'product-thumb');
+          $thumb = get_the_post_thumbnail($post->ID,'widget-thumb');
           $name = $post->post_title;
-          $content .='<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
+          $content .='<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a></li>';
         endforeach;
         $content .= '</ul>';
 
@@ -703,13 +694,63 @@ class last_posts_by_cat_widget extends WP_Widget {
 
 // Register and load the widget
 function gsalborz_widget() {
-  register_widget( 'last_products_widget' );
+//  register_widget( 'last_products_widget' );
   register_widget( 'last_posts_by_cat_widget' );
   register_widget( 'contact_info_widget' );
 }
 add_action( 'widgets_init', 'gsalborz_widget' );
 
+/*-----------Shortcodes-------------------------------*/
+function gsalborz_products_in_cat( $atts, $content = null ) {
+   global $wp_query;
+    $a = shortcode_atts( array(
+        'cat' => '',
+        'title' => '',
+        'qty' => -1,
+        // ...etc
+    ), $atts );
 
+$products = get_posts(array(
+                            'post_type' => 'post',
+                            'posts_per_page' => $a['qty'],
+                            'category'         => $a['cat'],
+                            )
+                        ); ?>
+  <div class="last-products-shortcode">
+      <section class="layout">
+        <div class="single-cat-title">
+          <h3><?php echo $a['title'] ?></h3>
+        </div>
+      </section>
+      <?php if(!empty($products)){ ?>
+
+
+      <section class="layout">
+         <?php foreach($products as $product){
+            setup_postdata( $product ) ; ?>
+
+                <div class="product-grid">
+                      <main class="product-body">
+                        <div class="featured-image">
+                           <a href="<?php echo get_post_permalink($product->ID); ?>">
+                               <?php echo get_the_post_thumbnail($product->ID); ?>
+                            </a>
+                        </div>
+                    </main>
+                    <header class="product-title">
+
+                       <a href="<?php echo get_post_permalink($product->ID); ?>">
+                             <h4><?php echo $product->post_title; ?></h4>
+                        </a>
+                    </header>
+                </div>
+        <?php } ?>
+        </section>
+      </div>
+  <?php }
+  wp_reset_postdata();
+}
+add_shortcode( 'products', 'gsalborz_products_in_cat' );
 
 /*----------------Pharmacy search -----------------------*/
 // class Pharmacy {
@@ -787,179 +828,108 @@ add_action( 'widgets_init', 'gsalborz_widget' );
 
 
 //------------ product order form ----------------
-function html_form_code() {
+//function html_form_code() {
+//
+//   $posts = get_posts(array(
+//          'post_type' => 'product',
+//          'posts_per_page' => -1,
+//          'suppress_filters' => false,
+//          )
+//      );
+//
+//      $product_select = '<select multiple="multiple" class="select-products" name="cf-products[]" >';
+//      foreach($posts as $post) : setup_postdata( $post );
+//        $name = $post->post_title;
+//        $product_select .='<option value="'.$name.'">'.$name.'</option>';
+//      endforeach;
+//     $product_select .= '</select>';
+//
+//
+//  echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post" class="order-products">';
+//  echo '<p>';
+//  echo __('Your Name (required)','gsalborz'). '<br/>';
+//  echo '<input type="text" name="cf-name"  value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
+//  echo '</p>';
+//  echo '<p>';
+//  echo __('Your Email (required)','gsalborz'). '<br/>';
+//  echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
+//  echo '</p>';
+//   echo __('Your Phone (required)','gsalborz'). '<br/>';
+//  echo '<input type="text" name="cf-phone" value="' . ( isset( $_POST["cf-phone"] ) ? esc_attr( $_POST["cf-phone"] ) : '' ) . '" size="40" />';
+//  echo '</p>';
+//  echo '<p>';
+//  echo  __('Products List (required)','gsalborz'). '<br/>';
+//  echo  $product_select;
+//  echo '</p>';
+//  echo '<p>';
+//  echo  __('More Information (required)','gsalborz'). '<br/>';
+//  echo '<textarea rows="10" cols="35" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
+//  echo '</p>';
+//  echo '<p><input type="submit" name="cf-submitted" value="'.__('Order Products','gsalborz').'"></p>';
+//  echo '</form>';
+//}
+//
+//
+//function set_html_content_type() {
+//  return 'text/html';
+//}
+//
+//function deliver_mail() {
+//
+//  // if the submit button is clicked, send the email
+//  if ( isset( $_POST['cf-submitted'] ) ) {
+//    $ordered_products ="";
+//    $counter = 1;
+//    // sanitize form values
+//    $name    = sanitize_text_field( $_POST["cf-name"] );
+//    $email   = sanitize_email( $_POST["cf-email"] );
+//    $phone   = sanitize_text_field( $_POST["cf-phone"] );
+//    $products = $_POST["cf-products"];
+//
+//    foreach ($_POST['cf-products'] as $product){
+//       $ordered_products .= '<span>'.$counter.' - '.$product.'</span><br />';
+//       $counter++;
+//    }
+//
+//    $message = "<div style='direction:rtl;text-align:right;'>";
+//    $message .= "<p>".__('Name : ','gsalborz').$name."</p>"."\r\n";
+//    $message .= "<p>".__('Phone Number : ','gsalborz').$phone."</p><br />"."\r\n";
+//    $message .= "<p>".__('Email : ','gsalborz').$email."</p><br />"."\r\n";
+//    $message .= "<p>".__('Products : ','gsalborz')."</p><br /><p>"."\r\n".$ordered_products."</p><br />"."\r\n";
+//    $message .= "<p>".esc_textarea( $_POST["cf-message"] )."\r\n"."</p>"."</div>";
+//
+//    // get the blog administrator's email address
+//    $to = get_option( 'admin_email' );
+//
+//    $headers = array('From: '.$name.'<'.$email.'>');
+//    add_filter( 'wp_mail_content_type', 'set_html_content_type' );
+//
+//
+//    // If email has been process for sending, display a success message
+//    if ( wp_mail( $to, __('Order Products','gsalborz'), $message, $headers ) ) {
+//      echo '<div>';
+//      echo '<p class="success-message">'.__('Thanks for Ordering Products, We will contact you as soon as posible.','gsalborz'). '</p>';
+//      echo '</div>';
+//    } else {
+//      echo '<p class="failed-message">'.__('An unexpected error occurred','gsalborz').'</p>';
+//    }
+//
+//    remove_filter( 'wp_mail_content_type', 'set_html_content_type' );
+//
+//  }
+//}
+//
+//function cf_shortcode() {
+//  ob_start();
+//  deliver_mail();
+//  html_form_code();
+//
+//  return ob_get_clean();
+//}
+//
+//add_shortcode( 'product_order_form', 'cf_shortcode' );
 
-   $posts = get_posts(array(
-          'post_type' => 'product',
-          'posts_per_page' => -1,
-          'suppress_filters' => false,
-          )
-      );
-     
-      $product_select = '<select multiple="multiple" class="select-products" name="cf-products[]" >';
-      foreach($posts as $post) : setup_postdata( $post );
-        $name = $post->post_title;
-        $product_select .='<option value="'.$name.'">'.$name.'</option>';
-      endforeach;
-     $product_select .= '</select>';
 
-
-  echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post" class="order-products">';
-  echo '<p>';
-  echo __('Your Name (required)','gsalborz'). '<br/>';
-  echo '<input type="text" name="cf-name"  value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
-  echo '</p>';
-  echo '<p>';
-  echo __('Your Email (required)','gsalborz'). '<br/>';
-  echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
-  echo '</p>';
-   echo __('Your Phone (required)','gsalborz'). '<br/>';
-  echo '<input type="text" name="cf-phone" value="' . ( isset( $_POST["cf-phone"] ) ? esc_attr( $_POST["cf-phone"] ) : '' ) . '" size="40" />';
-  echo '</p>';
-  echo '<p>';
-  echo  __('Products List (required)','gsalborz'). '<br/>';
-  echo  $product_select;
-  echo '</p>';
-  echo '<p>';
-  echo  __('More Information (required)','gsalborz'). '<br/>';
-  echo '<textarea rows="10" cols="35" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
-  echo '</p>';
-  echo '<p><input type="submit" name="cf-submitted" value="'.__('Order Products','gsalborz').'"></p>';
-  echo '</form>';
-}
-
-
-function set_html_content_type() {
-  return 'text/html';
-}
-
-function deliver_mail() {
-
-  // if the submit button is clicked, send the email
-  if ( isset( $_POST['cf-submitted'] ) ) {
-    $ordered_products ="";
-    $counter = 1;
-    // sanitize form values
-    $name    = sanitize_text_field( $_POST["cf-name"] );
-    $email   = sanitize_email( $_POST["cf-email"] );
-    $phone   = sanitize_text_field( $_POST["cf-phone"] );
-    $products = $_POST["cf-products"];
-    
-    foreach ($_POST['cf-products'] as $product){
-       $ordered_products .= '<span>'.$counter.' - '.$product.'</span><br />';
-       $counter++;
-    }
-    
-    $message = "<div style='direction:rtl;text-align:right;'>";
-    $message .= "<p>".__('Name : ','gsalborz').$name."</p>"."\r\n";
-    $message .= "<p>".__('Phone Number : ','gsalborz').$phone."</p><br />"."\r\n";
-    $message .= "<p>".__('Email : ','gsalborz').$email."</p><br />"."\r\n";
-    $message .= "<p>".__('Products : ','gsalborz')."</p><br /><p>"."\r\n".$ordered_products."</p><br />"."\r\n";
-    $message .= "<p>".esc_textarea( $_POST["cf-message"] )."\r\n"."</p>"."</div>";
-
-    // get the blog administrator's email address
-    $to = get_option( 'admin_email' );
-
-    $headers = array('From: '.$name.'<'.$email.'>');
-    add_filter( 'wp_mail_content_type', 'set_html_content_type' );
-
-
-    // If email has been process for sending, display a success message
-    if ( wp_mail( $to, __('Order Products','gsalborz'), $message, $headers ) ) {
-      echo '<div>';
-      echo '<p class="success-message">'.__('Thanks for Ordering Products, We will contact you as soon as posible.','gsalborz'). '</p>';
-      echo '</div>';
-    } else {
-      echo '<p class="failed-message">'.__('An unexpected error occurred','gsalborz').'</p>';
-    }
-
-    remove_filter( 'wp_mail_content_type', 'set_html_content_type' );
-
-  }
-}
-
-function cf_shortcode() {
-  ob_start();
-  deliver_mail();
-  html_form_code();
-
-  return ob_get_clean();
-}
-
-add_shortcode( 'product_order_form', 'cf_shortcode' );
-
-
-/*------------------- Pharmacy search function.----------------------------------------- */
-
-add_action("wp_ajax_gsalborz_request_pharmacies", "gsalborz_request_pharmacies");
-add_action("wp_ajax_nopriv_gsalborz_request_pharmacies", "gsalborz_request_pharmacies_approval");
-
-function gsalborz_request_pharmacies() {
-
-global $wp,$wp_query; 
-
-require("phpsqlsearch_dbinfo.php");
-// Get parameters from URL
-$center_lat = sanitize_text_field($_SERVER["lat"]);
-$center_lng = sanitize_text_field($_SERVER["lng"]);
-$radius = sanitize_text_field($_SERVER["radius"]);
-// Start XML file, create parent node
-$dom = new DOMDocument("1.0");
-$node = $dom->createElement("markers");
-$parnode = $dom->appendChild($node);
-
-$posts = get_posts(array(
-      'post_type' => 'pharmacy',
-      'posts_per_page' => -1,
-      )
-  );
-     
-  
-// Search the rows in the markers table
-// $query = sprintf("SELECT address, name, lat, lng, ( 3959 * acos( cos( radians('%s') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('%s') ) + sin( radians('%s') ) * sin( radians( lat ) ) ) ) AS distance FROM markers HAVING distance < '%s' ORDER BY distance LIMIT 0 , 20",
-//   mysql_real_escape_string($center_lat),
-//   mysql_real_escape_string($center_lng),
-//   mysql_real_escape_string($center_lat),
-//   mysql_real_escape_string($radius));
-
-header("Content-type: text/xml");
-// Iterate through the rows, adding XML nodes for each
-foreach($posts as $post) { 
-  setup_postdata( $post );
-  
-  $address = get_post_meta($post->ID,'_gsalborz_address',1);
-  $lat = get_post_meta($post->ID,'_gsalborz_Latitude',1);
-  $lng = get_post_meta($post->ID,'_gsalborz_Longitude',1);
-  $distance = (3959 * acos( cos( radians($center_lat) ) * cos( radians( $lat ) ) * cos( radians( $lng ) - radians($center_lng) ) + sin( radians($center_lat) ) * sin( radians( $lat ) ) ) );
-  
-  if($distance < $radius){
-    $node = $dom->createElement("marker");
-    $newnode = $parnode->appendChild($node);
-    $newnode->setAttribute("name", $post->post_title);
-    $newnode->setAttribute("address", $address);
-    $newnode->setAttribute("lat", $lat);
-    $newnode->setAttribute("lng", $lng);
-    $newnode->setAttribute("distance", $distance);
-  }
-
-}
-
-   if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-      echo $dom->saveXML();
-      
-   }
-   else {
-      header("Location: ".$_SERVER["HTTP_REFERER"]);
-   }
-
-   die();
-
-}
-
-function gsalborz_request_pharmacies_approval() {
-   echo "You must log in to view";
-   die();
-}
 
 
 ?>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	
-	<main class="site-main">
+	<main class="site-main single-page">
 		<?php if(have_posts()){ ?>
 			<?php while(have_posts()) { the_post(); ?>
 
@@ -14,9 +14,7 @@
 							<article class="hentry">
 								<?php if( get_post_meta(get_the_ID(),'_gsalborz_title',1 ) !== 'no'){ ?>
 									<header class="article-title">
-										<a href="<?php the_permalink(); ?>">
-											<h3><?php the_title(); ?></h3>
-										</a>
+											<h1><?php the_title(); ?></h1>
 									</header>
 								<?php } ?>
 								<main class="article-body">

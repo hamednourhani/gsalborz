@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
 	//});
 	$('.menu-search-area span#submit').click(function(e){
 		console.log("i am clicked");
-		$('nav.main-menu form#searchform').trigger('submit');
+		$('.menu-search-area form#searchform').trigger('submit');
 	});
 
 	// var smh = $('.sidebar-widget').outerHeight(true) + 40;

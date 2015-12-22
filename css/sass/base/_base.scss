@@ -26,7 +26,7 @@ body {
 	line-height : 180%;
 	p{
 		text-align : justify;
-		color : $grey3;
+		color : darken($grey3,10%);
 	}
 	form{
 		text-align:left;
@@ -55,8 +55,9 @@ body {
 
 }
 a{
+	@extend .def-transition;
 	text-decoration : none;
-	color : $grey3;
+	color : $cream2;
 	&:hover{
 		color : $brown1;
 	}
@@ -69,7 +70,6 @@ img,video,audio,iframe{
 }
 input,textarea,button{
 	max-width : 100%;
-	@include border-radius(5px);
 }
 h1,h2,h3,h4,h5,h6{
 	color : $black1;

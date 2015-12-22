@@ -105,33 +105,35 @@ function gsalborz_before_row_if_2( $field_args, $field ) {
 /******************************************************************/
 /*--------------------Product Features-------------------------------*/
 /******************************************************************/
-//  add_action( 'cmb2_init', 'gsalborz_register_product_features_metabox' );
-// function gsalborz_register_product_features_metabox() {
+  add_action( 'cmb2_init', 'gsalborz_register_article_gallery_metabox' );
+ function gsalborz_register_article_gallery_metabox() {
 
-// 	$prefix = '_gsalborz_';
+ 	$prefix = '_gsalborz_';
 
-// 	/**
-// 	 * Sample metabox to demonstrate each field type included
-// 	 */
-// 	$cmb_demo = new_cmb2_box( array(
-// 		'id'            => $prefix . 'prodct_features',
-// 		'title'         => __( 'Product Features', 'gsalborz' ),
-// 		'object_types'  => array( 'pharmacy' ), // Post type
+ 	/**
+ 	 * Sample metabox to demonstrate each field type included
+ 	 */
+ 	$cmb_demo = new_cmb2_box( array(
+ 		'id'            => $prefix . 'article_gallery',
+ 		'title'         => __( 'Article Gallery', 'gsalborz' ),
+ 		'object_types'  => array( 'post' ), // Post type
 		
-// 	) );
+ 	) );
 
 
 	
-// 	$cmb_demo->add_field( array(
-// 		'name'         => __( 'address', 'gsalborz' ),
-// 		'desc'         => __( 'Enter pharmacy address', 'gsalborz' ),
-// 		'id'           => $prefix . 'address',
-// 		'type'         => 'text',
+ 	$cmb_demo->add_field( array(
+ 		'name'         => __( 'Images', 'gsalborz' ),
+ 		'desc'         => __( 'Upload or add multiple images/attachments.', 'gsalborz' ),
+ 		'id'           => $prefix . 'image_list',
+		'type'         => 'file_list',
+		'preview_size' => array( 163	, 163 ), // Default: array( 163, 163 )
 		
-// 	) );
+ 	) );
+
 
 	
-// }
+ }
 /******************************************************************/
 /*--------------------Pharmacy-------------------------------*/
 /******************************************************************/
@@ -245,7 +247,8 @@ function gsalborz_register_page_banner_metabox() {
 		'options'          => array(
 			'slider' => __( 'Slider', 'gsalborz' ),
 			'image' => __( 'Image', 'gsalborz' ),
-			
+			'map' => __( 'Map', 'gsalborz' ),
+
 		),	
 		
 		//'show_on_cb' => 'gsalborz_hide_if_no_cats', // function should return a bool value
@@ -270,6 +273,14 @@ function gsalborz_register_page_banner_metabox() {
 		'id'         => $prefix . 'image',
 		'type'       => 'file',
 	
+	) );
+
+	$cmb_demo->add_field( array(
+		'name'       => __( 'Google Map', 'gsalborz' ),
+		'desc'       => __( 'Enter Google Map embed code', 'gsalborz' ),
+		'id'         => $prefix . 'map',
+		'type'       => 'textarea_code',
+
 	) );
 
 	$cmb_demo->add_field( array(

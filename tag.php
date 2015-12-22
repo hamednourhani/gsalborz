@@ -1,45 +1,41 @@
 <?php get_header(); ?>
-	
-	<main class="site-main">
-		
-		
+
+	<main class="site-main archive-articles">
+
+
 		<div class="site-content">
 			<section class="layout">
-				
+
 				<div class="primary">
 
-			
-							<?php get_template_part('library/banner','maker'); ?>
-							
-					
+
 					<?php if(have_posts()){ ?>
 						<?php while(have_posts()) { the_post(); ?>
-						
+
 							<article class="hentry">
+
+
+								<main class="article-body">
+									<div class="featured-image">
+										<a href="<?php the_permalink(); ?>">
+											<?php echo get_the_post_thumbnail();?>
+										</a>
+									</div>
+								</main>
 								<header class="article-title">
+
 									<a href="<?php the_permalink(); ?>">
 										<h3><?php the_title(); ?></h3>
 									</a>
 								</header>
-								<main class="article-body">
-									<section class="layout">
-										<div class="featured-image single-image">
-											<a href="<?php the_permalink(); ?>">
-												<?php the_post_thumbnail('post-thumb'); ?>
-											</a>
-										</div>
-										<div class="excerpt">
-											<?php the_excerpt(); ?>
-										</div>
-									</section>
-									<?php get_template_part('library/post','meta'); ?>
-								</main>
 							</article>
 						<?php } ?>
-					<?php } ?>		
+					<?php } ?>
+
+
 					<nav class="pagination">
 						<?php gsalborz_pagination(); ?>
-					</nav>			
+					</nav>
 				</div><!-- primary -->
 
 				<div class="secondary">
@@ -47,7 +43,7 @@
 				</div><!-- secondary -->
 			</section>
 		</div>
-		
+
 	</main>
 
 <?php get_footer(); ?>

@@ -129,11 +129,22 @@
     .banner-wrapper {
       padding: 10px 10px 10px;
       background-color: $cream3;
+      color : $cream1;
       margin-bottom : -30px;
       @extend .dark-box-shadow;
+      text-align : center;
       img{
         padding:0px;
         margin:0px;
+      }
+      .single-cat-title{
+        pading:{
+          right : 10px;
+          left : 10px;
+        }
+        h1,h3{
+          color : $cream1;
+        }
       }
     }
 }

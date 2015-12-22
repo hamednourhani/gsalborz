@@ -79,7 +79,7 @@ $glass : rgba(0,0,0,0);
 
 /*----------------transition-shadow----------------------*/
 .def-transition{
-	@include single-transition(all ,0.4s , ease-in-out);
+	@include single-transition(all ,0.3s , ease-in-out);
 }
 /*----------------box-shadow----------------------*/
 
@@ -87,7 +87,7 @@ $glass : rgba(0,0,0,0);
 	@include box-shadow(0px 0px 6px $brown1,inset 0px 0px 6px $brown1);
 }
 .def-box-shadow {
-	@include box-shadow(0px 0px 6px $grey2);
+	@include box-shadow(0px 0px 6px $cream2);
 }
 .dark-box-shadow {
 	@include box-shadow(0px 0px 6px $black1);
