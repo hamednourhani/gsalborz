@@ -493,7 +493,7 @@ ul.main-nav > li ul li ul.sub-menu {
     display: inline; }
 /* line 107, sass/rtl/layout/_main.scss */
 .site-main .last-products-shortcode .single-cat-title h3 {
-  border-left: 10px solid #BC6809;
+  border-left: 0px solid #BC6809;
   border-right: 10px solid #BC6809;
   padding-left: 0px;
   padding-right: 10px;

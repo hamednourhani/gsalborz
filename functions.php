@@ -602,6 +602,7 @@ $products = get_posts(array(
                             'post_type' => 'post',
                             'posts_per_page' => $a['qty'],
                             'category'         => $a['cat'],
+                            'suppress_filters' => false,
                             )
                         ); ?>
   <div class="last-products-shortcode">

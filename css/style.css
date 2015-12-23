@@ -1603,16 +1603,20 @@ body.page-template-page-templatesintro-php {
     .site-main.single-article article.hentry .article-body .post-meta .post-meta-list span.tags-title, .site-main.single-article article.hentry .article-body .post-meta .post-meta-list span.cats-title,
     .site-main.single-article article.hentry .article-body .post-meta .post-meta-list .fa-bookmark, .site-main.single-article article.hentry .article-body .post-meta .post-meta-list .fa-tags {
       color: #827A6D; }
-  /* line 195, sass/layout/_main.scss */
+  /* line 193, sass/layout/_main.scss */
+  .site-main.single-page .article-body {
+    padding: 5px 20px; }
+  /* line 197, sass/layout/_main.scss */
   .site-main.single-page .article-title h3, .site-main.single-page .article-title h1 {
     margin: 15px;
     border-left: 10px solid #BC6809;
     border-bottom: 1px solid #CECECE;
     padding-left: 20px; }
-  /* line 206, sass/layout/_main.scss */
+  /* line 208, sass/layout/_main.scss */
   .site-main.archive-articles article.hentry {
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: 20px;
     -moz-box-shadow: 0px 0px 0px transparent;
     -webkit-box-shadow: 0px 0px 0px transparent;
     box-shadow: 0px 0px 0px transparent;
@@ -1625,28 +1629,28 @@ body.page-template-page-templatesintro-php {
     margin-right: 1.53846%;
     display: inline; }
     @media (min-width: 45em) {
-      /* line 206, sass/layout/_main.scss */
+      /* line 208, sass/layout/_main.scss */
       .site-main.archive-articles article.hentry {
         width: 32.30769%;
         float: left;
         margin-right: 1.53846%; } }
-    /* line 219, sass/layout/_main.scss */
+    /* line 222, sass/layout/_main.scss */
     .site-main.archive-articles article.hentry:nth-of-type(3n) {
       float: right;
       margin-right: 0;
       *margin-left: -1em;
       display: inline; }
-    /* line 226, sass/layout/_main.scss */
+    /* line 229, sass/layout/_main.scss */
     .site-main.archive-articles article.hentry .featured-image img {
       border: 3px solid #EBEBEB; }
-    /* line 233, sass/layout/_main.scss */
+    /* line 236, sass/layout/_main.scss */
     .site-main.archive-articles article.hentry .article-title a h1, .site-main.archive-articles article.hentry .article-title a h3 {
       margin: 15px 10px;
       color: #827A6D; }
-    /* line 239, sass/layout/_main.scss */
+    /* line 242, sass/layout/_main.scss */
     .site-main.archive-articles article.hentry .article-title a:hover h1, .site-main.archive-articles article.hentry .article-title a:hover h3 {
       color: #19110F; }
-  /* line 251, sass/layout/_main.scss */
+  /* line 254, sass/layout/_main.scss */
   .site-main .last-products-shortcode .single-cat-title h3 {
     border-left: 10px solid #BC6809;
     border-bottom: 1px solid #CECECE;
@@ -1655,9 +1659,10 @@ body.page-template-page-templatesintro-php {
     margin-left: 0px;
     margin-bottom: 20px;
     margin-top: 20px; }
-  /* line 264, sass/layout/_main.scss */
+  /* line 267, sass/layout/_main.scss */
   .site-main .last-products-shortcode div.product-grid {
     padding: 10px;
+    margin-bottom: 20px;
     background-color: #FFFFFF;
     border: 2px solid #CECECE;
     text-align: center;
@@ -1665,23 +1670,23 @@ body.page-template-page-templatesintro-php {
     float: left;
     margin-right: 1.53846%;
     display: inline; }
-    /* line 270, sass/layout/_main.scss */
+    /* line 274, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid .featured-image img {
       border: 3px solid #CECECE; }
-    /* line 275, sass/layout/_main.scss */
+    /* line 279, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid .product-title a h4 {
       color: #827A6D;
       margin: 15px; }
-    /* line 279, sass/layout/_main.scss */
+    /* line 283, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid .product-title a:hover {
       color: #19110F; }
     @media (min-width: 45em) {
-      /* line 264, sass/layout/_main.scss */
+      /* line 267, sass/layout/_main.scss */
       .site-main .last-products-shortcode div.product-grid {
         width: 32.30769%;
         float: left;
         margin-right: 1.53846%; } }
-    /* line 287, sass/layout/_main.scss */
+    /* line 291, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid:nth-of-type(3n) {
       float: right;
       margin-right: 0;
