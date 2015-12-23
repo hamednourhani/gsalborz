@@ -114,7 +114,7 @@ new image size.
 function gsalborz_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
-  // Uncomment the below lines to remove the default customize sections 
+  // Uncomment the below lines to remove the default customize sections
 
   // $wp_customize->remove_section('title_tagline');
   // $wp_customize->remove_section('colors');
@@ -124,7 +124,7 @@ function gsalborz_theme_customizer($wp_customize) {
 
   // Uncomment the below lines to remove the default controls
   // $wp_customize->remove_control('blogdescription');
-  
+
   // Uncomment the following to change the default section titles
   // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
@@ -181,9 +181,9 @@ function gsalborz_register_sidebars() {
      'before_title' => '<h4 class="widgettitle">',
      'after_title' => '</h4>',
    ));
-  
 
-  
+
+
 } // don't remove this bracket!
 
 
@@ -231,7 +231,7 @@ function gsalborz_pagination(){
   global $wp_query;
 
     if($wp_query->max_num_pages > 1){
-        $big = 999999999; 
+        $big = 999999999;
         echo /*__('Page : ','gsalborz').*/paginate_links( array(
           'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
           'format' => '?paged=%#%',
@@ -276,9 +276,9 @@ function gsalborz_get_image_src($src="" , $size=""){
 
 function gsalborz_search_form( $form ) {
   global $post,$wp_query,$wpdb;
-   
 
-  if(ICL_LANGUAGE_CODE == 'en' || ICL_LANGUAGE_CODE == 'it'){
+
+  if( ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE == 'en'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
       <div><label class="screen-reader-text" for="s">' . __( 'Search for:','gsalborz' ) . '</label>
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
@@ -299,9 +299,9 @@ function gsalborz_search_form( $form ) {
 }
 function gsalborz_menu_search_form() {
   global $post,$wp_query,$wpdb;
-   
 
-  if(ICL_LANGUAGE_CODE == 'en' || ICL_LANGUAGE_CODE == 'it'){
+
+  if( ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE == 'en'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
       <div class="search-form-inner">
         <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' .  __( 'Search' ) . '"/>
@@ -330,8 +330,8 @@ add_filter( 'excerpt_length', 'gsalborz_excerpt_length', 999 );
 
 
 
-if ( ICL_LANGUAGE_CODE=='en'){ 
-  
+if ( ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE=='en'){
+
         remove_filter('the_title', 'ztjalali_persian_num');
         remove_filter('the_content', 'ztjalali_persian_num');
         remove_filter('the_excerpt', 'ztjalali_persian_num');
@@ -341,7 +341,7 @@ if ( ICL_LANGUAGE_CODE=='en'){
         remove_filter('the_title', 'ztjalali_ch_arabic_to_persian');
         remove_filter('the_excerpt', 'ztjalali_ch_arabic_to_persian');
         remove_filter('comment_text', 'ztjalali_ch_arabic_to_persian');
-    
+
 
 
 }
@@ -354,7 +354,7 @@ class contact_info_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
         // Base ID of your widget
-        'contact_info_widget', 
+        'contact_info_widget',
 
         // Widget name will appear in UI
         __('Contact Informaion Widget', 'gsalborz'),
@@ -375,25 +375,25 @@ class contact_info_widget extends WP_Widget {
         $fax = $instance['fax'];
         $email = $instance['email'];
 
-                
+
         $content = '<main class="widgetbody">';
         $content .='<p><i class="fa fa-map-marker"></i>'.__('Address : ','gsalborz').$address.'</p>';
         $content .='<p><i class="fa fa-phone"></i>'.__('Phone : ','gsalborz').$phone.'</p>';
         $content .='<p><i class="fa fa-fax"></i>'.__('Fax : ','gsalborz').$fax.'</p>';
         $content .='<p><i class="fa fa-envelope"></i>'.__('Email : ','gsalborz').$email.'</p>';
         $content .= '</main>';
-      
+
         // before and after widget arguments are defined by themes
         echo $args['before_widget'];
-        
+
         if ( ! empty( $title ) )
           echo $args['before_title'] . $title . $args['after_title'];
           echo $content;
         // This is where you run the code and display the output
           echo $args['after_widget'];
     }
-        
-    // Widget Backend 
+
+    // Widget Backend
     public function form( $instance ) {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
@@ -425,11 +425,11 @@ class contact_info_widget extends WP_Widget {
             $email = "info@email.com";
         }
 
-        
+
         // Widget admin form
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
          <p>
@@ -452,10 +452,10 @@ class contact_info_widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e( 'Email Address :','gsalborz' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" type="text" value="<?php echo esc_attr( $email ); ?>" />
         </p>
-        
-        <?php 
+
+        <?php
     }
-      
+
     // Updating widget replacing old instances with new
     public function update( $new_instance, $old_instance ) {
         $instance = array();
@@ -468,119 +468,7 @@ class contact_info_widget extends WP_Widget {
     }
 } // Class wpb_widget ends here
 
-/* DON'T DELETE THIS CLOSING TAG */ 
-/*---------------Widgets----------------------*/
 
-// Creating the widget 
-//class last_products_widget extends WP_Widget {
-//
-//    function __construct() {
-//        parent::__construct(
-//        // Base ID of your widget
-//        'last_products_widget',
-//
-//        // Widget name will appear in UI
-//        __('Last Products Widget', 'gsalborz'),
-//
-//        // Widget description
-//        array( 'description' => __( 'Display Last Products', 'gsalborz' ), )
-//        );
-//    }
-//
-//    // Creating widget front-end
-//    // This is where the action happens
-//    public function widget( $args, $instance ) {
-//        global $wp_query;
-//
-//        $title = apply_filters( 'widget_title', $instance['title'] );
-//        $number = $instance['number'];
-//        $term = get_term($instance['cat'],'product_cat');
-//
-//        //var_dump($instance);
-//        $products = get_posts(array(
-//            'post_type' => 'product',
-//            'posts_per_page' => $number,
-//            'product_cat'         => $term->slug,
-//            )
-//        );
-//
-//        $content = '<ul class="widget-list">';
-//        foreach($products as $product) : setup_postdata( $product );
-//          $url = get_the_permalink($product->ID);
-//          $thumb = get_the_post_thumbnail($product->ID,'product-thumb');
-//          $name = $product->post_title;
-//          $content .='<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
-//        endforeach;
-//        $content .= '</ul>';
-//
-//
-//
-//
-//
-//        // before and after widget arguments are defined by themes
-//        echo $args['before_widget'];
-//
-//        if ( ! empty( $title ) )
-//          echo $args['before_title'] . $title . $args['after_title'];
-//          echo $content;
-//        // This is where you run the code and display the output
-//          echo $args['after_widget'];
-//    }
-//
-//    // Widget Backend
-//    public function form( $instance ) {
-//        if ( isset( $instance[ 'title' ] ) ) {
-//            $title = $instance[ 'title' ];
-//        }else {
-//            $title = __( 'Last Products', 'gsalborz' );
-//        }
-//        if ( isset( $instance[ 'number' ] ) ) {
-//            $number = $instance[ 'number' ];
-//        }else {
-//            $number = 5;
-//        }
-//        if ( isset( $instance[ 'cat' ] ) ) {
-//            $cat = $instance[ 'cat' ];
-//        }else {
-//            $cat ="";
-//        }
-//        // Widget admin form
-//        ?>
-<!--        <p>-->
-<!--            <label for="--><?php //echo $this->get_field_id( 'title' ); ?><!--">--><?php //_e( 'Title:' ); ?><!--</label> -->
-<!--            <input class="widefat" id="--><?php //echo $this->get_field_id( 'title' ); ?><!--" name="--><?php //echo $this->get_field_name( 'title' ); ?><!--" type="text" value="--><?php //echo esc_attr( $title ); ?><!--" />-->
-<!--        </p>-->
-<!--         <p>-->
-<!--            <label for="--><?php //echo $this->get_field_id( 'number' ); ?><!--">--><?php //_e( 'product Numbers :','gsalborz' ); ?><!--</label>-->
-<!--            <input class="widefat" id="--><?php //echo $this->get_field_id( 'number' ); ?><!--" name="--><?php //echo $this->get_field_name( 'number' ); ?><!--" type="text" value="--><?php //echo esc_attr( $number ); ?><!--" />-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            <label for="--><?php //echo $this->get_field_id( 'cat' ); ?><!--">--><?php //_e( 'Product Category :','gsalborz' ); ?><!--</label>-->
-<!--           --><?php //wp_dropdown_categories(array(
-//                  'name'               => $this->get_field_name( 'cat' ),
-//                  'id'                 => $this->get_field_id( 'cat' ),
-//                  'class'              => 'widefat',
-//                  'taxonomy'           => 'product_cat',
-//                  'echo'               => '1',
-//                  'selected'          =>esc_attr( $cat ),
-//            )); ?>
-<!---->
-<!---->
-<!--        </p>-->
-<!--        -->
-<!--        --><?php //
-//    }
-//
-//    // Updating widget replacing old instances with new
-//    public function update( $new_instance, $old_instance ) {
-//        $instance = array();
-//        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-//        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? strip_tags( $new_instance['number'] ) : '';
-//        $instance['cat'] = ( ! empty( $new_instance['cat'] ) ) ? strip_tags( $new_instance['cat'] ) : '';
-//        //var_dump($instance);
-//        return $instance;
-//    }
-//} // Class wpb_widget ends here
 
 
 
@@ -589,7 +477,7 @@ class last_posts_by_cat_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
         // Base ID of your widget
-        'last_posts_by_cat_widget', 
+        'last_posts_by_cat_widget',
 
         // Widget name will appear in UI
         __('Last Posts By Category Widget', 'gsalborz'),
@@ -608,15 +496,15 @@ class last_posts_by_cat_widget extends WP_Widget {
         $number = $instance['number'];
         $cat = get_category($instance['cat']);
 
-      
+
         $posts = get_posts(array(
             'post_type' => 'post',
             'posts_per_page' => $number,
             'category'         => $cat->term_id,
             )
         );
-        
-       
+
+
         $content = '<ul class="widget-list">';
         foreach($posts as $post) : setup_postdata( $post );
           $url = get_the_permalink($post->ID);
@@ -626,21 +514,21 @@ class last_posts_by_cat_widget extends WP_Widget {
         endforeach;
         $content .= '</ul>';
 
-      
-       
 
-        
+
+
+
         // before and after widget arguments are defined by themes
         echo $args['before_widget'];
-        
+
         if ( ! empty( $title ) )
           echo $args['before_title'] . $title . $args['after_title'];
           echo $content;
         // This is where you run the code and display the output
           echo $args['after_widget'];
     }
-        
-    // Widget Backend 
+
+    // Widget Backend
     public function form( $instance ) {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
@@ -660,7 +548,7 @@ class last_posts_by_cat_widget extends WP_Widget {
         // Widget admin form
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
          <p>
@@ -678,9 +566,9 @@ class last_posts_by_cat_widget extends WP_Widget {
                   'selected'           => esc_attr($cat ),
             )); ?>
         </p>
-        <?php 
+        <?php
     }
-      
+
     // Updating widget replacing old instances with new
     public function update( $new_instance, $old_instance ) {
         $instance = array();
@@ -751,183 +639,6 @@ $products = get_posts(array(
   wp_reset_postdata();
 }
 add_shortcode( 'products', 'gsalborz_products_in_cat' );
-
-/*----------------Pharmacy search -----------------------*/
-// class Pharmacy {
-//       public $name = "";
-//       public $hobbies  = "";
-//       public $birthdate = "";
-//    }
-  
-//    $p = new Pharmacy();
-//    $p->name = "sachin";
-//    $p->hobbies  = "sports";
-//    $p->birthdate = date('m/d/Y h:i:s a', "8/5/1974 12:20:03 p");
-//    $p->birthdate = date('m/d/Y h:i:s a', strtotime("8/5/1974 12:20:03"));
-
-//   json_encode($p);
-//   json_decode ($json [,$assoc = false [, $depth = 512 [, $options = 0 ]]])
-
-
-
-
-// $jsonIterator = new RecursiveIteratorIterator(
-//     new RecursiveArrayIterator(json_decode($json, TRUE)),
-//     RecursiveIteratorIterator::SELF_FIRST);
-
-// foreach ($jsonIterator as $key => $val) {
-//     if(is_array($val)) {
-//         echo "$key:\n";
-//     } else {
-//         echo "$key => $val\n";
-//     }
-// }
-
-
-// $fruits = array("a" => "lemon", "b" => "orange", array("a" => "apple", "p" => "pear"));
-
-// $iterator = new RecursiveArrayIterator($fruits);
-
-// while ($iterator->valid()) {
-
-//     if ($iterator->hasChildren()) {
-//         // print all children
-//         foreach ($iterator->getChildren() as $key => $value) {
-//             echo $key . ' : ' . $value . "\n";
-//         }
-//     } else {
-//         echo "No children.\n";
-//     }
-
-//     $iterator->next();
-// }
-
-
-// $string = file_get_contents("/home/michael/test.json");
-// dirname(__FILE__)
-// string dirname ( string $path [, int $levels = 1 ] )
-// getcwd();
-// chdir( $dir );
-
-
-
-// function get_file_dir() {
-//     global $argv;
-//     $dir = dirname(getcwd() . '/' . $argv[0]);
-//     $curDir = getcwd();
-//     chdir($dir);
-//     $dir = getcwd();
-//     chdir($curDir);
-//     return $dir;
-// }
-// So you can use it like this:
-// include get_file_dir() . '/otherfile.php';
-// // or even..
-// chdir(get_file_dir());
-// include './otherfile.php';
-
-
-//------------ product order form ----------------
-//function html_form_code() {
-//
-//   $posts = get_posts(array(
-//          'post_type' => 'product',
-//          'posts_per_page' => -1,
-//          'suppress_filters' => false,
-//          )
-//      );
-//
-//      $product_select = '<select multiple="multiple" class="select-products" name="cf-products[]" >';
-//      foreach($posts as $post) : setup_postdata( $post );
-//        $name = $post->post_title;
-//        $product_select .='<option value="'.$name.'">'.$name.'</option>';
-//      endforeach;
-//     $product_select .= '</select>';
-//
-//
-//  echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post" class="order-products">';
-//  echo '<p>';
-//  echo __('Your Name (required)','gsalborz'). '<br/>';
-//  echo '<input type="text" name="cf-name"  value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
-//  echo '</p>';
-//  echo '<p>';
-//  echo __('Your Email (required)','gsalborz'). '<br/>';
-//  echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
-//  echo '</p>';
-//   echo __('Your Phone (required)','gsalborz'). '<br/>';
-//  echo '<input type="text" name="cf-phone" value="' . ( isset( $_POST["cf-phone"] ) ? esc_attr( $_POST["cf-phone"] ) : '' ) . '" size="40" />';
-//  echo '</p>';
-//  echo '<p>';
-//  echo  __('Products List (required)','gsalborz'). '<br/>';
-//  echo  $product_select;
-//  echo '</p>';
-//  echo '<p>';
-//  echo  __('More Information (required)','gsalborz'). '<br/>';
-//  echo '<textarea rows="10" cols="35" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
-//  echo '</p>';
-//  echo '<p><input type="submit" name="cf-submitted" value="'.__('Order Products','gsalborz').'"></p>';
-//  echo '</form>';
-//}
-//
-//
-//function set_html_content_type() {
-//  return 'text/html';
-//}
-//
-//function deliver_mail() {
-//
-//  // if the submit button is clicked, send the email
-//  if ( isset( $_POST['cf-submitted'] ) ) {
-//    $ordered_products ="";
-//    $counter = 1;
-//    // sanitize form values
-//    $name    = sanitize_text_field( $_POST["cf-name"] );
-//    $email   = sanitize_email( $_POST["cf-email"] );
-//    $phone   = sanitize_text_field( $_POST["cf-phone"] );
-//    $products = $_POST["cf-products"];
-//
-//    foreach ($_POST['cf-products'] as $product){
-//       $ordered_products .= '<span>'.$counter.' - '.$product.'</span><br />';
-//       $counter++;
-//    }
-//
-//    $message = "<div style='direction:rtl;text-align:right;'>";
-//    $message .= "<p>".__('Name : ','gsalborz').$name."</p>"."\r\n";
-//    $message .= "<p>".__('Phone Number : ','gsalborz').$phone."</p><br />"."\r\n";
-//    $message .= "<p>".__('Email : ','gsalborz').$email."</p><br />"."\r\n";
-//    $message .= "<p>".__('Products : ','gsalborz')."</p><br /><p>"."\r\n".$ordered_products."</p><br />"."\r\n";
-//    $message .= "<p>".esc_textarea( $_POST["cf-message"] )."\r\n"."</p>"."</div>";
-//
-//    // get the blog administrator's email address
-//    $to = get_option( 'admin_email' );
-//
-//    $headers = array('From: '.$name.'<'.$email.'>');
-//    add_filter( 'wp_mail_content_type', 'set_html_content_type' );
-//
-//
-//    // If email has been process for sending, display a success message
-//    if ( wp_mail( $to, __('Order Products','gsalborz'), $message, $headers ) ) {
-//      echo '<div>';
-//      echo '<p class="success-message">'.__('Thanks for Ordering Products, We will contact you as soon as posible.','gsalborz'). '</p>';
-//      echo '</div>';
-//    } else {
-//      echo '<p class="failed-message">'.__('An unexpected error occurred','gsalborz').'</p>';
-//    }
-//
-//    remove_filter( 'wp_mail_content_type', 'set_html_content_type' );
-//
-//  }
-//}
-//
-//function cf_shortcode() {
-//  ob_start();
-//  deliver_mail();
-//  html_form_code();
-//
-//  return ob_get_clean();
-//}
-//
-//add_shortcode( 'product_order_form', 'cf_shortcode' );
 
 
 

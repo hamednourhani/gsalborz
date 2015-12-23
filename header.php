@@ -61,7 +61,11 @@
 							</ul>
 						</div>
 						<div class="lang-container">
-							<?php do_action('icl_language_selector'); ?>
+							<?php
+								if(function_exists('icl_language_selector')) {
+									do_action('icl_language_selector');
+								}
+							?>
 						</div>
 					</section>
 				</div><!--top-bar-->

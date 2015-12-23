@@ -34,6 +34,30 @@
       border-left : 10px solid $brown2 ;
       border-bottom : 1px solid $grey2;
     }
+    &.widget_contact_info_widget{
+
+      i::before{
+        padding-right : 7px;
+        color : $cream2;
+      }
+      p{
+        margin : 10px 0px;
+      }
+    }
+    &.widget_last_posts_by_cat_widget{
+      a{
+        display: inline-block;
+      }
+      img{
+        border : 3px solid $grey2;
+        margin-right : 7px;
+        vertical-align: baseline;
+        float : left;
+      }
+      span{
+        float : left;
+      }
+    }
   }
 }
 .credit-holder{
