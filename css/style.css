@@ -1453,7 +1453,7 @@ ul.main-nav {
         border-bottom: 1px solid #bba78f; }
       /* line 340, sass/layout/_header.scss */
       ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu {
-        font-size: 90%;
+        font-size: 80%;
         display: inline-block;
         width: 100%;
         position: relative;
@@ -1467,7 +1467,7 @@ ul.main-nav {
           width: 100%; }
         /* line 355, sass/layout/_header.scss */
         ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu a {
-          padding: 5px 10px;
+          padding: 5px 5px;
           min-width: 100%; }
         /* line 359, sass/layout/_header.scss */
         ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu img {
