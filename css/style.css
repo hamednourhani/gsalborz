@@ -1703,7 +1703,7 @@ body.page-template-page-templatesintro-php {
     -moz-box-shadow: 0px 0px 0px transparent;
     -webkit-box-shadow: 0px 0px 0px transparent;
     box-shadow: 0px 0px 0px transparent;
-    border: 2px solid #CECECE;
+    border: 1px solid #CECECE;
     background-color: #FFFFFF;
     padding: 15px;
     text-align: center;
@@ -1725,7 +1725,7 @@ body.page-template-page-templatesintro-php {
       display: inline; }
     /* line 229, sass/layout/_main.scss */
     .site-main.archive-articles article.hentry .featured-image img {
-      border: 3px solid #EBEBEB; }
+      border: 2px solid #EBEBEB; }
     /* line 236, sass/layout/_main.scss */
     .site-main.archive-articles article.hentry .article-title a h1, .site-main.archive-articles article.hentry .article-title a h3 {
       margin: 15px 10px;
@@ -1747,7 +1747,7 @@ body.page-template-page-templatesintro-php {
     padding: 10px;
     margin-bottom: 20px;
     background-color: #FFFFFF;
-    border: 2px solid #CECECE;
+    border: 1px solid #CECECE;
     text-align: center;
     width: 100%;
     float: left;
@@ -1755,7 +1755,7 @@ body.page-template-page-templatesintro-php {
     display: inline; }
     /* line 275, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid .featured-image img {
-      border: 3px solid #CECECE; }
+      border: 2px solid #CECECE; }
     /* line 283, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid .product-title a h4 {
       color: #827A6D;
