@@ -148,5 +148,84 @@ ul.main-nav{
     }
 
   }
+  &>li.mega-menu{
+    &>ul.sub-menu{
+      background-color: $cream3;
+
+      right : -85%;
+      left : auto;
+      //display : block;
+      width : 100%;
+      max-width : 100%;
+
+      @include at-breakpoint($medium 62em) {
+        width : 42em;
+        max-width : 42em;
+      }
+      @include at-breakpoint(62em){
+        width : 57em;
+        max-width :57em;
+      }
+
+      &>.sub-menu-wrap{
+        @extend .layout;
+      }
+      &>.sub-menu-wrap>li{
+        background-color: $glass;
+        @include span-columns(12, 12);
+        @include at-breakpoint($medium 62em) {
+          @include span-columns(3, 12);
+          margin-right : auto;
+
+          &:nth-of-type(4n) {
+            @include omega();
+            margin-right : auto;
+
+          }
+        }
+
+        @include at-breakpoint(62em){
+          @include span-columns(2,12);
+          margin-right : auto;
+          &:nth-of-type(6n){
+            @include omega;
+            margin-right : auto;
+          }
+
+        }
+
+        &>a{
+          font-size : 90%;
+
+          width : 100%;
+          min-width : 100%;
+          text-align: center;
+        }
+
+
+
+        ul.sub-menu{
+          font-size : 90%;
+          width : 100%;
+
+          li{
+            width : 100%;
+          }
+
+          img{
+            float : right;
+            margin-right : auto;
+            margin-left : 7px;
+          }
+        }
+        &.menu-item-has-children>a:after{
+          content : "";
+        }
+      }
+    }
+
+
+
+  }
 }
 /*-------------------end of Main Menu-------------------*/

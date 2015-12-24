@@ -265,6 +265,7 @@ body.page-template-page-templatesintro-php{
       }
     }
     div.product-grid{
+      @extend .def-transition;
       padding : 10px;
       margin-bottom  : 20px;
       background-color: $white;
@@ -274,6 +275,9 @@ body.page-template-page-templatesintro-php{
         img{
           border : 3px solid $grey2;
         }
+      }
+      &:focus,&:hover{
+        @extend .def-box-shadow;
       }
       .product-title{
         a h4{

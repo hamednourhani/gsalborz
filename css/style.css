@@ -2,8 +2,8 @@
 /* fonts */
 @font-face {
   font-family: "open-sans";
-  src: url('fonts/OpenSans-Regular.eot?1450806468');
-  src: url('fonts/OpenSans-Regular.eot?&1450806468#iefix') format('embedded-opentype'), url('fonts/OpenSans-Regular.ttf?1450806468') format('truetype'), url('fonts/OpenSans-Regular.woff?1450806468') format('woff');
+  src: url('fonts/OpenSans-Regular.eot?1450851390');
+  src: url('fonts/OpenSans-Regular.eot?&1450851390#iefix') format('embedded-opentype'), url('fonts/OpenSans-Regular.ttf?1450851390') format('truetype'), url('fonts/OpenSans-Regular.woff?1450851390') format('woff');
   font-weight: "OpenSans-Regular.svg"; }
 /* normalize style */
 /* normalize-scss 3.0.2+normalize.3.0.2 | MIT/GPLv2 License | bit.ly/normalize-scss */
@@ -12,7 +12,7 @@
  * and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when
  * body `font-size` is set using `em` units.
  */
-/* line 106, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 100%;
   line-height: 1.5em; }
@@ -618,7 +618,7 @@ p {
   font-feature-settings: "liga", "dlig"; }
 
 /* ------------susy-------- */
-/* line 14, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/susy-2.2.2/sass/susy/language/susyone/_grid.scss */
+/* line 14, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susyone/_grid.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -689,8 +689,8 @@ p {
 
 /*------ colors -----------*/
 /*----------------transition-shadow----------------------*/
-/* line 83, sass/base/_variables.scss */
-.def-transition, a, .site-header .hero .menu-search-area input#s, ul.main-nav ul.sub-menu, ul.main-nav ul.sub-menu li a, ul.main-nav > li, ul.main-nav > li a, .site-main.intro-main .intro-buttons a, .site-main.archive-articles article.hentry, .site-main.archive-articles article.hentry .article-title a h1, .site-main.archive-articles article.hentry .article-title a h3 {
+/* line 85, sass/base/_variables.scss */
+.def-transition, a, .site-header .hero .menu-search-area input#s, ul.main-nav ul.sub-menu, ul.main-nav ul.sub-menu li a, ul.main-nav > li, ul.main-nav > li a, .site-main.intro-main .intro-buttons a, .site-main.archive-articles article.hentry, .site-main.archive-articles article.hentry .article-title a h1, .site-main.archive-articles article.hentry .article-title a h3, .site-main .last-products-shortcode div.product-grid {
   -moz-transition: all 0.3s ease-in-out 0s;
   -o-transition: all 0.3s ease-in-out 0s;
   -webkit-transition: all 0.3s ease-in-out;
@@ -698,25 +698,25 @@ p {
   transition: all 0.3s ease-in-out 0s; }
 
 /*----------------box-shadow----------------------*/
-/* line 88, sass/base/_variables.scss */
+/* line 90, sass/base/_variables.scss */
 .gold-box-shadow, .site-main.intro-main .intro-buttons a:hover {
   -moz-box-shadow: 0px 0px 6px #FFA00A, inset 0px 0px 6px #FFA00A;
   -webkit-box-shadow: 0px 0px 6px #FFA00A, inset 0px 0px 6px #FFA00A;
   box-shadow: 0px 0px 6px #FFA00A, inset 0px 0px 6px #FFA00A; }
 
-/* line 91, sass/base/_variables.scss */
+/* line 93, sass/base/_variables.scss */
 .green-box-shadow {
   -moz-box-shadow: 0px 0px 6px #029352, inset 0px 0px 6px #029352;
   -webkit-box-shadow: 0px 0px 6px #029352, inset 0px 0px 6px #029352;
   box-shadow: 0px 0px 6px #029352, inset 0px 0px 6px #029352; }
 
-/* line 94, sass/base/_variables.scss */
-.def-box-shadow, .site-main.single-article article.hentry .article-body img.article-gallery-image, .site-main.archive-articles article.hentry:hover, .site-main.archive-articles article.hentry:focus {
+/* line 96, sass/base/_variables.scss */
+.def-box-shadow, .site-main.single-article article.hentry .article-body img.article-gallery-image, .site-main.archive-articles article.hentry:hover, .site-main.archive-articles article.hentry:focus, .site-main .last-products-shortcode div.product-grid:focus, .site-main .last-products-shortcode div.product-grid:hover {
   -moz-box-shadow: 0px 0px 6px #827A6D;
   -webkit-box-shadow: 0px 0px 6px #827A6D;
   box-shadow: 0px 0px 6px #827A6D; }
 
-/* line 97, sass/base/_variables.scss */
+/* line 99, sass/base/_variables.scss */
 .dark-box-shadow, .site-header .banner-wrapper, ul.main-nav, ul.main-nav ul.sub-menu, .site-main.single-article article.hentry .article-header .featured-image img {
   -moz-box-shadow: 0px 0px 6px #111;
   -webkit-box-shadow: 0px 0px 6px #111;
@@ -770,7 +770,7 @@ body {
   position: relative; }
 
 /* line 46, sass/base/_base.scss */
-.layout {
+.layout, ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap {
   *zoom: 1;
   max-width: 67em;
   _width: 67em;
@@ -779,8 +779,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   position: relative; }
-  /* line 38, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
-  .layout:after {
+  /* line 38, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+  .layout:after, ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap:after {
     content: "";
     display: table;
     clear: both; }
@@ -1113,104 +1113,105 @@ img.wp-smiley,
 
 /* line 6, sass/layout/_header.scss */
 .site-header {
-  background-image: url('../images/Melamine-wood-004.png?1354272312');
+  background-image: url('../images/Melamine-wood-004.png?1450937603');
   background-position: top left;
   background-repeat: repeat;
   border-bottom: 1px solid #827A6D; }
   /* line 11, sass/layout/_header.scss */
   .site-header .top-bar {
-    border-bottom: 1px solid #FFA00A;
-    padding: 5px; }
-    /* line 14, sass/layout/_header.scss */
+    border-bottom: 1px solid #bba78f;
+    padding: 5px;
+    background-color: rgba(25, 17, 15, 0.5); }
+    /* line 15, sass/layout/_header.scss */
     .site-header .top-bar .top-contact-info {
       width: 100%;
       float: left;
       margin-right: 1.53846%;
       display: inline; }
-      /* line 16, sass/layout/_header.scss */
+      /* line 17, sass/layout/_header.scss */
       .site-header .top-bar .top-contact-info ul {
         padding-bottom: 0px;
         margin: 0px; }
-      /* line 20, sass/layout/_header.scss */
+      /* line 21, sass/layout/_header.scss */
       .site-header .top-bar .top-contact-info ul li {
         display: inline-block;
         color: #bba78f;
         font-size: smaller; }
-        /* line 24, sass/layout/_header.scss */
+        /* line 25, sass/layout/_header.scss */
         .site-header .top-bar .top-contact-info ul li span {
           padding-left: 5px; }
-        /* line 27, sass/layout/_header.scss */
+        /* line 28, sass/layout/_header.scss */
         .site-header .top-bar .top-contact-info ul li i {
           padding-right: 5px;
           padding-left: 10px; }
       @media (min-width: 45em) {
-        /* line 14, sass/layout/_header.scss */
+        /* line 15, sass/layout/_header.scss */
         .site-header .top-bar .top-contact-info {
           width: 49.23077%;
           float: right;
           margin-right: 0;
           text-align: right; } }
-  /* line 42, sass/layout/_header.scss */
+  /* line 43, sass/layout/_header.scss */
   .site-header .lang-container {
     width: 100%;
     float: left;
     margin-right: 1.53846%;
     display: inline; }
-    /* line 43, sass/layout/_header.scss */
+    /* line 44, sass/layout/_header.scss */
     .site-header .lang-container #lang_sel_list {
       float: left;
       padding-top: 7px; }
-      /* line 46, sass/layout/_header.scss */
+      /* line 47, sass/layout/_header.scss */
       .site-header .lang-container #lang_sel_list ul a {
         background: transparent;
         color: #bba78f; }
     @media (min-width: 45em) {
-      /* line 42, sass/layout/_header.scss */
+      /* line 43, sass/layout/_header.scss */
       .site-header .lang-container {
         width: 49.23077%;
         float: left;
         margin-right: 1.53846%;
         text-align: left; } }
-  /* line 59, sass/layout/_header.scss */
+  /* line 60, sass/layout/_header.scss */
   .site-header .hero {
     position: relative; }
-    /* line 61, sass/layout/_header.scss */
+    /* line 62, sass/layout/_header.scss */
     .site-header .hero .site-logo-container {
       text-align: center;
       width: 100%;
       float: left;
       margin-right: 1.53846%;
       display: inline; }
-      /* line 62, sass/layout/_header.scss */
+      /* line 63, sass/layout/_header.scss */
       .site-header .hero .site-logo-container .site-logo {
         margin: 20px auto 20px; }
       @media (min-width: 45em) {
-        /* line 61, sass/layout/_header.scss */
+        /* line 62, sass/layout/_header.scss */
         .site-header .hero .site-logo-container {
           width: 49.23077%;
           float: left;
           margin-right: 1.53846%;
           text-align: left; }
-          /* line 70, sass/layout/_header.scss */
+          /* line 71, sass/layout/_header.scss */
           .site-header .hero .site-logo-container img.site-logo {
             margin: 30px auto 5px 30px; } }
-    /* line 76, sass/layout/_header.scss */
+    /* line 77, sass/layout/_header.scss */
     .site-header .hero .menu-search-area {
       width: 100%;
       float: left;
       margin-right: 1.53846%;
       display: inline; }
-      /* line 78, sass/layout/_header.scss */
+      /* line 79, sass/layout/_header.scss */
       .site-header .hero .menu-search-area form#searchform {
         text-align: center;
         margin-top: 20px; }
         @media (min-width: 45em) {
-          /* line 78, sass/layout/_header.scss */
+          /* line 79, sass/layout/_header.scss */
           .site-header .hero .menu-search-area form#searchform {
             text-align: right;
             padding-right: 30px;
             margin-top: auto; } }
-      /* line 88, sass/layout/_header.scss */
+      /* line 89, sass/layout/_header.scss */
       .site-header .hero .menu-search-area input#s {
         background-color: #19110F;
         opacity: 0.55;
@@ -1221,30 +1222,30 @@ img.wp-smiley,
         border-radius: 0px;
         padding: 5px 28px 5px 10px; }
         @media (min-width: 45em) {
-          /* line 88, sass/layout/_header.scss */
+          /* line 89, sass/layout/_header.scss */
           .site-header .hero .menu-search-area input#s {
             margin: 70px auto 20px; } }
-        /* line 100, sass/layout/_header.scss */
+        /* line 101, sass/layout/_header.scss */
         .site-header .hero .menu-search-area input#s:focus {
           opacity: 0.9; }
-      /* line 105, sass/layout/_header.scss */
+      /* line 106, sass/layout/_header.scss */
       .site-header .hero .menu-search-area span#submit {
         position: relative;
         color: #bba78f; }
-        /* line 108, sass/layout/_header.scss */
+        /* line 109, sass/layout/_header.scss */
         .site-header .hero .menu-search-area span#submit i {
           position: absolute;
           left: -23px;
           top: 2px;
           cursor: pointer; }
       @media (min-width: 45em) {
-        /* line 76, sass/layout/_header.scss */
+        /* line 77, sass/layout/_header.scss */
         .site-header .hero .menu-search-area {
           width: 49.23077%;
           float: right;
           margin-right: 0;
           text-align: right; } }
-    /* line 121, sass/layout/_header.scss */
+    /* line 122, sass/layout/_header.scss */
     .site-header .hero span.menu-toggler {
       display: inline-block;
       color: #bba78f;
@@ -1256,48 +1257,48 @@ img.wp-smiley,
       right: 30px;
       cursor: pointer; }
       @media (min-width: 45em) {
-        /* line 121, sass/layout/_header.scss */
+        /* line 122, sass/layout/_header.scss */
         .site-header .hero span.menu-toggler {
           display: none; } }
-      /* line 134, sass/layout/_header.scss */
+      /* line 135, sass/layout/_header.scss */
       .site-header .hero span.menu-toggler i {
         font-size: 140%; }
-  /* line 139, sass/layout/_header.scss */
+  /* line 140, sass/layout/_header.scss */
   .site-header .banner-wrapper {
     padding: 10px 10px 10px;
     background-color: #19110F;
     color: #bba78f;
     margin-bottom: -30px;
     text-align: center; }
-    /* line 146, sass/layout/_header.scss */
+    /* line 147, sass/layout/_header.scss */
     .site-header .banner-wrapper img {
       padding: 0px;
       margin: 0px; }
-    /* line 150, sass/layout/_header.scss */
+    /* line 151, sass/layout/_header.scss */
     .site-header .banner-wrapper .single-cat-title {
       pading-right: 10px;
       pading-left: 10px; }
-      /* line 155, sass/layout/_header.scss */
+      /* line 156, sass/layout/_header.scss */
       .site-header .banner-wrapper .single-cat-title h1, .site-header .banner-wrapper .single-cat-title h3 {
         color: #bba78f; }
 
 /*-------------------Main Menu-------------------------*/
-/* line 163, sass/layout/_header.scss */
+/* line 164, sass/layout/_header.scss */
 nav.main-menu {
   margin-bottom: 10px; }
   @media (min-width: 45em) {
-    /* line 163, sass/layout/_header.scss */
+    /* line 164, sass/layout/_header.scss */
     nav.main-menu {
       margin-bottom: 0px; } }
 
-/* line 169, sass/layout/_header.scss */
+/* line 170, sass/layout/_header.scss */
 ul.main-nav {
   background-color: #19110F;
   display: none;
   padding: 0px 10px 10px;
   margin: auto; }
   @media (min-width: 45em) {
-    /* line 169, sass/layout/_header.scss */
+    /* line 170, sass/layout/_header.scss */
     ul.main-nav {
       -moz-box-shadow: 0px 0px 0px transparent;
       -webkit-box-shadow: 0px 0px 0px transparent;
@@ -1305,16 +1306,16 @@ ul.main-nav {
       background-color: transparent;
       display: block;
       margin: 0px auto 10px; } }
-  /* line 182, sass/layout/_header.scss */
+  /* line 183, sass/layout/_header.scss */
   ul.main-nav li {
     position: relative;
     width: 100%; }
     @media (min-width: 45em) {
-      /* line 182, sass/layout/_header.scss */
+      /* line 183, sass/layout/_header.scss */
       ul.main-nav li {
         width: inherit; } }
     @media (min-width: 45em) {
-      /* line 188, sass/layout/_header.scss */
+      /* line 189, sass/layout/_header.scss */
       ul.main-nav li.menu-item-has-children::after {
         content: "\f0da";
         position: absolute;
@@ -1322,14 +1323,14 @@ ul.main-nav {
         right: 15px;
         font-size: 110%;
         color: #bba78f; } }
-  /* line 201, sass/layout/_header.scss */
+  /* line 202, sass/layout/_header.scss */
   ul.main-nav ul.sub-menu {
     margin: auto;
     padding: 0px;
     display: inline-block;
     width: 100%; }
     @media (min-width: 45em) {
-      /* line 201, sass/layout/_header.scss */
+      /* line 202, sass/layout/_header.scss */
       ul.main-nav ul.sub-menu {
         display: none;
         position: absolute;
@@ -1338,22 +1339,25 @@ ul.main-nav {
         width: 240px;
         background-color: #19110F;
         z-index: 9999; } }
-    /* line 217, sass/layout/_header.scss */
+    /* line 218, sass/layout/_header.scss */
     ul.main-nav ul.sub-menu li a {
       padding: 10px 20px; }
-      /* line 221, sass/layout/_header.scss */
+      /* line 222, sass/layout/_header.scss */
       ul.main-nav ul.sub-menu li a:hover {
         color: #FFA00A;
         text-shadow: 0px 0px 5px #FFA00A; }
         @media (min-width: 45em) {
-          /* line 221, sass/layout/_header.scss */
+          /* line 222, sass/layout/_header.scss */
           ul.main-nav ul.sub-menu li a:hover {
             background-color: black;
             border-bottom: 1px solid #FFA00A; } }
-  /* line 233, sass/layout/_header.scss */
+  /* line 234, sass/layout/_header.scss */
   ul.main-nav > li {
     display: inline-block; }
     /* line 237, sass/layout/_header.scss */
+    ul.main-nav > li > a {
+      font-size: 110%; }
+    /* line 240, sass/layout/_header.scss */
     ul.main-nav > li a {
       padding: 10px;
       width: 100%;
@@ -1364,44 +1368,123 @@ ul.main-nav {
       border-bottom: 1px solid #827A6D;
       width: 100%; }
       @media (min-width: 45em) {
-        /* line 237, sass/layout/_header.scss */
+        /* line 240, sass/layout/_header.scss */
         ul.main-nav > li a {
           border-bottom: 1px solid transparent;
           width: inherit; } }
-      /* line 251, sass/layout/_header.scss */
+      /* line 254, sass/layout/_header.scss */
       ul.main-nav > li a:hover {
         color: #FFA00A;
         text-shadow: 0px 0px 5px #FFA00A; }
         @media (min-width: 45em) {
-          /* line 251, sass/layout/_header.scss */
+          /* line 254, sass/layout/_header.scss */
           ul.main-nav > li a:hover {
             border-bottom: 1px solid #FFA00A; } }
-    /* line 261, sass/layout/_header.scss */
+    /* line 264, sass/layout/_header.scss */
     ul.main-nav > li.current_page_item > a {
       color: #FFA00A;
       text-shadow: 0px 0px 5px #FFA00A;
       border-bottom: 1px solid #FFA00A; }
     @media (min-width: 45em) {
-      /* line 267, sass/layout/_header.scss */
+      /* line 270, sass/layout/_header.scss */
       ul.main-nav > li.menu-item-has-children::after {
         content: "\f0d7";
         left: 40%;
         top: 32px; } }
-    /* line 275, sass/layout/_header.scss */
+    /* line 278, sass/layout/_header.scss */
     ul.main-nav > li:hover > ul.sub-menu {
       display: inline-block; }
-    /* line 278, sass/layout/_header.scss */
+    /* line 281, sass/layout/_header.scss */
     ul.main-nav > li ul li ul.sub-menu {
       top: 0;
       left: 100%; }
-    /* line 282, sass/layout/_header.scss */
+    /* line 285, sass/layout/_header.scss */
     ul.main-nav > li ul li:hover > ul.sub-menu {
       display: inline-block; }
+  /* line 291, sass/layout/_header.scss */
+  ul.main-nav > li.mega-menu > ul.sub-menu {
+    background-color: #19110F;
+    left: -85%;
+    width: 100%;
+    max-width: 100%; }
+    @media (min-width: 45em) and (max-width: 62em) {
+      /* line 291, sass/layout/_header.scss */
+      ul.main-nav > li.mega-menu > ul.sub-menu {
+        width: 42em;
+        max-width: 42em; } }
+    @media (min-width: 62em) {
+      /* line 291, sass/layout/_header.scss */
+      ul.main-nav > li.mega-menu > ul.sub-menu {
+        width: 57em;
+        max-width: 57em; } }
+    /* line 311, sass/layout/_header.scss */
+    ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li {
+      background-color: transparent;
+      width: 100%;
+      float: left;
+      margin-right: 1.53846%;
+      display: inline; }
+      @media (min-width: 45em) and (max-width: 62em) {
+        /* line 311, sass/layout/_header.scss */
+        ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li {
+          width: 23.84615%;
+          float: left;
+          margin-right: 1.53846%; }
+          /* line 316, sass/layout/_header.scss */
+          ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li:nth-of-type(4n) {
+            float: right;
+            margin-right: 0; } }
+      @media (min-width: 62em) {
+        /* line 311, sass/layout/_header.scss */
+        ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li {
+          width: 15.38462%;
+          float: left;
+          margin-right: 1.53846%; }
+          /* line 323, sass/layout/_header.scss */
+          ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li:nth-of-type(6n) {
+            float: right;
+            margin-right: 0; } }
+      /* line 329, sass/layout/_header.scss */
+      ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li > a {
+        font-size: 90%;
+        width: 100%;
+        min-width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #bba78f; }
+      /* line 340, sass/layout/_header.scss */
+      ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu {
+        font-size: 90%;
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        right: auto;
+        left: auto;
+        top: auto;
+        padding-bottom: 10px;
+        padding-top: 10px; }
+        /* line 352, sass/layout/_header.scss */
+        ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu li {
+          width: 100%; }
+        /* line 355, sass/layout/_header.scss */
+        ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu a {
+          padding: 5px 10px;
+          min-width: 100%; }
+        /* line 359, sass/layout/_header.scss */
+        ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu img {
+          float: left;
+          margin-right: 7px;
+          border: 2px solid #827A6D; }
+      /* line 365, sass/layout/_header.scss */
+      ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li.menu-item-has-children > a:after {
+        content: ""; }
+  /* line 371, sass/layout/_header.scss */
+  ul.main-nav > li.mega-menu:hover > ul.sub-menu > .sub-menu-wrap > li > ul {
+    display: inline-block; }
 
 /*-------------------end of Main Menu-------------------*/
 /* line 1, sass/layout/_main.scss */
 body.page-template-page-templatesintro-php {
-  background-image: url('../images/Melamine-wood-004.png?1354272312');
+  background-image: url('../images/Melamine-wood-004.png?1450937603');
   background-position: top left;
   background-repeat: repeat; }
 
@@ -1670,14 +1753,14 @@ body.page-template-page-templatesintro-php {
     float: left;
     margin-right: 1.53846%;
     display: inline; }
-    /* line 274, sass/layout/_main.scss */
+    /* line 275, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid .featured-image img {
       border: 3px solid #CECECE; }
-    /* line 279, sass/layout/_main.scss */
+    /* line 283, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid .product-title a h4 {
       color: #827A6D;
       margin: 15px; }
-    /* line 283, sass/layout/_main.scss */
+    /* line 287, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid .product-title a:hover {
       color: #19110F; }
     @media (min-width: 45em) {
@@ -1686,7 +1769,7 @@ body.page-template-page-templatesintro-php {
         width: 32.30769%;
         float: left;
         margin-right: 1.53846%; } }
-    /* line 291, sass/layout/_main.scss */
+    /* line 295, sass/layout/_main.scss */
     .site-main .last-products-shortcode div.product-grid:nth-of-type(3n) {
       float: right;
       margin-right: 0;

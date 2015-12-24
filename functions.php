@@ -87,6 +87,7 @@ add_image_size( 'banner', 1040, 430, array( 'center', 'center' ) );
 add_image_size( 'product-thumb', 270, 270, array( 'center', 'center' ) );
 add_image_size( 'archive-thumb', 163, 163, array( 'center', 'center' ) );
 add_image_size( 'widget-thumb', 53, 53, array( 'center', 'center' ) );
+add_image_size( 'menu-thumb', 34, 34, array( 'center', 'center' ) );
 
 add_filter( 'image_size_names_choose', 'gsalborz_custom_image_sizes' );
 
@@ -96,6 +97,7 @@ function gsalborz_custom_image_sizes( $sizes ) {
         'archive-thumb' => __('270px by 270px'),
         'product-thumb' => __('163px by 163px'),
         'widget-thumb' => __('53px by 53px'),
+        'menu-thumb' => __('34px by 34px'),
 
     ) );
 }
@@ -278,7 +280,7 @@ function gsalborz_search_form( $form ) {
   global $post,$wp_query,$wpdb;
 
 
-  if( ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE == 'en'){
+  if( defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
       <div><label class="screen-reader-text" for="s">' . __( 'Search for:','gsalborz' ) . '</label>
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
@@ -301,7 +303,7 @@ function gsalborz_menu_search_form() {
   global $post,$wp_query,$wpdb;
 
 
-  if( ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE == 'en'){
+  if( defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
       <div class="search-form-inner">
         <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' .  __( 'Search' ) . '"/>
@@ -330,7 +332,7 @@ add_filter( 'excerpt_length', 'gsalborz_excerpt_length', 999 );
 
 
 
-if ( ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE=='en'){
+if ( defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE=='en'){
 
         remove_filter('the_title', 'ztjalali_persian_num');
         remove_filter('the_content', 'ztjalali_persian_num');
@@ -614,7 +616,7 @@ $products = get_posts(array(
       <?php if(!empty($products)){ ?>
 
 
-      <section class="layout">
+<!--      <section class="layout">-->
          <?php foreach($products as $product){
             setup_postdata( $product ) ; ?>
 
@@ -634,14 +636,109 @@ $products = get_posts(array(
                     </header>
                 </div>
         <?php } ?>
-        </section>
+<!--        </section>-->
       </div>
   <?php }
   wp_reset_postdata();
 }
 add_shortcode( 'products', 'gsalborz_products_in_cat' );
 
+class Menu_With_Image extends Walker_Nav_Menu {
+  function start_el(&$output, $item, $depth = '0', $args = array(), $id = '0') {
+    global $wp_query;
 
+    $class_names = $value = '';
+    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+    global $sub_wrapper_before;
+    $sub_wrapper_before = "";
+    global $sub_wrapper_after;
+    $sub_wrapper_after = '';
+
+    if(in_array('mega-menu',$classes)){
+      $sub_wrapper_before = '<div class="sub-menu-wrap">';
+      $sub_wrapper_after = '</div>';
+    }
+
+
+    $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+    $output .= "\n$indent\n";
+
+    $menu_thumb = "";
+    if($item->object == 'post'){
+       $menu_thumb = get_the_post_thumbnail($item->object_id , 'menu-thumb');
+       //var_dump($menu_thumb);
+    }
+    $products = array();
+    $sub_content = "";
+
+    if($item->object == 'category'){
+        $term = get_term($item->object_id,'category');
+
+//        var_dump($term);
+        $products = get_posts(array(
+            'post_type' => 'post',
+            'posts_per_page' => -1,
+            'category'         => $term->term_id,
+            'suppress_filters' => false,
+
+            )
+        );
+        $sub_content = '<ul class="sub-menu">'.$sub_wrapper_before;
+        foreach($products as $product) : setup_postdata( $product );
+          //var_dump($product);
+          $url = get_the_permalink($product->ID);
+          $thumb = get_the_post_thumbnail($product->ID,'menu-thumb');
+          $name = $product->post_title;
+          $sub_content .='<li id="menu-item-'.$product->ID.'" class="menu-item product-item menu-item-type-post_type menu-item-object-product"><a href="'.$url.'">'.$thumb.$name.'</a></li>';
+        endforeach;
+        $sub_content .= '</ul>';
+
+    }
+
+
+
+
+
+    $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+    $class_names = ' class="' . esc_attr( $class_names ) . '"';
+
+    $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+    $attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) .'"' : '';
+    $attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
+    $attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
+    $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
+    $item_output = $args->before;
+    $item_output .= '<a'. $attributes .'>';
+    $item_output .= $args->link_before .$menu_thumb. '<span>'.apply_filters( 'the_title', $item->title, $item->ID ) .'</span>'. $args->link_after;
+    //$item_output .= '<br /><span class="sub">' . $item->description . '</span>';
+    $item_output .= '</a>';
+     //$item_output .= ;
+    //show posts of product cat
+     $item_output .= $sub_content;
+
+    $item_output .= $args->after;
+    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+  }
+
+  function start_lvl( &$output, $depth = 0, $args = array() ) {
+    // depth dependent classes
+    global $sub_wrapper_before;
+    $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
+    $display_depth = ( $depth + 1); // because it counts the first submenu as 0
+    $classes = array(
+        'sub-menu',
+        ( $display_depth % 2  ? 'menu-odd' : 'menu-even' ),
+        ( $display_depth >=2 ? 'sub-sub-menu' : '' ),
+        'menu-depth-' . $display_depth
+        );
+    $class_names = implode( ' ', $classes );
+
+    // build html
+    $output .= "\n" . $indent . '<ul class="' . $class_names . '">' .$sub_wrapper_before. "\n";
+  }
+
+}
 
 
 ?>

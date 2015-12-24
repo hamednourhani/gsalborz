@@ -191,7 +191,7 @@ body {
     text-align: right; }
 
 /* line 22, sass/rtl/base/_base.scss */
-.layout {
+.layout, ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap {
   *zoom: 1;
   max-width: 67em;
   _width: 67em;
@@ -201,7 +201,7 @@ body {
   margin-right: auto;
   position: relative; }
   /* line 38, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
-  .layout:after {
+  .layout:after, ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap:after {
     content: "";
     display: table;
     clear: both; }
@@ -381,6 +381,75 @@ nav.main-menu {
 ul.main-nav > li ul li ul.sub-menu {
   left: auto;
   right: 100%; }
+/* line 152, sass/rtl/layout/_header.scss */
+ul.main-nav > li.mega-menu > ul.sub-menu {
+  background-color: #19110F;
+  right: -85%;
+  left: auto;
+  width: 100%;
+  max-width: 100%; }
+  @media (min-width: 45em) and (max-width: 62em) {
+    /* line 152, sass/rtl/layout/_header.scss */
+    ul.main-nav > li.mega-menu > ul.sub-menu {
+      width: 42em;
+      max-width: 42em; } }
+  @media (min-width: 62em) {
+    /* line 152, sass/rtl/layout/_header.scss */
+    ul.main-nav > li.mega-menu > ul.sub-menu {
+      width: 57em;
+      max-width: 57em; } }
+  /* line 173, sass/rtl/layout/_header.scss */
+  ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li {
+    background-color: transparent;
+    width: 100%;
+    float: right;
+    margin-left: 1.53846%;
+    display: inline; }
+    @media (min-width: 45em) and (max-width: 62em) {
+      /* line 173, sass/rtl/layout/_header.scss */
+      ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li {
+        width: 23.84615%;
+        float: right;
+        margin-left: 1.53846%;
+        margin-right: auto; }
+        /* line 180, sass/rtl/layout/_header.scss */
+        ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li:nth-of-type(4n) {
+          float: left;
+          margin-left: 0;
+          margin-right: auto; } }
+    @media (min-width: 62em) {
+      /* line 173, sass/rtl/layout/_header.scss */
+      ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li {
+        width: 15.38462%;
+        float: right;
+        margin-left: 1.53846%;
+        margin-right: auto; }
+        /* line 190, sass/rtl/layout/_header.scss */
+        ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li:nth-of-type(6n) {
+          float: left;
+          margin-left: 0;
+          margin-right: auto; } }
+    /* line 197, sass/rtl/layout/_header.scss */
+    ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li > a {
+      font-size: 90%;
+      width: 100%;
+      min-width: 100%;
+      text-align: center; }
+    /* line 207, sass/rtl/layout/_header.scss */
+    ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu {
+      font-size: 90%;
+      width: 100%; }
+      /* line 211, sass/rtl/layout/_header.scss */
+      ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu li {
+        width: 100%; }
+      /* line 215, sass/rtl/layout/_header.scss */
+      ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu img {
+        float: right;
+        margin-right: auto;
+        margin-left: 7px; }
+    /* line 221, sass/rtl/layout/_header.scss */
+    ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li.menu-item-has-children > a:after {
+      content: ""; }
 
 /*-------------------end of Main Menu-------------------*/
 /* line 3, sass/rtl/layout/_main.scss */
