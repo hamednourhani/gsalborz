@@ -56,7 +56,7 @@
 					<section class="layout">
 						<div class="top-contact-info">
 							<ul>
-								<li><i class="fa fa-phone"></i><span> +98 (21) 88245608 - 9 </span></li>
+								<li><i class="fa fa-phone"></i><span>88245608 - 22342660</span></li>
 								<li><i class="fa fa-envelope"></i><span> info@gsalborz.com </span></li>
 							</ul>
 						</div>

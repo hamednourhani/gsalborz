@@ -19,10 +19,14 @@
       <library name="PHARS">
         <CLASSES>
           <root url="phar://$MODULE_DIR$/node_modules/grunt-phpdocumentor/test/fixtures/phpDocumentor.phar/" />
+          <root url="phar://$MODULE_DIR$/../back-gsalborz/node_modules/grunt-phpdocumentor/test/fixtures/phpDocumentor.phar/" />
+          <root url="phar://$MODULE_DIR$/../back-gsalborz/node_modules/grunt-phpdocumentor/bin/phpDocumentor.phar/" />
           <root url="phar://$MODULE_DIR$/node_modules/grunt-phpdocumentor/bin/phpDocumentor.phar/" />
         </CLASSES>
         <SOURCES>
           <root url="phar://$MODULE_DIR$/node_modules/grunt-phpdocumentor/test/fixtures/phpDocumentor.phar/" />
+          <root url="phar://$MODULE_DIR$/../back-gsalborz/node_modules/grunt-phpdocumentor/test/fixtures/phpDocumentor.phar/" />
+          <root url="phar://$MODULE_DIR$/../back-gsalborz/node_modules/grunt-phpdocumentor/bin/phpDocumentor.phar/" />
           <root url="phar://$MODULE_DIR$/node_modules/grunt-phpdocumentor/bin/phpDocumentor.phar/" />
         </SOURCES>
       </library>
