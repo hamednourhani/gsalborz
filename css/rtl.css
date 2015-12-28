@@ -144,7 +144,7 @@ p {
 
 /*------ colors -----------*/
 /*----------------transition-shadow----------------------*/
-/* line 83, sass/rtl/base/_variables.scss */
+/* line 86, sass/rtl/base/_variables.scss */
 .def-transition {
   -moz-transition: all 0.3s ease-in-out 0s;
   -o-transition: all 0.3s ease-in-out 0s;
@@ -153,25 +153,25 @@ p {
   transition: all 0.3s ease-in-out 0s; }
 
 /*----------------box-shadow----------------------*/
-/* line 88, sass/rtl/base/_variables.scss */
+/* line 91, sass/rtl/base/_variables.scss */
 .gold-box-shadow {
   -moz-box-shadow: 0px 0px 6px #FFA00A, inset 0px 0px 6px #FFA00A;
   -webkit-box-shadow: 0px 0px 6px #FFA00A, inset 0px 0px 6px #FFA00A;
   box-shadow: 0px 0px 6px #FFA00A, inset 0px 0px 6px #FFA00A; }
 
-/* line 91, sass/rtl/base/_variables.scss */
+/* line 94, sass/rtl/base/_variables.scss */
 .green-box-shadow {
   -moz-box-shadow: 0px 0px 6px #029352, inset 0px 0px 6px #029352;
   -webkit-box-shadow: 0px 0px 6px #029352, inset 0px 0px 6px #029352;
   box-shadow: 0px 0px 6px #029352, inset 0px 0px 6px #029352; }
 
-/* line 94, sass/rtl/base/_variables.scss */
+/* line 97, sass/rtl/base/_variables.scss */
 .def-box-shadow {
   -moz-box-shadow: 0px 0px 6px #827A6D;
   -webkit-box-shadow: 0px 0px 6px #827A6D;
   box-shadow: 0px 0px 6px #827A6D; }
 
-/* line 97, sass/rtl/base/_variables.scss */
+/* line 100, sass/rtl/base/_variables.scss */
 .dark-box-shadow {
   -moz-box-shadow: 0px 0px 6px #111;
   -webkit-box-shadow: 0px 0px 6px #111;

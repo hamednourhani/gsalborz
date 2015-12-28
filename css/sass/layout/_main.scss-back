@@ -7,46 +7,63 @@ body.page-template-page-templatesintro-php{
   width :100%;
   height : 100%;
   .intro-content{
-    background-color: $glassyCream;
     padding-top : 40px;
     padding-bottom : 20px;
     width : 100%;
-    @include span-columns(12,12);
     @include at-breakpoint($medium){
-      @include span-columns(4,12);
+      padding-top : 100px;
+      padding-bottom : 50px;
     }
-
     .intro-logo,.intro-text{
-
+      @include span-columns(12,12);
+      @include at-breakpoint($medium){
+        @include span-columns(6,12);
+      }
       text-align : center;
       padding : 20px;
-
+      @include at-breakpoint($medium){
+        text-align: right;
+      }
       img{
         max-width: 100%;
       }
     }
+    .intro-logo{
+      @include omega;
+      @include at-breakpoint($medium){
+        text-align: left;
+        padding-left : 40px;
 
-    .intro-buttons{
-      width : 100%;
-      text-align : center;
-      a{
-        @extend .def-transition;
-        -webkit-box-shadow: none ;
-        -moz-box-shadow: none ;
-        box-shadow: none;
+      }
+    }
+    .intro-text{
+      padding-top : 15px;
+      @include at-breakpoint($medium){
+        padding-right: 0px;
+        padding-top : 55px;
 
-        display:inline-block;
-        margin : 20px;
-        height:41px;
-        &:hover{
-          @extend .gold-box-shadow;
-
-        }
       }
     }
 
   }
+  .intro-buttons{
+    width : 100%;
+    text-align : center;
+    a{
+      @extend .def-transition;
+      -webkit-box-shadow: none ;
+      -moz-box-shadow: none ;
+      box-shadow: none;
 
+      display:inline-block;
+      margin : 20px;
+      height:41px;
+      &:hover{
+        @extend .gold-box-shadow;
+
+      }
+    }
+  }
 }
 .site-main{
   padding-top : 40px;
