@@ -371,17 +371,22 @@ nav.main-menu {
   ul.main-nav ul.sub-menu {
     left: auto;
     right: -20%; } }
+/* line 128, sass/rtl/layout/_header.scss */
+ul.main-nav ul.sub-menu li a img {
+  padding-right: 1px;
+  padding-left: 5px;
+  float: right; }
 @media (min-width: 45em) {
-  /* line 136, sass/rtl/layout/_header.scss */
+  /* line 140, sass/rtl/layout/_header.scss */
   ul.main-nav > li.menu-item-has-children::after {
     left: auto;
     right: 40%;
     content: "\f0d7"; } }
-/* line 145, sass/rtl/layout/_header.scss */
+/* line 149, sass/rtl/layout/_header.scss */
 ul.main-nav > li ul li ul.sub-menu {
   left: auto;
   right: 100%; }
-/* line 152, sass/rtl/layout/_header.scss */
+/* line 156, sass/rtl/layout/_header.scss */
 ul.main-nav > li.mega-menu > ul.sub-menu {
   background-color: #19110F;
   right: -85%;
@@ -389,16 +394,16 @@ ul.main-nav > li.mega-menu > ul.sub-menu {
   width: 100%;
   max-width: 100%; }
   @media (min-width: 45em) and (max-width: 62em) {
-    /* line 152, sass/rtl/layout/_header.scss */
+    /* line 156, sass/rtl/layout/_header.scss */
     ul.main-nav > li.mega-menu > ul.sub-menu {
       width: 42em;
       max-width: 42em; } }
   @media (min-width: 62em) {
-    /* line 152, sass/rtl/layout/_header.scss */
+    /* line 156, sass/rtl/layout/_header.scss */
     ul.main-nav > li.mega-menu > ul.sub-menu {
       width: 57em;
       max-width: 57em; } }
-  /* line 173, sass/rtl/layout/_header.scss */
+  /* line 177, sass/rtl/layout/_header.scss */
   ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li {
     background-color: transparent;
     width: 100%;
@@ -406,48 +411,48 @@ ul.main-nav > li.mega-menu > ul.sub-menu {
     margin-left: 1.53846%;
     display: inline; }
     @media (min-width: 45em) and (max-width: 62em) {
-      /* line 173, sass/rtl/layout/_header.scss */
+      /* line 177, sass/rtl/layout/_header.scss */
       ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li {
         width: 23.84615%;
         float: right;
         margin-left: 1.53846%;
         margin-right: auto; }
-        /* line 180, sass/rtl/layout/_header.scss */
+        /* line 184, sass/rtl/layout/_header.scss */
         ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li:nth-of-type(4n) {
           float: left;
           margin-left: 0;
           margin-right: auto; } }
     @media (min-width: 62em) {
-      /* line 173, sass/rtl/layout/_header.scss */
+      /* line 177, sass/rtl/layout/_header.scss */
       ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li {
         width: 15.38462%;
         float: right;
         margin-left: 1.53846%;
         margin-right: auto; }
-        /* line 190, sass/rtl/layout/_header.scss */
+        /* line 194, sass/rtl/layout/_header.scss */
         ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li:nth-of-type(6n) {
           float: left;
           margin-left: 0;
           margin-right: auto; } }
-    /* line 197, sass/rtl/layout/_header.scss */
+    /* line 201, sass/rtl/layout/_header.scss */
     ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li > a {
       font-size: 90%;
       width: 100%;
       min-width: 100%;
       text-align: center; }
-    /* line 207, sass/rtl/layout/_header.scss */
+    /* line 211, sass/rtl/layout/_header.scss */
     ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu {
       font-size: 80%;
       width: 100%; }
-      /* line 211, sass/rtl/layout/_header.scss */
+      /* line 215, sass/rtl/layout/_header.scss */
       ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu li {
         width: 100%; }
-      /* line 215, sass/rtl/layout/_header.scss */
+      /* line 219, sass/rtl/layout/_header.scss */
       ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li ul.sub-menu img {
         float: right;
         margin-right: auto;
         margin-left: 7px; }
-    /* line 221, sass/rtl/layout/_header.scss */
+    /* line 225, sass/rtl/layout/_header.scss */
     ul.main-nav > li.mega-menu > ul.sub-menu > .sub-menu-wrap > li.menu-item-has-children > a:after {
       content: ""; }
 

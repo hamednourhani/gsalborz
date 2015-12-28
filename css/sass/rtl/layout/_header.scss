@@ -125,7 +125,11 @@ ul.main-nav{
       right : -20%;
     }
     li a{
-
+      img {
+        padding-right : 1px;
+        padding-left : 5px;
+        float : right;
+      }
 
     }
   }
