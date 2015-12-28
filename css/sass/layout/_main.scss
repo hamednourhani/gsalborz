@@ -232,6 +232,7 @@ body.page-template-page-templatesintro-php{
 
   }
   .last-products-shortcode{
+    @include clearfix(); 
     .single-cat-title{
       h3{
         border-left : 10px solid $brown2;

@@ -603,7 +603,7 @@ function gsalborz_products_in_cat( $atts, $content = null ) {
 $products = get_posts(array(
                             'post_type' => 'post',
                             'posts_per_page' => $a['qty'],
-                            'category_name'         => $a['cat'],
+                            'cat'         => $a['cat'],
                             'suppress_filters' => false,
                             )
                         ); ?>
