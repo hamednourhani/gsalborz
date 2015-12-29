@@ -189,7 +189,9 @@ body.page-template-page-templatesintro-php{
 
     article.hentry{
       padding-top : 20px;
+      padding-bottom : 0px;
       padding-bottom : 20px;
+      min-height : 340px;
       margin-bottom : 20px;
       @extend .def-transition;
       @include box-shadow(0px 0px 0px $glass);
@@ -212,6 +214,7 @@ body.page-template-page-templatesintro-php{
           border:2px solid $grey1;
 
         }
+
       }
       .article-title{
         a{
@@ -250,6 +253,8 @@ body.page-template-page-templatesintro-php{
     div.product-grid{
       @extend .def-transition;
       padding : 10px;
+      padding-bottom : 0px;
+      min-height : 340px;
       margin-bottom  : 20px;
       background-color: $white;
       border : 1px solid $grey2;
