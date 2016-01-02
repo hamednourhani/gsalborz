@@ -610,7 +610,9 @@ $products = get_posts(array(
   <div class="last-products-shortcode">
       <section class="layout">
         <div class="single-cat-title">
-          <h3><?php echo $a['title'] ?></h3>
+           <a href="<?php echo get_category_link($a['cat']); ?>">
+            <h3><?php echo $a['title'] ?></h3>
+          </a>
         </div>
       </section>
       <?php if(!empty($products)){ ?>
