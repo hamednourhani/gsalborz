@@ -58,6 +58,21 @@
 							<ul>
 								<li><i class="fa fa-phone"></i><span>88245608 - 22342660</span></li>
 								<li><i class="fa fa-envelope"></i><span> info@gsalborz.com </span></li>
+								<li class="current-time">
+									<i class="fa fa-calendar"></i>
+								<?php if(ICL_LANGUAGE_CODE == 'en') {
+									echo date(' Y-m-d  H:i ', current_time('timestamp', 1));
+								}else {
+									if (function_exists(jdate)) {
+										echo jdate(' Y-m-d  H:i ', current_time('timestamp', 0));
+									} else {
+										echo date(' Y-m-d  H:i ', current_time('timestamp', 1));
+									}
+								}
+
+								?>
+
+							</li>
 							</ul>
 						</div>
 						<div class="lang-container">
