@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ace3b2a-5309-4b7f-9b43-e81466779f24" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
     </list>
     <ignored path="gsalborz.iws" />
@@ -31,9 +27,18 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.783105">
-              <caret line="68" column="63" selection-start-line="68" selection-start-column="63" selection-end-line="68" selection-end-column="63" />
-              <folding />
+            <state vertical-scroll-proportion="0.53424656">
+              <caret line="63" column="76" selection-start-line="63" selection-start-column="76" selection-end-line="63" selection-end-column="76" />
+              <folding>
+                <marker date="1452449073223" expanded="true" signature="3002:3043" placeholder="..." />
+                <marker date="1452449073223" expanded="true" signature="3213:3454" placeholder="..." />
+                <marker date="1452449073223" expanded="true" signature="3243:3454" placeholder="..." />
+                <marker date="1452449073223" expanded="true" signature="3283:3454" placeholder="..." />
+                <marker date="1452449073223" expanded="true" signature="3731:3779" placeholder="..." />
+                <marker date="1452449073223" expanded="true" signature="3817:3880" placeholder="..." />
+                <marker date="1452449073223" expanded="true" signature="4035:4153" placeholder="..." />
+                <marker date="1452449073223" expanded="true" signature="4065:4153" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -619,9 +624,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.783105">
-          <caret line="68" column="63" selection-start-line="68" selection-start-column="63" selection-end-line="68" selection-end-column="63" />
-          <folding />
+        <state vertical-scroll-proportion="0.53424656">
+          <caret line="63" column="76" selection-start-line="63" selection-start-column="76" selection-end-line="63" selection-end-column="76" />
+          <folding>
+            <marker date="1452449073223" expanded="true" signature="3002:3043" placeholder="..." />
+            <marker date="1452449073223" expanded="true" signature="3213:3454" placeholder="..." />
+            <marker date="1452449073223" expanded="true" signature="3243:3454" placeholder="..." />
+            <marker date="1452449073223" expanded="true" signature="3283:3454" placeholder="..." />
+            <marker date="1452449073223" expanded="true" signature="3731:3779" placeholder="..." />
+            <marker date="1452449073223" expanded="true" signature="3817:3880" placeholder="..." />
+            <marker date="1452449073223" expanded="true" signature="4035:4153" placeholder="..." />
+            <marker date="1452449073223" expanded="true" signature="4065:4153" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

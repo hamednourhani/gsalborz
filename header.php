@@ -63,7 +63,7 @@
 								<?php if(ICL_LANGUAGE_CODE == 'en') {
 									echo date(' Y-m-d  H:i ', current_time('timestamp', 1));
 								}else {
-									if (function_exists(jdate)) {
+									if (function_exists('jdate')) {
 										echo jdate(' Y-m-d  H:i ', current_time('timestamp', 0));
 									} else {
 										echo date(' Y-m-d  H:i ', current_time('timestamp', 1));
